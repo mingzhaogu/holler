@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 // import each individual reducer:
-// import -- from './--_reducer';
+import session from './session_reducer';
 
 // fix rootReducer to include actual reducers
 const rootReducer = combineReducers({
-  asdf: 'asdf'
+  session
 });
 
 export default rootReducer;
