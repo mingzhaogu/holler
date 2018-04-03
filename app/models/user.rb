@@ -1,11 +1,11 @@
 class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
-  validates :password_digest, :session_token, presence true:
+  validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 8, allow_nil: true}
 
   attr_reader :password
 
-  before_validation :ensure_session_token, :default_img
+  before_validation :ensure_session_token, :set_default_image
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def reset_session_token!
-    self.session_token = self.generate_session_token
+    self.session_token = self.class.generate_session_token
     self.save!
     self.session_token
   end
@@ -34,10 +34,10 @@ class User < ApplicationRecord
   private
 
   def ensure_session_token
-    self.session_token ||= self.generate_session_token
+    self.session_token ||= self.class.generate_session_token
   end
 
-  def default_img
-    self.img_url ||= 'https://i.imgur.com/GfeDqkc.png'
+  def set_default_image
+    self.image_url ||= 'https://i.imgur.com/GfeDqkc.png'
   end
 end
