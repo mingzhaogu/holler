@@ -1,3 +1,10 @@
+<% if logged_in? %>
+  <script id="bootstrap-current-user" type="text/javascript">
+    window.currentUser = <%= render("api/users/user.json.jbuilder",
+      user: current_user).html_safe %>
+  </script>
+<% end %>
+
 <main id="root">
   Stitch Has A Glitch!
   <img src="https://www.intofilm.org/intofilm-production/scaledcropped/1096x548https%3A/s3-eu-west-1.amazonaws.com/images.cdn.filmclub.org/film__3920-lilo-and-stitch-ii-stitch-has-a-glitch--hi_res-61805bfc.jpg/film__3920-lilo-and-stitch-ii-stitch-has-a-glitch--hi_res-61805bfc.jpg" />
