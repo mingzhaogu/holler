@@ -15,7 +15,6 @@ import {
 document.addEventListener('DOMContentLoaded', () => {
   // BOOTSTRAP CURRENT USER
   let store;
-  console.log(window.currentUser);
   if (window.currentUser) {
     const preloadedState = { session: { currentUser: window.currentUser } };
     store = configureStore(preloadedState);
