@@ -5,11 +5,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // TESTING START:
-import {
-  signup,
-  login,
-  logout
-} from './actions/session_actions'
+
 // TESTING END:
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,10 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TESTING START
-  window.store = store;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+
   // testUser = {user: {username: 'Lilo', password: 'password'}}
   // TESTING END
 

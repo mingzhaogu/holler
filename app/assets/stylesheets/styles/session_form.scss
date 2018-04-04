@@ -38,7 +38,7 @@
 
     .login-input {
       height: 42px;
-      font-size: 17px;
+      font-size: $fontSizeH3;
       width: 80%;
       padding: 0 16px;
       margin: 0 auto 12px auto;
@@ -47,16 +47,21 @@
 
     .login-button {
       // height: 20px;
-      font-size: 24px;
+      font-size: $fontSizeH2;
       width: 40%;
       padding: 0 10px;
-      margin: 0 auto 24px auto;
+      margin: 0 auto 12px auto;
       color: $blue;
       border: none;
     }
 
     .login-button:hover {
       background-color: $hoverBackground;
+    }
+
+    .demo {
+      // font-size: $fontSizeH3;
+      margin: 0 auto 24px auto;
     }
 
   }

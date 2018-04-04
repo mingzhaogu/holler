@@ -9,6 +9,8 @@ class SessionForm extends React.Component {
       password: ''
     };
 
+    this.defaultLogin = { username: 'stitch626', password: 'password'}
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -59,7 +61,16 @@ class SessionForm extends React.Component {
             placeholder="Password"
           />
 
-          <button className="login-button">{this.props.formType}</button>
+          <button type="submit"
+            className="login-button">
+            {this.props.formType}
+          </button>
+
+          <button
+            className="demo login-button"
+            onClick={() => this.props.processForm(this.defaultLogin)}>
+            demo login
+          </button>
         </form>
       </div>
     )
