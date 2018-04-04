@@ -16,6 +16,7 @@ image_urls = [
   "https://vignette.wikia.nocookie.net/stitchipediaalilostitch/images/f/f2/Jumba.gif/revision/latest/scale-to-width-down/350?cb=20110516163835"
 ]
 names = ['Lilo Pelekai', 'Stitch', 'Wendy Pleakley', 'Jumba Jookiba']
+
 usernames.length.times do |i|
   User.create(
     username: usernames[i],
@@ -27,3 +28,20 @@ end
 
 
 Message.destroy_all
+
+senders = [2, 4, 3, 4]
+conversations = [1, 1, 2, 2]
+body = [
+  "Yoo porma dissy!",
+  "Leave my mother out of this!",
+  "Oh great! He's loose!",
+  "His destructive programming is taking effect. He will be irresistibly drawn to large cities, where he will back up sewers, reverse street signs, and steal everyone's left shoe."
+]
+
+senders.length.times do |i|
+  Message.create(
+    sender_id: senders[i],
+    conversation_id: conversations[i],
+    body: body[i],
+  )
+end
