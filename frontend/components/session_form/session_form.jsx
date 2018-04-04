@@ -31,7 +31,9 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <h2>{this.props.formType}</h2>
+          <img className="logo"
+            src="https://i.imgur.com/XSTheUg.png" />
+
           <label>Username:
             <input type="text"
               className="login-input"
@@ -48,11 +50,11 @@ class SessionForm extends React.Component {
             />
           </label>
 
-          <button className="login-button">Continue</button>
+          <button className="login-button">{this.props.formType}</button>
         </form>
       </div>
     )
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);
