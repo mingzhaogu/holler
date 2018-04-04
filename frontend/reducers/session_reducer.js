@@ -2,7 +2,7 @@ import merge from 'lodash';
 
 import {
   RECEIVE_CURRENT_USER,
-} from '../actios/session_actions';
+} from '../actions/session_actions';
 
 const _nullUser = Object.freeze({
   currentUser: null
