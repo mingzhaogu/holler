@@ -33,5 +33,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // TESTING END
 
   const root = document.getElementById('root');
-  ReactDOM.render(<h1>Welcome to Holler</h1>, root);
+  ReactDOM.render(<Root store={store}/>, root);
 });
