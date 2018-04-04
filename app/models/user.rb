@@ -3,6 +3,11 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 8, allow_nil: true}
 
+  has_many :messages,
+    class_name: :Message,
+    primary_key: :id,
+    foreign_key: :sender_id
+
   attr_reader :password
 
   before_validation :ensure_session_token, :set_default_image
