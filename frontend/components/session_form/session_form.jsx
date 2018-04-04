@@ -40,7 +40,9 @@ class SessionForm extends React.Component {
           </h2>
 
           <h2 className="login-text">
-            Sign in below to get started.
+            {this.props.altText}
+            <br />
+            {this.props.navLink} to get started.
           </h2>
 
           <input type="text"
@@ -56,7 +58,6 @@ class SessionForm extends React.Component {
             onChange={this.updateInput('password')}
             placeholder="Password"
           />
-
 
           <button className="login-button">{this.props.formType}</button>
         </form>
