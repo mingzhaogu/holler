@@ -31,24 +31,32 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-          <img className="logo"
+          <img className="logo login-logo"
             src="https://i.imgur.com/XSTheUg.png" />
 
-          <label>Username:
-            <input type="text"
-              className="login-input"
-              value={this.state.username}
-              onChange={this.updateInput('username')}
-            />
-          </label>
+          <h1 className="holler login-holler">Holler</h1>
+          <h2 className="login-text">
+            Instantly connect with people in your life.
+          </h2>
 
-          <label>Password:
-            <input type="password"
-              className="login-input"
-              value={this.state.password}
-              onChange={this.updateInput('password')}
-            />
-          </label>
+          <h2 className="login-text">
+            Sign in below to get started.
+          </h2>
+
+          <input type="text"
+            className="login-input"
+            value={this.state.username}
+            onChange={this.updateInput('username')}
+            placeholder="Username"
+          />
+
+          <input type="password"
+            className="login-input"
+            value={this.state.password}
+            onChange={this.updateInput('password')}
+            placeholder="Password"
+          />
+
 
           <button className="login-button">{this.props.formType}</button>
         </form>

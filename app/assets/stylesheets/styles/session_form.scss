@@ -1,5 +1,63 @@
 /* frontend/components/session_form/session_form.jsx */
-.logo {
-  width: 100px;
+
+.login-logo {
+  width: 120px;
   height: auto;
+}
+
+.login-holler {
+  font-size: $fontSizeH1;
+  margin-bottom: 24px;
+}
+
+.login-form-container {
+  // border: 1px solid red;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  line-height: 1.2;
+
+  .login-form-box {
+    width: 350px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    .login-text {
+      font-size: $fontSizeMain;
+      font-weight: 200;
+      margin-bottom: 24px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .login-input, .login-button {
+      border-radius: 4px;
+    }
+
+    .login-input {
+      height: 42px;
+      font-size: 17px;
+      width: 80%;
+      padding: 0 16px;
+      margin: 0 auto 12px auto;
+      border: 1px solid $inputBoxBorder;
+    }
+
+    .login-button {
+      // height: 20px;
+      font-size: 24px;
+      width: 40%;
+      padding: 0 10px;
+      margin: 0 auto 24px auto;
+      color: $blue;
+      border: none;
+    }
+
+    .login-button:hover {
+      background-color: $hoverBackground;
+    }
+
+  }
 }

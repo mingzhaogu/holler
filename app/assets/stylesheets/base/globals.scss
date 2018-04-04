@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:200|Roboto);
+
+$inputBoxBorder: rgba(0,0,0,0.2);
+$blue: #0084ff;
+$hoverBackground: #e9ebee;
+$fontPoppins200: 'Poppins';
+$fontSizeMain: 16px;
+$fontSizeH1: 40px;
+
+.holler {
+  text-align: center;
+  // font-family: $fontPoppins200;
+  // font-weight: 300px;
+}
+
+.logo {
+  margin: 0 auto;
+  // justify-content: center;
+}
+
+body {
+  font-family: $fontPoppins200, sans-serif;
+}
