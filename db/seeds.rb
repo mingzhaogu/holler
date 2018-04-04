@@ -17,15 +17,13 @@ image_urls = [
   "https://vignette.wikia.nocookie.net/stitchipediaalilostitch/images/f/f2/Jumba.gif/revision/latest/scale-to-width-down/350?cb=20110516163835"
 ]
 
-first_names = ['Lilo', 'Stitch', 'Wendy', 'Jumba']
-last_names = ['Pelekai', '626', 'Pleakley', 'Jookiba']
+names = ['Lilo Pelekai', 'Stitch', 'Wendy Pleakley', 'Jumba Jookiba']
 
 4.times do |i|
   User.create(
     username: usernames[i],
     password: 'password',
     image_url: image_urls[i],
-    first_name: first_names[i],
-    last_name: last_names[i]
+    name: names[i],
   )
 end
