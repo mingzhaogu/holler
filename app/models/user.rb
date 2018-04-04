@@ -8,6 +8,8 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :sender_id
 
+  has_and_belongs_to_many :conversations
+
   attr_reader :password
 
   before_validation :ensure_session_token, :set_default_image

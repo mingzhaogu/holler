@@ -6,4 +6,8 @@ class Message < ApplicationRecord
     primary_key: :id,
     foreign_key: :sender_id
 
+  belongs_to :conversation,
+    class_name: :Conversation,
+    primary_key: :id,
+    foreign_key: :conversation_id
 end
