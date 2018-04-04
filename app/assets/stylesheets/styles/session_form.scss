@@ -25,7 +25,7 @@
     flex-direction: column;
 
     .login-text {
-      font-size: $fontSizeMain;
+      font-size: $fontSizeH3;
       font-weight: 200;
       margin-bottom: 24px;
       line-height: 1.2;
@@ -42,7 +42,7 @@
       width: 80%;
       padding: 0 16px;
       margin: 0 auto 12px auto;
-      border: 1px solid $inputBoxBorder;
+      border: 1px solid $boxBorder;
     }
 
     .login-button {

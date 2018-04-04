@@ -1,0 +1,48 @@
+/* frontend/components/session_form/session_form.jsx */
+
+// .login-logo {
+//   width: 120px;
+//   height: auto;
+// }
+
+.main-holler {
+  font-size: $fontSizeH3;
+  // margin-bottom: 24px;
+}
+
+.nav-col {
+  border: 1px solid red;
+  // height: 100vh;
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+  // line-height: 1.2;
+}
+  .nav-bar {
+    border-right: 1px solid $boxBorder;
+    border-bottom: 1px solid $boxBorder; // get rid of later
+    box-sizing: border-box;
+    max-width: 300px;
+    // width: 25vw;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    i, h2 {
+      padding: 8px;
+    }
+
+    .fa {
+      color: $blue;
+      font-size: $fontSizeH2;
+    }
+
+
+
+
+
+  }
+// }

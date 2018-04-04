@@ -1,24 +1,23 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 
 // pencil -> on click compose message
 
 const NavBar = ({ logout }) => {
 
-    // some container with
   return (
-    <nav className="nav">
+    <nav className="nav-bar">
       <i className="fa fa-cog"
         aria-hidden="true"
         onClick={ logout }
       />
 
-      <h1 className="holler main-holler">Holler</h1>
-      <p>click the tiny cog to logout</p>
+      <h2 className="holler main-holler">Holler</h2>
 
-      <i className="fa fa-pencil-square-o" aria-hidden="true" onClick={logout}></i>
+      <i className="fa fa-pencil-square-o"
+        aria-hidden="true"
+        onClick={ logout }
+      />
     </nav>
-
   )
 }
 
