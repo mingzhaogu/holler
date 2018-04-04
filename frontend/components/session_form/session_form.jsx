@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
     return (
       <div className="login-form-container">
         <form className="login-form-box" onSubmit={this.handleSubmit}>
-
+          <h2>{this.props.formType}</h2>
           <label>Username:
             <input type="text"
               className="login-input"
@@ -50,8 +50,6 @@ class SessionForm extends React.Component {
 
           <button className="login-button">Continue</button>
         </form>
-
-
       </div>
     )
   }
