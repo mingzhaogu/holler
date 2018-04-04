@@ -9,15 +9,20 @@ class SessionForm extends React.Component {
       password: ''
     };
 
-    this.defaultLogin = { username: 'stitch626', password: 'password'}
-
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.defaultLogin = { username: 'stitch626', password: 'password'}
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
     }
+  }
+
+  demoLogin() {
+    this.setState(this.defaultLogin)
+    this.props.processForm(this.state)
   }
 
   handleSubmit(e) {
@@ -68,7 +73,7 @@ class SessionForm extends React.Component {
 
           <button
             className="demo login-button"
-            onClick={() => this.props.processForm(this.defaultLogin)}>
+            onClick={this.demoLogin}>
             demo login
           </button>
         </form>
