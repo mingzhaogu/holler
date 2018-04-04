@@ -9,7 +9,7 @@ import {
   signup,
   login,
   logout
-} from './util/session_api_util'
+} from './actions/session_actions'
 // TESTING END:
 
 document.addEventListener('DOMContentLoaded', () => {
