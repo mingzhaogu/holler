@@ -8,9 +8,17 @@ import { fetchAllConversations,
 
 // pencil -> on click compose message
 
-const mapStateToProps = (state, ownProps) => ({
-  conversations: Object.values(state.entities.conversations)
-})
+// const mapStateToProps = (state, ownProps) => ({
+//   conversations: Object.values(state.entities.conversations)
+// })
+
+const mapStateToProps = (state, ownProps) => {
+  // console.log(state.entities.conversatons)
+  return {}
+  // return ({
+  //   conversations: Object.values(state.entities.conversations)
+  // })
+}
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchAllConversations: () => (dispatch(fetchAllConversations())),

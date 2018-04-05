@@ -9,7 +9,7 @@ import {
   fetchConversations,
   fetchConversation,
   createConversation
-} from './util/conversation_api_util'
+} from './actions/session_actions'
 // TESTING END:
 
 document.addEventListener('DOMContentLoaded', () => {
