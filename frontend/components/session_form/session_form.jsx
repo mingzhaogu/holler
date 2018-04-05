@@ -14,20 +14,37 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   console.log('cwrp')
+  //   console.log(nextProps)
+  //   console.log(nextProps.loggedIn)
+  //
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/');
+  //   }
+  // }
 
   demoLogin() {
-    this.setState(this.defaultLogin)
-    this.props.processForm(this.state)
+    this.setState(this.defaultLogin,
+      () => this.props.processForm(this.state)
+    )
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state)
+  }
+
+  renderErrors() {
+    return (
+      <ul className="error login-errors">
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   updateInput(field) {
@@ -52,6 +69,8 @@ class SessionForm extends React.Component {
             {this.props.navLink} to get started.
           </h2>
 
+          {this.renderErrors()}
+
           <input type="text"
             className="login-input"
             value={this.state.username}
@@ -71,11 +90,11 @@ class SessionForm extends React.Component {
             {this.props.formType}
           </button>
 
-          <button
+          <div
             className="demo login-button"
             onClick={this.demoLogin}>
             demo login
-          </button>
+          </div>
         </form>
       </div>
     )

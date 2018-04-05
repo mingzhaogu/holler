@@ -1,8 +1,24 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    get 'conversations/new'
+  end
+
+  namespace :api do
+    get 'conversations/create'
+  end
+
+  namespace :api do
+    get 'conversations/index'
+  end
+
+  namespace :api do
+    get 'conversations/show'
+  end
+
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:new, :create]
-    resource :session, only: [:new, :create, :destroy]
+    resource :session, only: [:create, :destroy]
     resources :messages, only: [:new, :create, :show]
   end
 
