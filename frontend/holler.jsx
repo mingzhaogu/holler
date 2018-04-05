@@ -5,7 +5,11 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 // TESTING START:
-
+import {
+  fetchConversations,
+  fetchConversation,
+  createConversation
+} from './util/conversation_api_util'
 // TESTING END:
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,8 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TESTING START
-
-  // testUser = {user: {username: 'Lilo', password: 'password'}}
+  window.state = store.getState;
+  window.dispatch = store.dispatch;
+  window.testUser = {username: 'evilgeniusjumba', password: 'password'};
+  window.fetchConversations = fetchConversations;
+  window.fetchConversation = fetchConversation;
+  window.createConversation = createConversation;
   // TESTING END
 
   const root = document.getElementById('root');
