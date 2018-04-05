@@ -8,7 +8,12 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :sender_id
 
-  has_and_belongs_to_many :conversations
+  has_many :conversations_users,
+    class_name: :ConversationUser,
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :conversations, through: :conversations_users
 
   attr_reader :password
 

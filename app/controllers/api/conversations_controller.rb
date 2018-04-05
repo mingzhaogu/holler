@@ -3,7 +3,6 @@ class Api::ConversationsController < ApplicationController
   end
 
   def create
-    @conversation =
   end
 
   def index
@@ -15,6 +14,5 @@ class Api::ConversationsController < ApplicationController
   private
 
   def conversation_params
-    params.require(:conversation).permit(:)
   end
 end

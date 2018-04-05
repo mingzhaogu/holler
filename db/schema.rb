@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404222552) do
+ActiveRecord::Schema.define(version: 20180405005145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20180404222552) do
   end
 
   create_table "conversations_users", id: false, force: :cascade do |t|
-    t.bigint "conversation_id"
-    t.bigint "user_id"
-    t.index ["conversation_id"], name: "index_conversations_users_on_conversation_id"
+    t.integer "conversation_id"
+    t.integer "user_id"
+    t.index ["conversation_id"], name: "index_conversations_users_on_conversation_id", unique: true
     t.index ["user_id", "conversation_id"], name: "index_conversations_users_on_user_id_and_conversation_id", unique: true
   end
 
