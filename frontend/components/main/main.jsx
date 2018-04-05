@@ -2,14 +2,14 @@ import React from 'react';
 // import { Link } from 'react-router-dom';
 
 // pencil -> on click compose message
-import NavColumnContainer from './nav_column_container'
+import NavColumnContainer from './nav_column_container';
+import Footer from '../footer/footer';
 
 const Main = ({ logout }) => {
 
   // have mainpage container
   return (
     <NavColumnContainer />
-
   )
 }
 

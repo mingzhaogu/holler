@@ -11,7 +11,8 @@ import {
 // import a bunch of containers
 import LoginFormContainer from './session_form/login_form_container';
 import SignUpFormContainer from './session_form/signup_form_container';
-import MainContainer from './main/main_container'
+import MainContainer from './main/main_container';
+import Footer from './footer/footer'
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -21,7 +22,6 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <ProtectedRoute path="/" component={MainContainer} />
     </Switch>
-
   </div>
 )
 
