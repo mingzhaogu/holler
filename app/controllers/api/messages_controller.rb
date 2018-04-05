@@ -8,6 +8,7 @@ class Api::MessagesController < ApplicationController
   def create
     # how would we get the conversation_id? through params?
     @message = Message.new(message_params)
+    @message.conversation_id = params[:id]
     @message.sender_id = current_user.id
 
     if @message.save
