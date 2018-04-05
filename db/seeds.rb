@@ -26,6 +26,13 @@ usernames.length.times do |i|
   )
 end
 
+Conversation.destroy_all
+
+5.times do |i|
+  Conversation.create(
+    chat_name: Faker::Dog.meme_phrase
+  )
+end
 
 Message.destroy_all
 
