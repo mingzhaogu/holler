@@ -6,9 +6,18 @@ class Api::ConversationsController < ApplicationController
   end
 
   def create
-    @conversation = Conversation.create
+    #use inverse_of
+    @conversation = Conversation.create(conversation_params)
 
-    render 'api/users/show'
+    #create ConversationUser
+    conversation_params.users.each do |user|
+      ConversationUser.create({
+        user_id: user.id,
+        conversation_id: @conversation.id
+      })
+    end
+
+    render 'api/conversations/show'
   end
 
   def index
@@ -22,9 +31,9 @@ class Api::ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
   end
 
-  # private
-  #
-  # def conversation_params
-  #
-  # end
+  private
+
+  def conversation_params
+    params.require(:conversation).permit(:users, :chat_name)
+  end
 end
