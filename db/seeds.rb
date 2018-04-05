@@ -37,7 +37,7 @@ end
 Message.destroy_all
 
 senders = [2, 4, 3, 4]
-conversations = [1, 1, 2, 2]
+conversations = [3, 3, 2, 2]
 body = [
   "Yoo porma dissy!",
   "Leave my mother out of this!",
@@ -49,6 +49,18 @@ senders.length.times do |i|
   Message.create(
     sender_id: senders[i],
     conversation_id: conversations[i],
-    body: body[i],
+    body: body[i]
+  )
+end
+
+ConversationUser.destroy_all
+
+conversation = [1, 1, 2, 2, 3, 3, 3, 3]
+user = [1, 2, 3, 4, 1, 2, 3, 4]
+
+conversation.length.times do |i|
+  ConversationUser.create(
+    conversation_id: conversation[i],
+    user_id: user[i]
   )
 end

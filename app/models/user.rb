@@ -5,11 +5,9 @@ class User < ApplicationRecord
 
   has_many :messages, -> { order(created_at: :desc) },
     foreign_key: :sender_id
-
-  has_many :conversations_users
-
+  has_many :conversation_users
   has_many :conversations,
-    through: :conversations_users
+    through: :conversation_users
 
   attr_reader :password
 
