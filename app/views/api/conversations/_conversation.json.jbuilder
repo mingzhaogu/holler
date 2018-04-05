@@ -6,3 +6,5 @@
   end
   json.messages conversation.messages
 # end
+
+#minimize needed data
