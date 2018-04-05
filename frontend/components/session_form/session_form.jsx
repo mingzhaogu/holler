@@ -14,7 +14,8 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
-  demoLogin() {
+  demoLogin(e) {
+    e.preventDefault();
     this.setState(this.defaultLogin,
       () => this.props.login(this.state)
     )
@@ -80,15 +81,18 @@ class SessionForm extends React.Component {
             {this.props.formType}
           </button>
 
-          <div
+          <button
             className="demo login-button"
             onClick={this.demoLogin}>
             demo login
-          </div>
+          </button>
         </form>
       </div>
     )
   }
 }
 
+// <aside className="login-side">
+//   <img src="https://i.pinimg.com/736x/1d/d2/e4/1dd2e45a1e167916be88ed04f093f68b--italia.jpg" />
+// </aside>
 export default withRouter(SessionForm);

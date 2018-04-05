@@ -17,13 +17,17 @@
   align-items: center;
   line-height: 1.2;
   text-align: center;
+  background-image: url(https://i.imgur.com/ktvx0p2.jpg);
+  background-position: right;
+  background-size: cover;
 
   .login-form-box {
     width: 350px;
     height: auto;
-    margin: auto;
+    margin-left: 12.5vw;
     display: flex;
     flex-direction: column;
+    // background-color:
 
     .login-text {
       font-size: $fontSizeH3;
@@ -33,31 +37,29 @@
     }
 
     .login-input, .login-button {
+      height: 42px;
+      width: 80%;
+      font-size: $fontSizeH3;
       border-radius: 4px;
+      padding: 0 16px;
+      margin: 0 auto 12px auto;
     }
 
     .login-input {
-      height: 42px;
-      font-size: $fontSizeH3;
-      width: 80%;
-      padding: 0 16px;
-      margin: 0 auto 12px auto;
       border: 1px solid $boxBorder;
     }
 
     .login-button {
-      // height: 20px;
-      font-size: $fontSizeH2;
-      width: 40%;
-      padding: 0 10px;
-      margin: 0 auto 12px auto;
-      color: $blue;
-      border: none;
+      color: #FFFFFF;
+      background-color: $pink;
+      align-items: center;
+      transition: 200ms;
+      box-sizing: content-box;
     }
 
-    .login-button:hover {
-      background-color: $hoverBackground;
-    }
+    // .login-button:hover {
+    //   background-color: $hoverBackground;
+    // }
 
     .demo {
       // font-size: $fontSizeH3;

@@ -3,6 +3,8 @@ class Api::ConversationsController < ApplicationController
   end
 
   def create
+    @conversation = Conversation.create
+    render 'api/conversations/show'
   end
 
   def index
@@ -11,8 +13,9 @@ class Api::ConversationsController < ApplicationController
   def show
   end
 
-  private
-
-  def conversation_params
-  end
+  # private
+  #
+  # def conversation_params
+  #
+  # end
 end

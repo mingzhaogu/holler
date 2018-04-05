@@ -10,4 +10,5 @@ class Message < ApplicationRecord
     class_name: :Conversation,
     primary_key: :id,
     foreign_key: :conversation_id
+
 end
