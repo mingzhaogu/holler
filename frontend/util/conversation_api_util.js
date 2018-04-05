@@ -30,7 +30,7 @@ export const createConversation = (conversation) => (
 //   })
 // );
 
-// export const deletePost = (id) => (
+// export const deleteConversation = (id) => (
 //   $.ajax({
 //     url: `api/conversatons/${id}`,
 //     method: 'DELETE'
