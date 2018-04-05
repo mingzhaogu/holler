@@ -2,7 +2,7 @@ import React from 'react';
 
 // pencil -> on click compose message
 
-const NavBar = ({ logout }) => {
+const NavBar = ({ logout, createConversation }) => {
 
   return (
     <nav className="nav-bar">
@@ -15,7 +15,7 @@ const NavBar = ({ logout }) => {
 
       <i className="fa fa-pencil-square-o"
         aria-hidden="true"
-        onClick={ logout }
+        onClick={ createConversation }
       />
     </nav>
   )

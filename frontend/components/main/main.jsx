@@ -5,7 +5,7 @@ import React from 'react';
 import NavColumnContainer from './nav_column_container';
 import Footer from '../footer/footer';
 
-const Main = ({ logout }) => {
+const Main = () => {
 
   // have mainpage container
   return (
