@@ -11,4 +11,7 @@ class Message < ApplicationRecord
     primary_key: :id,
     foreign_key: :conversation_id
 
+  after_create_commit do
+    MessageCreationEventBroadcastJob.perform_later(self)
+  end
 end
