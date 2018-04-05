@@ -7,9 +7,9 @@ export const RECEIVE_ALL_CONVERSATIONS = 'RECEIVE_ALL_CONVERSATIONS';
 export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION';
 // export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION';
 
-export const receiveAllConversations = (conversations) => ({
+export const receiveAllConversations = (payload) => ({
   type: RECEIVE_ALL_CONVERSATIONS,
-  conversations
+  payload
 });
 
 export const receiveConversation = (conversation) => ({
@@ -24,7 +24,7 @@ export const receiveConversation = (conversation) => ({
 
 export const fetchAllConversations = () => (dispatch) => (
   APIUtil.fetchConversations()
-    .then((conversations) => dispatch(receiveAllConversations(conversations)))
+    .then((payload) => dispatch(receiveAllConversations(payload)))
 );
 
 export const fetchConversation = (id) => (dispatch) => (
