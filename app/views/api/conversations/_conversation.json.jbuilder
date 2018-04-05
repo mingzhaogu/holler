@@ -1,5 +1,6 @@
 json.conversations do
   json.set! conversation.id do
+    json.id conversation.id
     json.users_id conversation.users.pluck(:id)
     json.messages_id conversation.messages.pluck(:id)
   end

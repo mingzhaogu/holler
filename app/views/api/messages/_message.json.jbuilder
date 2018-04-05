@@ -5,3 +5,4 @@ json.extract! message,
   :body,
   :message_type,
   :created_at
+json.sender_name message.user.username
