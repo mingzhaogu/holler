@@ -1,4 +1,4 @@
-import merge from 'lodash';
+import { merge } from 'lodash';
 import {
   RECEIVE_ALL_CONVERSATIONS,
   RECEIVE_CONVERSATION,
@@ -11,7 +11,7 @@ const ConversationReducer = (oldState = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_ALL_CONVERSATIONS:
-      return merge({}, action.posts);
+      return merge({}, action.payload.conversations);
     case RECEIVE_CONVERSATION:
       const receivedConvo = { [action.conversation.id]: action.conversation };
       newState = merge({}, oldState, receivedConvo);
