@@ -1,1 +1,1 @@
-json.extract! @conversation, :messages, :username;
+json.partial! "api/conversations/conversation", conversation: @conversation

@@ -5,4 +5,8 @@ class Conversation < ApplicationRecord
   has_many :users,
     through: :conversation_users
 
+  def last_message
+    messages.last
+  end
+
 end
