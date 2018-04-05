@@ -1,6 +1,5 @@
 import React from 'react';
-import NavBar from './nav_bar';
-
+import MessageListItem from './message_list_item'
 
 // const mapStateToProps = (state, ownProps) => ({
 //   conversations: Object.values(state.entities.conversations)
@@ -18,12 +17,26 @@ class MessageList extends React.Component {
     super(props);
   }
 
-  render() {
-    return (
-      <section>
-        --HERE LIES MESSAGE_LIST.JSX--
-        {this.props.conversations}
+  componentWillMount() {
+    this.props.fetchAllConversations();
+  }
 
+  render() {
+    console.log("message_list.jsx")
+    console.log(this.props.conversations)
+    return (
+      <section className="message-list">
+        --HERE LIES MESSAGE_LIST.JSX--
+        <ul>
+          {this.props.conversations.map((conv) => {
+            return(
+              <MessageListItem
+                key={conv.id}
+                props={this.props}
+              />
+            )
+          })}
+        </ul>
         'RENDER LIST OF CONVERSATIONS HERE'
       </section>
     )
