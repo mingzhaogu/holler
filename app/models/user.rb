@@ -3,7 +3,8 @@ class User < ApplicationRecord
   validates :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 8, allow_nil: true}
 
-  has_many :messages, -> { order(created_at: :desc) }
+  has_many :messages, -> { order(created_at: :desc) },
+    foreign_key: :sender_id
 
   has_many :conversations_users
 
