@@ -14,19 +14,9 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   console.log('cwrp')
-  //   console.log(nextProps)
-  //   console.log(nextProps.loggedIn)
-  //
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
-
   demoLogin() {
     this.setState(this.defaultLogin,
-      () => this.props.processForm(this.state)
+      () => this.props.login(this.state)
     )
   }
 
@@ -66,7 +56,7 @@ class SessionForm extends React.Component {
           <h2 className="login-text">
             {this.props.altText}
             <br />
-            {this.props.navLink} to get started.
+            {this.props.navLink}
           </h2>
 
           {this.renderErrors()}

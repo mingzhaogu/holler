@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   line-height: 1.2;
+  text-align: center;
 
   .login-form-box {
     width: 350px;
@@ -29,7 +30,6 @@
       font-weight: 200;
       margin-bottom: 24px;
       line-height: 1.2;
-      text-align: center;
     }
 
     .login-input, .login-button {
