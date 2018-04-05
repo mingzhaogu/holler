@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // TESTING START
+  window.store = store;
   window.state = store.getState;
   window.dispatch = store.dispatch;
   window.testUser = {username: 'evilgeniusjumba', password: 'password'};

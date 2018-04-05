@@ -1,13 +1,13 @@
 import React from 'react';
-import NavBar from './nav_bar';
+import NavBarContainer from './nav_bar_container';
 import MessageListContainer from './message_list_container';
 
 const NavColumn = (props) => {
 
-  //  add messageListContainer
+// SHOULD HAVE EVERYTHING FOR THE ENTIRE NAV BAR -- LEFT COLUMN
   return (
     <nav className="nav-col">
-      <NavBar props={props} />
+      <NavBarContainer />
       <p>'HELLO FROM NAV-COLUMN.JSX'</p>
       <MessageListContainer />
     </nav>

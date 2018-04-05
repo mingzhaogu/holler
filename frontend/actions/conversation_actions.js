@@ -1,5 +1,8 @@
 import * as APIUtil from '../util/conversation_api_util';
 
+
+console.log(APIUtil);
+
 export const RECEIVE_ALL_CONVERSATIONS = 'RECEIVE_ALL_CONVERSATIONS';
 export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION';
 // export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION';
