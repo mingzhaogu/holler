@@ -1,4 +1,4 @@
-import * as APIUtil from '..util/conversation_api_util';
+import * as APIUtil from '../util/conversation_api_util';
 
 export const RECEIVE_ALL_CONVERSATIONS = 'RECEIVE_ALL_CONVERSATIONS';
 export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION';
