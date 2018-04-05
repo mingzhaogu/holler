@@ -1,10 +1,22 @@
-# json.extract! @conversation, :messages, :users;
-#
-json.conversation do
-  json.users conversation.users do |user|
-    json.extract! user, :id, :username, :image_url, :name
+json.conversations do
+  json.set! conversation.id do
+    json.users_id conversation.users.pluck(:id)
+    json.messages_id conversation.messages.pluck(:id)
   end
-  json.messages conversation.messages
 end
 
-#minimize needed data
+json.users do
+  conversation.users.each do |user|
+    json.set! user.id do
+      json.partial! "api/users/user", user: user
+    end
+  end
+end
+
+json.messages do
+  conversation.messages.each do |message|
+    json.set! message.id do
+      json.partial! "api/messages/message", message: message
+    end
+  end
+end
