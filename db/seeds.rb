@@ -28,10 +28,14 @@ end
 
 Conversation.destroy_all
 
-5.times do |i|
+4.times do |i|
   Conversation.create(
     chat_name: Faker::Dog.meme_phrase
   )
+end
+
+1.times do |i|
+  Conversation.create()
 end
 
 Message.destroy_all
@@ -58,7 +62,7 @@ ConversationUser.destroy_all
 conversation = [1, 1, 2, 2, 3, 3, 3, 3]
 user = [1, 2, 3, 4, 1, 2, 3, 4]
 
-conversation.length.times do |i|
+(conversation.length).times do |i|
   ConversationUser.create(
     conversation_id: conversation[i],
     user_id: user[i]
