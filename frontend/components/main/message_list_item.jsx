@@ -17,7 +17,8 @@ const MessageListItem = (props) => {
   // console.log('mostRecentMessage', mostRecentMessage);
   return (
     <li className="message-list-item">
-      <img className="message-list-item-pic" />
+      <img src="https://i.imgur.com/XSTheUg.png"
+        className="message-list-item-pic" />
 
       <main className="message-list-item-body">
         <span className="message-list-item-convo-name">
