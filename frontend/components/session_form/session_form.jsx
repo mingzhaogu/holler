@@ -15,6 +15,10 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (this.props != nextProps) this.props.receiveErrors();
+  }
+
   demoLogin(e) {
     e.preventDefault();
     this.setState(this.defaultLogin,

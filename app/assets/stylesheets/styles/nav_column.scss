@@ -51,6 +51,7 @@
       display: flex;
       align-items: center;
       cursor: pointer;
+      text-decoration: none;
       // border-bottom: 1px solid $boxBorder;
 
       .message-list-item-pic {
@@ -78,7 +79,7 @@
       }
     }
 
-    .message-list-item:hover {
+    .active, .message-list-item:hover {
       background-color: $hoverBackground;
     }
   }
