@@ -20,7 +20,8 @@ class User < ApplicationRecord
   has_many :messages, -> { order(created_at: :desc) },
     foreign_key: :sender_id
   has_many :conversation_users, inverse_of: :user
-  has_many :conversations,
+  # has_many :conversations, -> { order()}
+  has_many :conversations, 
     through: :conversation_users
 
   attr_reader :password
