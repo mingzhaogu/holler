@@ -21,10 +21,12 @@ class Api::ConversationsController < ApplicationController
   end
 
   def index
-    @conversations = Conversation.select { |conv| conv.last_message }
-    @conversations.sort_by do |conv|
-      - conv.last_message.created_at.to_i
-    end
+    # @conversations = Conversation.select { |conv| conv.last_message }
+    # @conversations.sort_by do |conv|
+    #   - conv.last_message.created_at.to_i
+    # end
+
+    @conversations = current_user.conversations
   end
 
   def show
