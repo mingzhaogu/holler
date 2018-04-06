@@ -4,7 +4,7 @@ import MessageList from './message_list';
 
 import { fetchAllConversations,
   fetchConversation
-} from '../../actions/conversation_actions';
+} from '../../../actions/conversation_actions';
 
 // pencil -> on click compose message
 
