@@ -23,16 +23,17 @@ class MessageList extends React.Component {
 
   render() {
     // WILL NEED TO ADD SEARCH BAR BEFORE <UL>
+    // console.log("lastmsgs", this.props);
 
     return (
       <section className="message-list">
         <ul>
           {this.props.conversations.map((conv) => {
-            const lastMsgId = conv.messagesId.last;
             return(
               <MessageListItem
                 key={conv.id}
                 conv={conv}
+                lastMsg={this.props.lastMessages[conv.id]}
               />
             )
           })}

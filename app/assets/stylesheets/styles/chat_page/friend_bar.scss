@@ -1,0 +1,11 @@
+.friend-bar {
+  height: 50px;
+  border-bottom: 1px solid $boxBorder;
+  display: float;
+  width: 100%;
+
+  .friend-bar-name {
+    // align-items: center;
+    // overflow: hidden;
+  }
+}

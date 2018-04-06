@@ -5,7 +5,7 @@ import {
 
 const sessionErrorsReducer = (oldState = [], action) => {
   Object.freeze(oldState);
-  console.log('action', action);
+  // console.log('action', action);
   let newState;
   switch(action.type) {
     case RECEIVE_SESSION_ERRORS:

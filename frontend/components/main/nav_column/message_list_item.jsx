@@ -1,26 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { last } from 'lodash';
-
-const mapStateToProps = (state, ownProps) => {
-  const lastMsgId = last(ownProps.conv.messagesId)
-
-  return ({
-    mostRecentMessage: state.entities.messages[lastMsgId]
-  })
-}
-
-const mapDispatchToProps = (dispatch) => ({})
 
 const MessageListItem = (props) => {
-  const chatName = props.conv.chatName;
-  const mostRecentMessage = props.mostRecentMessage
-  // console.log('mostRecentMessage', mostRecentMessage);
-  // console.log('props', props);
+
   return (
-    <NavLink to={`/${chatName}`}
+    <NavLink to={`/${props.conv.chatName}`}
       className="message-list-item"
+      activeClassName="active"
     >
 
       <img src="https://i.imgur.com/XSTheUg.png"
@@ -28,18 +14,15 @@ const MessageListItem = (props) => {
 
       <main className="message-list-item-body">
         <span className="message-list-item-convo-name">
-          {chatName}
+          {props.conv.chatName}
         </span>
 
         <div className="message-list-item-body">
-          {mostRecentMessage.body}
+          {props.lastMsg.body}
         </div>
       </main>
     </NavLink>
   )
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(MessageListItem);
+export default MessageListItem;

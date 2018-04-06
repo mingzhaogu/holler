@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MessageList from './message_list';
+import { withRouter } from 'react-router';
+import { selectAllConversations, findLastMessages } from '../../../reducers/selectors'
 
 import { fetchAllConversations,
   fetchConversation
@@ -8,17 +10,10 @@ import { fetchAllConversations,
 
 // pencil -> on click compose message
 
-// const mapStateToProps = (state, ownProps) => ({
-//   conversations: Object.values(state.entities.conversations)
-// })
-
-const mapStateToProps = (state, ownProps) => {
-  // console.log('message list container')
-  // console.log(state.entities)
-  return ({
-    conversations: Object.values(state.entities.conversations)
-  })
-}
+const mapStateToProps = (state, ownProps) => ({
+  conversations: selectAllConversations(state),
+  lastMessages: findLastMessages(state)
+})
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchAllConversations: () => (dispatch(fetchAllConversations())),
@@ -27,7 +22,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 console.log(MessageList)
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(MessageList);
+)(MessageList));

@@ -7,13 +7,11 @@ import ChatPage from './chat_page/chat_page';
 import Footer from '../footer/footer';
 
 const Main = () => {
-
-  // have mainpage container
   return (
-    <body className="main">
+    <main className="main">
       <NavColumn />
       <ChatPage />
-    </body>
+    </main>
   )
 }
 
