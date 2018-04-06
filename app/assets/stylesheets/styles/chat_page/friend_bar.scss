@@ -1,11 +1,27 @@
 .friend-bar {
   height: 50px;
   border-bottom: 1px solid $boxBorder;
-  display: float;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
+  box-sizing: border-box;
 
   .friend-bar-name {
-    // align-items: center;
-    // overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: bold;
+  }
+
+  .friend-bar-icons {
+    padding: 9px 8px;
+
+    // li {
+    //   padding-right: 12px;
+    // }
+    .fa {
+      color: $blue;
+      font-size: $fontSizeH2;
+    }
   }
 }
