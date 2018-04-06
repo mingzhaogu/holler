@@ -13,8 +13,8 @@ import { fetchAllConversations,
 // })
 
 const mapStateToProps = (state, ownProps) => {
-  console.log('message list container')
-  console.log(state.entities)
+  // console.log('message list container')
+  // console.log(state.entities)
   return ({
     conversations: Object.values(state.entities.conversations)
   })

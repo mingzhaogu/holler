@@ -17,22 +17,24 @@ class MessageList extends React.Component {
     super(props);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchAllConversations();
   }
 
   render() {
-    console.log("message_list.jsx")
-    console.log(this.props.conversations)
+    // console.log("message_list.jsx----------------------")
+    // console.log(this.props.conversations[0])
+
     return (
       <section className="message-list">
         --HERE LIES MESSAGE_LIST.JSX--
         <ul>
           {this.props.conversations.map((conv) => {
+            const lastMsgId = conv.messagesId.last;
             return(
               <MessageListItem
                 key={conv.id}
-                props={this.props}
+                conv={conv}
               />
             )
           })}
