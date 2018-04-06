@@ -8,7 +8,6 @@ const NavColumn = (props) => {
   return (
     <nav className="nav-col">
       <NavBarContainer />
-      <p>'HELLO FROM NAV-COLUMN.JSX'</p>
       <MessageListContainer />
     </nav>
   )

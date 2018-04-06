@@ -27,7 +27,6 @@ class MessageList extends React.Component {
 
     return (
       <section className="message-list">
-        --HERE LIES MESSAGE_LIST.JSX--
         <ul>
           {this.props.conversations.map((conv) => {
             const lastMsgId = conv.messagesId.last;

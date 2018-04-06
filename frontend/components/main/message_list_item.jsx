@@ -14,15 +14,19 @@ const mapDispatchToProps = (dispatch) => ({})
 
 const MessageListItem = (props) => {
   const mostRecentMessage = props.mostRecentMessage
-  console.log('mostRecentMessage', mostRecentMessage);
+  // console.log('mostRecentMessage', mostRecentMessage);
   return (
     <li className="message-list-item">
+      <img className="message-list-item-pic" />
 
-      <h3 className="message-list-item-convo-name">
-        {mostRecentMessage.senderName}
-      </h3>
       <main className="message-list-item-body">
-        {mostRecentMessage.body}
+        <span className="message-list-item-convo-name">
+          {mostRecentMessage.senderName}
+        </span>
+
+        <div className="message-list-item-body">
+          {mostRecentMessage.body}
+        </div>
       </main>
     </li>
   )

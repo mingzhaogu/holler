@@ -12,7 +12,8 @@
 
 .nav-col {
   // border: 1px solid red;
-  width: 25vw;
+  border-right: 1px solid $boxBorder;
+  width: 33vw;
   max-width: 300px;
   height: 100vh;
   // background-color: green;
@@ -22,7 +23,6 @@
   // line-height: 1.2;
 
   .nav-bar {
-    border-right: 1px solid $boxBorder;
     border-bottom: 1px solid $boxBorder; // get rid of later
     box-sizing: border-box;
     // width: 25vw;
@@ -40,10 +40,42 @@
       color: $blue;
       font-size: $fontSizeH2;
     }
+  }
+
+  .message-list {
 
 
+    .message-list-item {
+      height: 64px;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      border-bottom: 1px solid $boxBorder;
 
+      .message-list-item-pic {
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin-right: 9px;
+      }
 
+      .message-list-item-body {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
 
+        .message-list-item-convo-name {
+          font-weight: 400;
+          line-height: 1.4;
+        }
+
+        .message-list-item-body {
+          height: 18px;
+          font-size: 13px;
+          color: rgba(153, 153, 153, 1);
+        }
+      }
+    }
   }
 }
