@@ -7,23 +7,24 @@ const mapStateToProps = (state, ownProps) => {
   // need to get active conversation
 
   return ({
+    name: ownProps.name
   })
 }
 
 const mapDispatchToProps = (dispatch) => ({})
 
 const FriendBar = (props) => {
-  // console.log('mostRecentMessage', mostRecentMessage);
-  // console.log('props', props);
   return (
     <nav className="friend-bar">
       <span className="friend-bar-name">
-        "HI FRIEND"
+        {props.chatName}
       </span>
 
-      <div className="friend-bar-icons">
-        "ICONS GO HERE"
-      </div>
+      <ul className="friend-bar-icons">
+        <li>
+          <i className="fa fa-info-circle" aria-hidden="true" />
+        </li>
+      </ul>
     </nav>
   )
 }

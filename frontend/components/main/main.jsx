@@ -3,14 +3,14 @@ import React from 'react';
 
 // pencil -> on click compose message
 import NavColumn from './nav_column/nav_column';
-import ChatPage from './chat_page/chat_page';
+import ChatMain from './chat_page/chat_main';
 import Footer from '../footer/footer';
 
 const Main = () => {
   return (
     <main className="main">
       <NavColumn />
-      <ChatPage />
+      <ChatMain />
     </main>
   )
 }
