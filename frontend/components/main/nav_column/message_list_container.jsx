@@ -2,7 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import MessageList from './message_list';
 import { withRouter } from 'react-router';
-import { selectAllConversations, findLastMessages } from '../../../reducers/selectors'
+import {
+  selectAllConversations,
+  findLastMessages
+} from '../../../reducers/selectors'
 
 import { fetchAllConversations,
   fetchConversation

@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const MessageListItem = (props) => {
-
   return (
     <NavLink to={`/${props.conv.chatName}`}
       className="message-list-item"
