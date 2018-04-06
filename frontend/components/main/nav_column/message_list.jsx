@@ -22,8 +22,7 @@ class MessageList extends React.Component {
   }
 
   render() {
-    // console.log("message_list.jsx----------------------")
-    // console.log(this.props.conversations[0])
+    // WILL NEED TO ADD SEARCH BAR BEFORE <UL>
 
     return (
       <section className="message-list">
