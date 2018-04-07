@@ -7,7 +7,7 @@ class ChatChannel < ApplicationCable::Channel
 
   def create(opts)
     Message.create(
-      content: opts.fetch('content')
+      body: opts.fetch('body')
     )
   end
 end
