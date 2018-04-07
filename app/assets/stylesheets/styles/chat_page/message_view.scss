@@ -1,26 +1,50 @@
 .message-view {
+  display: flex;
   flex-grow: 1;
-  // liveChat area here
 
-  .message-form {
+  .message-view-main {
+    flex: 1;
     display: flex;
+    flex-direction: column;
 
-    textarea {
-      font-size: 14px;
-      // font: $fontRoboto;
-      font-weight: lighter;
-      resize: none;
-      border: none;
-      border-top: 1px solid $boxBorder;
+    .live-chat {
       flex-grow: 1;
-      padding: 8px;
     }
 
+    .message-form {
+      display: flex;
+      border: none;
+      // border-top: 1px solid $boxBorder;
+
+      textarea {
+        font-size: 14px;
+        border: inherit;
+        border-top: 1px solid $boxBorder;
+        font-weight: lighter;
+        resize: none;
+        flex-grow: 1;
+        padding: 8px;
+      }
+
+      button {
+        border: inherit;
+        border-top: 1px solid $boxBorder;
+        font-weight: 400;
+        font-size: $fontSizeMain;
+        color: $pink;
+        min-width: 33px;
+      }
+
+    }
+
+    // messageAdditions area here
   }
 
+  .friend-details {
+    width: 22vw;
+    border-left: 1px solid $boxBorder;
+  }
 
-
-  // messageAdditions area here
 
 
 

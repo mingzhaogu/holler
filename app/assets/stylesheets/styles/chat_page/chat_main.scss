@@ -1,5 +1,12 @@
 .chat-main {
   flex-grow: 1;
+  height: 100vh;
+
+  .chat-page {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
