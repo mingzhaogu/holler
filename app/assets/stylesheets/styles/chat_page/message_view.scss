@@ -1,0 +1,30 @@
+.message-view {
+  flex-grow: 1;
+  // liveChat area here
+
+  .message-form {
+    display: flex;
+
+    textarea {
+      font-size: 14px;
+      // font: $fontRoboto;
+      font-weight: lighter;
+      resize: none;
+      border: none;
+      border-top: 1px solid $boxBorder;
+      flex-grow: 1;
+      padding: 8px;
+    }
+
+  }
+
+
+
+  // messageAdditions area here
+
+
+
+
+
+
+}

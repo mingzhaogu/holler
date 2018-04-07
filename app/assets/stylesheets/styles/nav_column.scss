@@ -25,12 +25,16 @@
   .nav-bar {
     border-bottom: 1px solid $boxBorder; // get rid of later
     box-sizing: border-box;
-    // width: 25vw;
     height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    .main-holler {
+      font: $fontRoboto;
+      font-weight: 400;
+    }
 
     i, h2 {
       padding: 8px;
@@ -67,7 +71,7 @@
         white-space: nowrap;
 
         .message-list-item-convo-name {
-          font-weight: 400;
+          font-weight: bolder;
           line-height: 1.4;
         }
 
