@@ -11,26 +11,19 @@ class MessageInput extends React.Component {
     this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
-  // WHAT IS REDUX FORM
-  // https://github.com/erikras/redux-form/issues/572
-
   handleKeyPress(e) {
-    console.log('keypress', e.shiftKey);
     if (e.key === "Enter" && e.shiftKey === false) {
       this.handleSubmit(e)
     }
   }
 
   handleInputChange(e) {
-    this.setState(
-      { currentMessage: e.target.value },
-      () => console.log("else2", this.state.currentMessage)
-    )
+    this.setState({ currentMessage: e.target.value })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('currentmsg', this.state);
+    // SOME SORT OF SUBMISSION WITH ACTION CABLE
     this.setState({ currentMessage: "" })
   }
 
