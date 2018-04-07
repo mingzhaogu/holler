@@ -64,3 +64,10 @@ button {
   -moz-appearance: none;
   appearance: none;
 }
+
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="submit"]:focus,
+textarea:focus,
+button:focus {outline:0;}
