@@ -17,6 +17,7 @@ class Api::UsersController < ApplicationController
       @users = Conversation.find(params[:conversation_id]).users
     elsif params[:search]
       @users = User.all
+    end
   end
 
   private
