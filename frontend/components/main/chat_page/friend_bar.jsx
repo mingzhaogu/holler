@@ -3,15 +3,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 // import { last } from 'lodash';
 
-const mapStateToProps = (state, ownProps) => {
-  // need to get active conversation
-
-  return ({
-    name: ownProps.name
-  })
-}
-
-const mapDispatchToProps = (dispatch) => ({})
+// const mapStateToProps = (state, ownProps) => {
+//   // need to get active conversation
+//
+//   return ({
+//     name: ownProps.name
+//   })
+// }
+//
+// const mapDispatchToProps = (dispatch) => ({})
 
 const FriendBar = (props) => {
   return (
@@ -29,7 +29,9 @@ const FriendBar = (props) => {
   )
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(FriendBar);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(FriendBar);
+
+export default FriendBar
