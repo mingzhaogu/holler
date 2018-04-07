@@ -47,6 +47,11 @@ class MessageInput extends React.Component {
           onChange={this.handleInputChange}
         />
 
+        <button
+          onClick={this.handleSubmit}
+        >
+          Send
+        </button>
       </form>
     )
   }

@@ -9,7 +9,6 @@ const ChatPage = (props) => {
     <main className="chat-page">
       <FriendBar chatName={props.chatHead} />
       <MessageView />
-      'hello from chat_page.jsx'
     </main>
   )
 }

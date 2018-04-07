@@ -1,16 +1,19 @@
 import React from 'react';
 
 // import LiveChat
-import MessageInput from './message_input'
+import LiveChat from './live_chat';
+import MessageInput from './message_input';
+import FriendDetails from './friend_details';
 
 const MessageView = (props) => {
   return (
     <div className="message-view">
-      [liveChat]
-      <MessageInput />
-      [messageAdditions]
-      <br />
-      [friendDetails]
+      <section className="message-view-main">
+        <LiveChat />
+        <MessageInput />
+      </section>
+
+      <FriendDetails />
     </div>
   )
 }
