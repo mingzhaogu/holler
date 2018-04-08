@@ -7,7 +7,7 @@ class MessageInput extends React.Component {
       currentMessage: ''
     }
     this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
+    this.updateCurrentMessage = this.updateCurrentMessage.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
   }
 
@@ -17,13 +17,12 @@ class MessageInput extends React.Component {
     }
   }
 
-  handleInputChange(e) {
+  updateCurrentMessage(e) {
     this.setState({ currentMessage: e.target.value })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("message", this.state.currentMessage);
     // SOME SORT OF SUBMISSION WITH ACTION CABLE
     this.setState({ currentMessage: "" })
   }
@@ -38,7 +37,7 @@ class MessageInput extends React.Component {
           placeholder="Type a message..."
           value={this.state.currentMessage}
           onKeyPress={this.handleKeyPress}
-          onChange={this.handleInputChange}
+          onChange={this.updateCurrentMessage}
         />
 
         <button

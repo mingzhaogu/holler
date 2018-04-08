@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FriendDetails from './friend_details';
 import { withRouter } from 'react-router';
+import { findConversationName } from '../../../../reducers/selectors'
 
 const mapStateToProps = (state, ownProps) => ({
-  chatName: ownProps.match.params.chatName,
+  chatName: findConversationName(state, ownProps),
   showFriendDetails: state.ui.showFriendDetails
 })
 

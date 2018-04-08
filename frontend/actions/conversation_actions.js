@@ -9,9 +9,9 @@ export const receiveAllConversations = (payload) => ({
   payload
 });
 
-export const receiveConversation = (conversation) => ({
+export const receiveConversation = (payload) => ({
   type: RECEIVE_CONVERSATION,
-  conversation
+  payload
 });
 
 // export const removeConversation = (conversationId) => ({
@@ -24,9 +24,14 @@ export const fetchAllConversations = () => (dispatch) => (
     .then((payload) => dispatch(receiveAllConversations(payload)))
 );
 
+// export const fetchConversation = (id) => (dispatch) => (
+//   APIUtil.fetchConversation(id)
+//     .then((conversation) => dispatch(receiveConversation(conversation)))
+// );
+
 export const fetchConversation = (id) => (dispatch) => (
   APIUtil.fetchConversation(id)
-    .then((conversation) => dispatch(receiveConversation(conversation)))
+    .then(conversation => dispatch(receiveConversation(conversation)))
 );
 
 export const createConversation = (convo) => (dispatch) => (

@@ -26,7 +26,7 @@ class Api::ConversationsController < ApplicationController
     #   - conv.last_message.created_at.to_i
     # end
 
-    @conversations = current_user.conversations
+    @conversations = current_user.conversations.includes(:users, :messages)
   end
 
   def show
