@@ -39,16 +39,6 @@
 
     // messageAdditions area here
   }
-
-  .friend-details {
-    width: 22vw;
-    border-left: 1px solid $boxBorder;
-  }
-
-
-
-
-
-
-
 }
+
+@import "friend_details.scss"

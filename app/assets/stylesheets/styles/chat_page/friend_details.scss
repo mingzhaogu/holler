@@ -1,0 +1,29 @@
+.message-view {
+  .friend-details {
+    width: 22vw;
+    border-left: 1px solid $boxBorder;
+
+    .friend-details-header {
+      border-bottom: 1px solid $boxBorder;
+      height: 64px;
+      padding: 0 10px 0 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+
+      img {
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin-right: 9px;
+      }
+
+      .friend-details-convo-name {
+        // text-align: center;
+        // margin: 0 auto;
+        font-weight: 400;
+      }
+    }
+  }
+}
