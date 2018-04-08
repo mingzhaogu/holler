@@ -13,8 +13,16 @@
 
 @import "base/reset.scss";
 @import "base/globals.scss";
-// @import "base/components.scss";
+
 @import "styles/session_form.scss";
+
 @import "styles/nav_column/nav_column.scss";
+@import "styles/nav_column/nav_bar.scss";
+@import "styles/nav_column/message_list.scss";
+
 @import "styles/chat_page/chat_main.scss";
+@import "styles/chat_page/friend_bar.scss";
+@import "styles/chat_page/message_view.scss";
+@import "styles/chat_page/friend_details.scss";
+
 @import "styles/footer.scss";

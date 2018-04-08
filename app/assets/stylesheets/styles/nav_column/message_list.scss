@@ -1,0 +1,41 @@
+.nav-col {
+  .message-list {
+    .message-list-item {
+      height: 64px;
+      padding-left: 12px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      text-decoration: none;
+      // border-bottom: 1px solid $boxBorder;
+
+      .message-list-item-pic {
+        display: block;
+        height: 50px;
+        width: 50px;
+        margin-right: 9px;
+      }
+
+      .message-list-item-body {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        .message-list-item-convo-name {
+          font-weight: bolder;
+          line-height: 1.4;
+        }
+
+        .message-list-item-body {
+          height: 18px;
+          font-size: 13px;
+          color: rgba(153, 153, 153, 1);
+        }
+      }
+    }
+
+    .active, .message-list-item:hover {
+      background-color: $hoverBackground;
+    }
+  }
+}
