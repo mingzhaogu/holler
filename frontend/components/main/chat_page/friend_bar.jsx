@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Footer from "../../footer/footer";
 
 const FriendBar = (props) => {
-  console.log("props", props);
+
   return (
     <nav className="friend-bar">
       <span className="friend-bar-name">

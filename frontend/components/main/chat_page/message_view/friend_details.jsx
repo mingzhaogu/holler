@@ -6,13 +6,9 @@ class FriendDetails extends React.Component {
     super(props);
   }
 
-  // probably need container for this
-
-  render() {
-    // console.log(this.props);
-    if (this.props.chatName === "") {
-      return (<div></div>)
-    } else {
+  toggleDetails() {
+    const chatName = this.props.chatName;
+    if (this.props.showFriendDetails) {
       return (
         <div className="friend-details">
           <div className="friend-details-header">
@@ -20,12 +16,21 @@ class FriendDetails extends React.Component {
               className="friend-details-convo-pic" />
 
             <span className="friend-details-convo-name">
-              {this.props.chatName}
+              {chatName}
             </span>
           </div>
         </div>
       )
     }
+  }
+
+  render() {
+    console.log("props", this.props);
+    return (
+      <div>
+        {this.toggleDetails()}
+      </div>
+    )
   }
 }
 

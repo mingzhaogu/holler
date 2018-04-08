@@ -4,7 +4,7 @@ import {
 } from '../actions/ui_actions';
 
 const _nullState = {
-  showFriendDetails: false
+  showFriendDetails: true
 };
 
 const UIReducer = (oldState = _nullState, action) => {

@@ -2,6 +2,7 @@
   .friend-details {
     width: 22vw;
     border-left: 1px solid $boxBorder;
+    height: 100%;
 
     .friend-details-header {
       border-bottom: 1px solid $boxBorder;
@@ -11,6 +12,7 @@
       align-items: center;
       cursor: pointer;
       text-decoration: none;
+
 
       img {
         display: block;
@@ -23,6 +25,9 @@
         // text-align: center;
         // margin: 0 auto;
         font-weight: 400;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

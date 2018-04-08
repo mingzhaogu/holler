@@ -23,6 +23,7 @@ class MessageInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    console.log("message", this.state.currentMessage);
     // SOME SORT OF SUBMISSION WITH ACTION CABLE
     this.setState({ currentMessage: "" })
   }
