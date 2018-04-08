@@ -20,8 +20,12 @@
     //   padding-right: 12px;
     // }
     .fa {
-      color: $blue;
+      color: $magenta;
       font-size: $fontSizeH2;
+    }
+
+    .fa:hover {
+      color: $pink;
     }
   }
 }

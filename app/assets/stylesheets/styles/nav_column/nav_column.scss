@@ -21,31 +21,11 @@
   flex-direction: column;
   // align-items: center;
   // line-height: 1.2;
+}
 
-  .nav-bar {
-    border-bottom: 1px solid $boxBorder; // get rid of later
-    box-sizing: border-box;
-    height: 50px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+@import 'nav_bar.scss';
 
-    .main-holler {
-      font: $fontRoboto;
-      font-weight: 400;
-    }
-
-    i, h2 {
-      padding: 8px;
-    }
-
-    .fa {
-      color: $blue;
-      font-size: $fontSizeH2;
-    }
-  }
-
+.nav-col {
   .message-list {
 
 

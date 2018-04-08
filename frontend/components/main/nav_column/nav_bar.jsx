@@ -2,23 +2,60 @@ import React from 'react';
 
 // pencil -> on click compose message
 
-const NavBar = ({ logout, createConversation }) => {
+class NavBar extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      displayDropdown: false
+    }
 
-  return (
-    <nav className="nav-bar">
-      <i className="fa fa-cog"
-        aria-hidden="true"
-        onClick={ logout }
-      />
+    this.toggleGearDropdown = this.toggleGearDropdown.bind(this);
+    this.closeGearDropdown = this.closeGearDropdown.bind(this);
+  }
 
-      <h2 className="holler main-holler">Holler</h2>
+  componentDidMount() {
+    document.addEventListener("click", this.closeGearDropdown)
+    $('.nav-bar-cog').on("click", this.toggleGearDropdown)
+  }
 
-      <i className="fa fa-pencil-square-o"
-        aria-hidden="true"
-        onClick={ createConversation }
-      />
-    </nav>
-  )
+  componentWillUnmount() {
+    document.removeEventListener("click", this.closeGearDropdown)
+  }
+
+  toggleGearDropdown(event) {
+    event.stopPropagation()
+    this.setState({ displayDropdown: !this.state.displayDropdown });
+  }
+
+  closeGearDropdown() {
+    this.setState({ displayDropdown: false })
+  }
+
+  render() {
+    const { logout, createConversation } = this.props;
+    const extended = this.state.displayDropdown ? "extended" : "";
+
+    return (
+      <nav className="nav-bar">
+        <i className="fa fa-cog nav-bar-cog"
+          aria-hidden="true"
+        />
+
+        <menu className={`nav-bar-dropdown ${extended}`}>
+          <ul onClick={(e) => e.stopPropagation()}>
+            <li onClick={logout}>Logout</li>
+          </ul>
+        </menu>
+
+        <h2 className="holler main-holler">Holler</h2>
+
+        <i className="fa fa-pencil-square-o"
+          aria-hidden="true"
+          onClick={createConversation}
+        />
+      </nav>
+    )
+  }
 }
 
 export default NavBar;
