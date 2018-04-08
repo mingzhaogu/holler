@@ -4,7 +4,7 @@ import ChatPage from './chat_page';
 // import MessageView(container?) from './';
 
 const mapStateToProps = (state, ownProps) => ({
-  chatHead : ownProps.match.params.chatName
+  chatHead: ownProps.match.params.chatName
 })
 
 const mapDispatchToProps = (dispatch) => ({

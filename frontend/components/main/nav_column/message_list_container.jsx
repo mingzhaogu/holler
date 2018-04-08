@@ -23,8 +23,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchConversation: (id) => (dispatch(fetchConversation(id))),
 })
 
-console.log(MessageList)
-
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps

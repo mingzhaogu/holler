@@ -3,7 +3,7 @@ import React from 'react';
 // import LiveChat
 import LiveChat from './live_chat';
 import MessageInput from './message_input';
-import FriendDetails from './friend_details';
+import FriendDetailsContainer from './friend_details_container';
 
 const MessageView = (props) => {
   return (
@@ -13,7 +13,7 @@ const MessageView = (props) => {
         <MessageInput />
       </section>
 
-      <FriendDetails />
+      <FriendDetailsContainer />
     </div>
   )
 }
