@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:200|Roboto:300,400");
 
-// $inputBoxBorder: rgba(0,0,0,0.2);
 $boxBorder: rgba(0,0,0,0.2);
 $blue: #0084ff;
 $pink: #ff6da9;
@@ -33,6 +32,19 @@ $fontSizeH1: 40px;
 
 .fa:hover {
   cursor: pointer;
+}
+
+.fa:focus {
+  box-shadow: 0 0 1px 2px rgba(255,109,169,0.75)
+}
+
+.fa:active {
+  transform: scale(0.98);
+  opacity: 0.2;
+}
+
+.main {
+  display: flex;
 }
 
 body {
