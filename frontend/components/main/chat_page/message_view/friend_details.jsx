@@ -10,18 +10,22 @@ class FriendDetails extends React.Component {
 
   render() {
     console.log(this.props);
-    return (
-      <div className="friend-details">
-        <div className="friend-details-header">
-          <img src="https://i.imgur.com/XSTheUg.png"
-            className="friend-details-convo-pic" />
+    if (this.props.chatName === "") {
+      return (<div></div>)
+    } else {
+      return (
+        <div className="friend-details">
+          <div className="friend-details-header">
+            <img src="https://i.imgur.com/XSTheUg.png"
+              className="friend-details-convo-pic" />
 
-          <span className="friend-details-convo-name">
-            {this.props.chatName}
-          </span>
+            <span className="friend-details-convo-name">
+              {this.props.chatName}
+            </span>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 
