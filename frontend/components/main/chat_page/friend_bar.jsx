@@ -35,4 +35,4 @@ const FriendBar = (props) => {
 //   mapDispatchToProps
 // )(FriendBar);
 
-export default FriendBar
+export default FriendBar;
