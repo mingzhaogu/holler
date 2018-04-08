@@ -9,7 +9,7 @@ class FriendDetails extends React.Component {
   // probably need container for this
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     if (this.props.chatName === "") {
       return (<div></div>)
     } else {

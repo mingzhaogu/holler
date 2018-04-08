@@ -12,7 +12,7 @@ import { withRouter } from 'react-router';
 // } from '../../../actions/conversation_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  chatName: ownProps.location.pathname.slice(1),
+  chatName: ownProps.match.params.chatName,
   state
 })
 
