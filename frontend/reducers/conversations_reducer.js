@@ -13,8 +13,7 @@ const ConversationReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_CONVERSATIONS:
       return merge({}, action.payload.conversations);
     case RECEIVE_CONVERSATION:
-      const receivedConvo = { [action.conversation.id]: action.conversation };
-      newState = merge({}, oldState, receivedConvo);
+      newState = merge({}, oldState, action.payload.conversation);
       return newState;
     // case REMOVE_CONVERSATION:
     //   newState - merge({}, oldState);
