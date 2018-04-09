@@ -4,6 +4,9 @@ import {
   RECEIVE_CONVERSATION,
   // REMOVE_CONVERSATION
 } from '../actions/conversation_actions';
+import {
+  RECEIVE_MESSAGE
+} from '../actions/message_actions';
 
 const ConversationReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
@@ -15,6 +18,12 @@ const ConversationReducer = (oldState = {}, action) => {
     case RECEIVE_CONVERSATION:
       newState = merge({}, oldState, action.payload.conversation);
       return newState;
+    case RECEIVE_MESSAGE:
+      newState = merge({}, oldState);
+      const convoId = action.payload.message.conversationId;
+      newState[convoId].messageIds = action.payload.messageIds;
+      return newState;
+
     // case REMOVE_CONVERSATION:
     //   newState - merge({}, oldState);
     //   delete newState[action.conversationId];

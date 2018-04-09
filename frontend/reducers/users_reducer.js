@@ -12,6 +12,7 @@ const UserReducer = (oldState = {}, action) => {
     case RECEIVE_ALL_CONVERSATIONS:
       return merge({}, action.payload.users);
     case RECEIVE_CONVERSATION:
+      console.log("user red RECEIVE_CONVERSATION", action.payload);
       newState = merge({}, action.payload.users);
       return newState;
     default:

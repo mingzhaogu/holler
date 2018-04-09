@@ -19,7 +19,8 @@ const MessageReducer = (oldState = {}, action) => {
       newState = merge({}, oldState, action.payload.messages);
       return newState;
     case RECEIVE_MESSAGE:
-      return merge({}, oldState, action.messages);
+      const message = action.payload.message;
+      return merge({}, oldState, { [message.id]: message });
     case SET_MESSAGES:
       return action.messages;
     default:
