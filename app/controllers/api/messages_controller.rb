@@ -12,7 +12,7 @@ class Api::MessagesController < ApplicationController
     # @message.sender_id = current_user.id
 
     if @message.save
-      render json: "Message sent! :D"
+      render :show
     else
       render json: @message.errors.full_messages, status: 422
     end
