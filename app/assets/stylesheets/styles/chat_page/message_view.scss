@@ -14,15 +14,16 @@
       li {
         margin-bottom: 15px;
         padding: 6px 12px;
-        border: 1px solid black;
+        border: 1px solid $grey;
       }
 
       .chat-msg-align-left {
         margin-right: 50%;
         float: left;
         text-align: left;
-        border-top-right-radius: 1.3em;
-        border-bottom-right-radius: 1.3em;
+        border-radius: 1.3em;
+        // border-top-right-radius: 1.3em;
+        // border-bottom-right-radius: 1.3em;
         background-color: $grey;
       }
 
@@ -30,8 +31,9 @@
         margin-left: 50%;
         float: right;
         text-align: right;
-        border-top-left-radius: 1.3em;
-        border-bottom-left-radius: 1.3em;
+        border-radius: 1.3em;
+        // border-top-left-radius: 1.3em;
+        // border-bottom-left-radius: 1.3em;
         background-color: $pink;
         color: #FFFFFF;
         // background-color: #F9B9F2;
