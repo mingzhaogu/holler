@@ -28,7 +28,7 @@ end
 
 Conversation.destroy_all
 
-4.times do |i|
+2.times do |i|
   Conversation.create(
     chat_name: Faker::Dog.meme_phrase
   )
@@ -40,13 +40,14 @@ end
 
 Message.destroy_all
 
-senders = [2, 4, 3, 4]
-conversations = [3, 3, 2, 2]
+senders = [2, 4, 3, 4, 2]
+conversations = [3, 3, 2, 2, 1]
 body = [
   "Yoo porma dissy!",
   "Leave my mother out of this!",
   "Oh great! He's loose!",
-  "His destructive programming is taking effect. He will be irresistibly drawn to large cities, where he will back up sewers, reverse street signs, and steal everyone's left shoe."
+  "His destructive programming is taking effect. He will be irresistibly drawn to large cities, where he will back up sewers, reverse street signs, and steal everyone's left shoe.",
+  "Cousin!"
 ]
 
 senders.length.times do |i|
