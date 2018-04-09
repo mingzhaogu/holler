@@ -9,8 +9,9 @@
 #
 
 class Conversation < ApplicationRecord
+  # validates :messages, length: { minimum: 1 }
 
-  has_many :messages, -> { order(created_at: :asc) }
+  has_many :messages, -> { order(created_at: :asc) }, inverse_of: :conversation
   has_many :conversation_users, inverse_of: :conversation
   has_many :users,
     through: :conversation_users

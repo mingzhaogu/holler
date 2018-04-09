@@ -19,10 +19,10 @@ class Message < ApplicationRecord
     primary_key: :id,
     foreign_key: :sender_id
 
-  belongs_to :conversation,
-    class_name: :Conversation,
-    primary_key: :id,
-    foreign_key: :conversation_id
+  belongs_to :conversation, inverse_of: :messages
+    # class_name: :Conversation,
+    # primary_key: :id,
+    # foreign_key: :conversation_id
 
   after_create_commit do
     MessageCreationEventBroadcastJob.perform_later(self)
