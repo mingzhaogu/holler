@@ -4,53 +4,42 @@ import ActionCable from 'actioncable';
 class LiveChat extends React.Component {
   constructor(props) {
     super(props);
-    console.log("livechatprops", props);
     this.setUpChatRoom = this.setUpChatRoom.bind(this);
   }
 
   componentWillMount() {
-    const { convId, fetchMessage } = this.props;
-    this.setUpChatRoom(convId, fetchMessage(convId));
-    console.log("convId", convId);
+    const { convId, receiveMessage } = this.props;
+    this.setUpChatRoom(convId, receiveMessage);
   }
 
-  // setupChatRoom(convId, getData, userId) {
-  //
-  //
-  // }
-  componentWillReceiveProps(nextProps) {
-    if (this.props.convoId !== nextProps.convoId) {
-      this.props.fetchConversation(nextProps.chatId)
-    }
-  }
-
-  setUpChatRoom(convId, retrieveMsg) {
+  setUpChatRoom(convId, receiveMessage) {
     const chatroom = ActionCable.createConsumer("ws://localhost:3001/cable");
     chatroom.subscriptions.create({
-      channel: `chat-${convId}`,
+      channel: 'ChatChannel',
+      room: `chat-${convId}`,
     }, {
       connected: function() {
         console.log("connected");
       },
       disconnected: function() {},
-      received: (message) => {
-        console.log(message)
+      received: ({ payload }) => {
+        console.log("payload", payload);
+        receiveMessage(payload)
       },
     });
-
-    console.log("all set up", chatroom);
   };
-
 
   render() {
     console.log('livechatprops', this.props);
-    const { messages, currentUser,  } = this.props;
+    const { messages, currentUser, chatUsers } = this.props;
+
     const displayMessages = messages.map((msg) => {
       let align;
       if (msg.senderId === currentUser.id) align = "right";
       else align = "left";
 
-      const senderPic = this.props.chatUsers[msg.senderId].imageUrl
+      if (!chatUsers[msg.senderId]) return null;
+      const senderPic = chatUsers[msg.senderId].imageUrl
 
       return (
         <li key={`chat-msg-${msg.id}`}

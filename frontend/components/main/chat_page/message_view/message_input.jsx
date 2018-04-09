@@ -8,7 +8,6 @@ class MessageInput extends React.Component {
       currentMessage: ''
     }
 
-    console.log("message_input_props", props);
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateCurrentMessage = this.updateCurrentMessage.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)

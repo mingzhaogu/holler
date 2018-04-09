@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { GithubIconLink, LinkedInIconLink } from '../../../footer/icon_links';
+import FriendDetailsItem from './friend_details_item'
 
 class FriendDetails extends React.Component {
   constructor(props) {
@@ -25,6 +26,16 @@ class FriendDetails extends React.Component {
             <GithubIconLink />
             <LinkedInIconLink />
           </div>
+
+          <ul className="friend-details-users">
+            <label className="friend-details-users-label">People</label>
+            {this.props.chatUsers.map((user) => (
+              <FriendDetailsItem
+                key={user.id}
+                user={user}
+              />
+            ))}
+          </ul>
         </div>
       )
     }

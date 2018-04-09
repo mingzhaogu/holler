@@ -6,7 +6,8 @@ import { findConversationName } from '../../../../reducers/selectors'
 
 const mapStateToProps = (state, ownProps) => ({
   chatName: findConversationName(state, ownProps),
-  showFriendDetails: state.ui.showFriendDetails
+  showFriendDetails: state.ui.showFriendDetails,
+  chatUsers: Object.values(state.entities.users)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

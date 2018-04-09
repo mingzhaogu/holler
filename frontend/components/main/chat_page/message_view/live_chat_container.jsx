@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchMessage } from '../../../../actions/message_actions';
+import { receiveMessage } from '../../../../actions/message_actions';
 import LiveChat from './live_chat';
 import { withRouter } from 'react-router';
 import { fetchConversation } from "../../../../actions/conversation_actions";
@@ -11,8 +11,6 @@ import { findConvoId,
 } from '../../../../reducers/selectors'
 
 const mapStateToProps = (state, ownProps) => ({
-  state,
-  ownProps,
   convId: findConvoId(state, ownProps),
   currentUser: state.session.currentUser,
   chatUsers: state.entities.users,
@@ -25,7 +23,7 @@ const mapStateToProps = (state, ownProps) => ({
   //get users of the conversation, call on compnentWillMount
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchConversation: (id) => dispatch(fetchConversation(id)),
-  fetchMessage: ({chatId, msgId}) => dispatch(fetchMessage({chatId, msgId}))
+  receiveMessage: (payload) => dispatch(receiveMessage(payload))
 })
 // bindActionCreators(MessageActions, dispatch)
 
