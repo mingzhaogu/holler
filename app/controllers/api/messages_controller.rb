@@ -19,11 +19,32 @@ class Api::MessagesController < ApplicationController
   end
 
   def show
+    @message = Message.find(params[:id])
+    # @limit = params[:limit]
+
+    # this is what params looks like
+    # {
+    #   "message": {
+    #   "format": "json",
+    #   "controller": "api/messages",
+    #   "action": "show",
+    #   "conversation_id": "3",
+    #   "id": "2"
+    #   }
+    # }
+  end
+
+  def index
+    # @messages = Conversation.find(params[:conversation_id]).messages
+    convoMessages = Conversation.find(params[:conversation_id]).messages
+    @limit = params[:limit];
+    # @messages = Conversation.find(params[:conversation_id]).messages
+    @messages = convoMessages.limit(@limit).order("created_at DESC").load.reverse
   end
 
   private
 
   def message_params
-    params.require(:message).permit(:body)
+    params.require(:message).permit(:limit, :body)
   end
 end
