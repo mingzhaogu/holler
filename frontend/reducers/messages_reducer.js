@@ -4,7 +4,7 @@ import {
   RECEIVE_CONVERSATION
 } from '../actions/conversation_actions';
 import {
-  ADD_MESSAGE,
+  RECEIVE_MESSAGE,
   SET_MESSAGES
 } from '../actions/message_actions';
 
@@ -18,8 +18,8 @@ const MessageReducer = (oldState = {}, action) => {
     case RECEIVE_CONVERSATION:
       newState = merge({}, oldState, action.payload.messages);
       return newState;
-    case ADD_MESSAGE:
-      return merge({}, oldState, action.message);
+    case RECEIVE_MESSAGE:
+      return merge({}, oldState, action.messages);
     case SET_MESSAGES:
       return action.messages;
     default:

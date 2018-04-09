@@ -31,7 +31,7 @@ export const findConvoId = (state, ownProps) => (
 export const findAllMessages = (state, ownProps) => {
   const convoId = findConvoId(state, ownProps);
   const convo = state.entities.conversations[convoId];
-  console.log("state", state);
+
   if (convo && convo.messagesId) {
     const messageIds = convo.messagesId;
     return messageIds.map((id) => state.entities.messages[id]);
