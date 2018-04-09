@@ -26,7 +26,7 @@ class MessageInput extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log("msg", App.cable);
-    App.messages.speak({
+    App.chatroom.speak({
       body: e.target.value,
       user_id: 2,
       conversation_id: 2

@@ -5,10 +5,13 @@ class LiveChat extends React.Component {
   constructor(props) {
     super(props);
     console.log("livechatprops", props);
+    this.setUpChatRoom = this.setUpChatRoom.bind(this);
   }
 
   componentWillMount() {
-    // this.createSocket();
+    const { convId, fetchMessage } = this.props;
+    this.setUpChatRoom(convId, fetchMessage(convId));
+    console.log("convId", convId);
   }
 
   // setupChatRoom(convId, getData, userId) {
@@ -20,6 +23,24 @@ class LiveChat extends React.Component {
       this.props.fetchConversation(nextProps.chatId)
     }
   }
+
+  setUpChatRoom(convId, retrieveMsg) {
+    App.chatroom = App.cable.subscriptions.create({
+      channel: "ChatChannel",
+      conv_id: convId
+    }, {
+      connected: function() {},
+      disconnected: function() {},
+      received:
+        retrieveMsg,
+      speak: function(message) {
+        return this.perform('speak', message);
+      }
+    });
+
+    console.log("all set up", App.chatroom);
+  };
+
 
   render() {
     console.log('livechatprops', this.props);

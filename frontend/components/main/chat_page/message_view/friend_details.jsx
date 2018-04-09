@@ -9,7 +9,6 @@ class FriendDetails extends React.Component {
 
   toggleDetails() {
     const chatName = this.props.chatName || "Hello there!";
-    console.log("chatName", chatName);
     if (this.props.showFriendDetails) {
       return (
         <div className="friend-details">
