@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { GithubIconLink, LinkedInIconLink } from '../../../footer/icon_links';
 
 class FriendDetails extends React.Component {
   constructor(props) {
@@ -18,6 +19,11 @@ class FriendDetails extends React.Component {
             <span className="friend-details-convo-name">
               {chatName}
             </span>
+          </div>
+
+          <div className="annie-links">
+            <GithubIconLink />
+            <LinkedInIconLink />
           </div>
         </div>
       )

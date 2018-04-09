@@ -13,14 +13,13 @@
 
       li {
         margin-bottom: 15px;
-        // margin: 1px;
         padding: 6px 12px;
         border: 1px solid black;
       }
 
       .chat-msg-align-left {
-        // margin-left: 2vw;
-        // float: left;
+        margin-right: 50%;
+        float: left;
         text-align: left;
         border-top-right-radius: 1.3em;
         border-bottom-right-radius: 1.3em;
@@ -28,8 +27,8 @@
       }
 
       .chat-msg-align-right {
-        // margin-left: 36px;
-        // float: right;
+        margin-left: 50%;
+        float: right;
         text-align: right;
         border-top-left-radius: 1.3em;
         border-bottom-left-radius: 1.3em;
