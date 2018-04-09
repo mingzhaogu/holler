@@ -25,20 +25,20 @@ class LiveChat extends React.Component {
   }
 
   setUpChatRoom(convId, retrieveMsg) {
-    App.chatroom = App.cable.subscriptions.create({
-      channel: "ChatChannel",
-      conv_id: convId
+    const chatroom = ActionCable.createConsumer("ws://localhost:3001/cable");
+    chatroom.subscriptions.create({
+      channel: `chat-${convId}`,
     }, {
-      connected: function() {},
+      connected: function() {
+        console.log("connected");
+      },
       disconnected: function() {},
-      received:
-        retrieveMsg,
-      speak: function(message) {
-        return this.perform('speak', message);
-      }
+      received: (message) => {
+        console.log(message)
+      },
     });
 
-    console.log("all set up", App.chatroom);
+    console.log("all set up", chatroom);
   };
 
 

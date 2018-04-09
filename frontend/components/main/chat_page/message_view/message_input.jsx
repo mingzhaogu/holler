@@ -1,4 +1,5 @@
 import React from 'react';
+import { createMessage } from '../../../../util/message_api_util';
 
 class MessageInput extends React.Component {
   constructor(props) {
@@ -25,12 +26,11 @@ class MessageInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("msg", App.cable);
-    App.chatroom.speak({
-      body: e.target.value,
-      user_id: 2,
-      conversation_id: 2
-    })
+    createMessage({
+      sender_id: this.props.currentUser.id,
+      conversation_id: this.props.convId,
+      body: this.state.currentMessage
+    });
     this.setState({ currentMessage: "" })
   }
 

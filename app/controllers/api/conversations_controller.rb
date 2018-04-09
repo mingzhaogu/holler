@@ -10,9 +10,9 @@ class Api::ConversationsController < ApplicationController
     @conversation = Conversation.create(conversation_params)
 
     #create ConversationUser
-    conversation_params.users.each do |user|
+    conversation_params.users.each do |userId|
       ConversationUser.create({
-        user_id: user.id,
+        user_id: userId,
         conversation_id: @conversation.id
       })
     end
@@ -36,6 +36,6 @@ class Api::ConversationsController < ApplicationController
   private
 
   def conversation_params
-    params.require(:conversation).permit(:users, :chat_name)
+    params.require(:conversation).permit(:userIds, :chat_name)
   end
 end

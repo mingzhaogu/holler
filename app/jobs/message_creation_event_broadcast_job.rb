@@ -14,7 +14,7 @@ class MessageCreationEventBroadcastJob < ApplicationJob
 
   def perform(message)
     ActionCable.server.broadcast(
-      ("chat-#{message.conversation.id}"),
+      ("chat-#{message.conversation_id}"),
       message: ActiveSupport::JSON.decode(render_message(message))
     )
   end

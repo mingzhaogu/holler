@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
-// import * as MessageActions from '../../../../actions/message_actions';
-// import LiveChat from './live_chat';
-// import { withRouter } from 'react-router';
-// import { findConversationName } from '../../../../reducers/selectors'
+import { createMessage } from '../../../../actions/message_actions';
+import MessageInput from './message_input';
+import { withRouter } from 'react-router';
+import { findConversationName } from '../../../../reducers/selectors'
 
 const mapStateToProps = (state, ownProps) => ({
   state,
@@ -19,11 +19,11 @@ const mapStateToProps = (state, ownProps) => ({
 
 
   //get users of the conversation, call on compnentWillMount
-const mapDispatchToProps = (dispatch, ownProps) => (
-  bindActionCreators(MessageActions, dispatch)
-)
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  createMessage: (message) => console.log(message)
+})
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(LiveChat));
+)(MessageInput));

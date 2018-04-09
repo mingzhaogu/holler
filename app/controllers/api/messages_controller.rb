@@ -8,11 +8,11 @@ class Api::MessagesController < ApplicationController
   def create
     # how would we get the conversation_id? through params?
     @message = Message.new(message_params)
-    @message.conversation_id = params[:id]
-    @message.sender_id = current_user.id
+    # @message.conversation_id = params[:id]
+    # @message.sender_id = current_user.id
 
     if @message.save
-      render
+      render json: "Message sent! :D"
     else
       render json: @message.errors.full_messages, status: 422
     end
@@ -45,6 +45,6 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:limit, :body)
+    params.require(:message).permit(:sender_id, :conversation_id, :body)
   end
 end
