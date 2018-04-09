@@ -14,6 +14,7 @@ const ConversationReducer = (oldState = {}, action) => {
       return merge({}, action.payload.conversations);
     case RECEIVE_CONVERSATION:
       newState = merge({}, oldState, action.payload.conversation);
+      console.log("conv red", action);
       return newState;
     // case REMOVE_CONVERSATION:
     //   newState - merge({}, oldState);
