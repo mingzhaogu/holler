@@ -15,7 +15,6 @@ import MessageListItem from './message_list_item'
 class MessageList extends React.Component {
   constructor(props) {
     super(props);
-    console.log("msg list props", props);
   }
 
   componentDidMount() {
@@ -24,7 +23,6 @@ class MessageList extends React.Component {
 
   render() {
     // WILL NEED TO ADD SEARCH BAR BEFORE <UL>
-
     return (
       <section className="message-list">
         <ul>
