@@ -3,13 +3,13 @@
     width: 22vw;
     border-left: 1px solid $boxBorder;
     height: 100%;
-    padding-top: 14px; // maybe remove?
+    //padding-top: 14px; // maybe remove?
 
     .friend-details-header {
       border-bottom: 1px solid $boxBorder;
       height: 64px;
       // padding: 0 10px 0 12px;
-      padding: 0 14px 16px 14px;
+      padding: 16px 14px; // 16px 14px;
       display: flex;
       align-items: center;
       // cursor: pointer;
@@ -29,6 +29,26 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+    }
+
+    .annie-links {
+      border-bottom: 1px solid $boxBorder;
+      height: 64px;
+      padding: 16px 14px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 50px;
+      color: $magenta;
+
+      a {
+        padding: 5px;
+        border-radius: 5px;
+      }
+
+      a:hover {
+        color: $pink;
       }
     }
   }
