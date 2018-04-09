@@ -10,6 +10,8 @@
     .live-chat {
       flex-grow: 1;
       margin: 12px;
+      overflow: scroll;
+      overflow-x: hidden;
 
       .chat-msg {
         margin-bottom: 15px;
