@@ -17,7 +17,8 @@ class Message < ApplicationRecord
   belongs_to :user,
     class_name: :User,
     primary_key: :id,
-    foreign_key: :sender_id
+    foreign_key: :sender_id,
+    inverse_of: :messages
 
   belongs_to :conversation, inverse_of: :messages
     # class_name: :Conversation,

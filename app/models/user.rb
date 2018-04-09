@@ -18,7 +18,8 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 8, allow_nil: true}
 
   has_many :messages, -> { order(created_at: :desc) },
-    foreign_key: :sender_id
+    foreign_key: :sender_id,
+    inverse_of: :user
   has_many :conversation_users, inverse_of: :user
   has_many :conversations,
     through: :conversation_users
