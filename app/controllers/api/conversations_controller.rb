@@ -30,7 +30,8 @@ class Api::ConversationsController < ApplicationController
   end
 
   def show
-    @conversation = Conversation.find(params[:id])
+    @conversation = Conversation.includes(:users, :messages).find(params[:id])
+    @messages = @conversation.messages.includes(:user)
   end
 
   private
