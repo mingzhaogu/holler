@@ -15,6 +15,7 @@ import MessageListItem from './message_list_item'
 class MessageList extends React.Component {
   constructor(props) {
     super(props);
+    console.log("msg list props", props);
   }
 
   componentDidMount() {

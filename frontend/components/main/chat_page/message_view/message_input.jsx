@@ -6,9 +6,15 @@ class MessageInput extends React.Component {
     this.state = {
       currentMessage: ''
     }
+
+    console.log("message_input_props", props);
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateCurrentMessage = this.updateCurrentMessage.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
+  }
+
+  updateCurrentMessage(e) {
+    this.setState({ currentMessage: e.target.value })
   }
 
   handleKeyPress(e) {
@@ -17,13 +23,14 @@ class MessageInput extends React.Component {
     }
   }
 
-  updateCurrentMessage(e) {
-    this.setState({ currentMessage: e.target.value })
-  }
-
   handleSubmit(e) {
     e.preventDefault();
-    // SOME SORT OF SUBMISSION WITH ACTION CABLE
+    console.log("msg", App.cable);
+    App.messages.speak({
+      body: e.target.value,
+      user_id: 2,
+      conversation_id: 2
+    })
     this.setState({ currentMessage: "" })
   }
 
@@ -40,9 +47,7 @@ class MessageInput extends React.Component {
           onChange={this.updateCurrentMessage}
         />
 
-        <button
-          onClick={this.handleSubmit}
-        >
+        <button onClick={this.handleSubmit}>
           Send
         </button>
       </form>
