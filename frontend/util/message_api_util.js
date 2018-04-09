@@ -8,6 +8,21 @@ export const fetchMessage = (convId, limit = 1) => (
   })
 );
 
+// export const fetchMessages = (convId) => (
+//   $.ajax({
+//     url: `api/conversations/${convId}/messages`,
+//     method: 'GET',
+//   })
+// );
+
+export const fetchMessages = (convId) => {
+  console.log('msg api util', convId);
+   return ($.ajax({
+    url: `api/conversations/${convId}/messages`,
+    method: 'GET',
+  }));
+};
+
 export const createMessage = (message) => (
   $.ajax({
     url: `api/conversations/${message.conversation_id}/messages`,
