@@ -32,8 +32,8 @@ export const findAllMessages = (state, ownProps) => {
   const convoId = findConvoId(state, ownProps);
   const convo = state.entities.conversations[convoId];
 
-  if (convo && convo.messagesId) {
-    const messageIds = convo.messagesId;
+  if (convo && convo.messageIds) {
+    const messageIds = convo.messageIds;
     return messageIds.map((id) => state.entities.messages[id]);
   } else {
     return [];
@@ -42,9 +42,8 @@ export const findAllMessages = (state, ownProps) => {
 
 export const findLastMessages = (state) => {
   let result = {};
-
   selectAllConversations(state).forEach((conv) => {
-    const lastMsgId = last(conv.messagesId);
+    const lastMsgId = last(conv.messageIds);
     if (lastMsgId) {
       result[conv.id] = state.entities.messages[lastMsgId];
     } else {
