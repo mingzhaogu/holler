@@ -51,5 +51,35 @@
         color: $pink;
       }
     }
+
+    .friend-details-users {
+      display: flex;
+      flex-direction: column;
+
+      .friend-details-users-label {
+        width: auto;
+        height: 20px;
+        padding: 14px;
+        color: $darkgrey;
+      }
+
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        img {
+          width: 50px;
+          height: 50px;
+          margin: 6px 12px;
+          border-radius: 50%;
+        }
+
+        label {
+          text-overflow: ellipsis;
+          // font-size: $fontSizeMain;
+        }
+      }
+    }
   }
 }
