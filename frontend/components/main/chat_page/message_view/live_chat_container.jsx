@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as MessageActions from '../../../../actions/message_actions';
 import LiveChat from './live_chat';
 import { withRouter } from 'react-router';
+import { fetchConversation } from "../../../../actions/conversation_actions";
 import { findConvoId,
   findConversationName,
   findAllMessages
@@ -14,16 +15,18 @@ const mapStateToProps = (state, ownProps) => ({
   ownProps,
   convId: findConvoId(state, ownProps),
   currentUser: state.session.currentUser,
+  chatUsers: state.entities.users,
   messages: findAllMessages(state, ownProps),
-  chatName: findConversationName(state, ownProps),
-  showFriendDetails: state.ui.showFriendDetails
 })
 
+// showFriendDetails: state.ui.showFriendDetails
+// chatName: findConversationName(state, ownProps),
 
   //get users of the conversation, call on compnentWillMount
-const mapDispatchToProps = (dispatch, ownProps) => (
-  bindActionCreators(MessageActions, dispatch)
-)
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchConversation: (id) => dispatch(fetchConversation(id))
+})
+// bindActionCreators(MessageActions, dispatch)
 
 export default withRouter(connect(
   mapStateToProps,

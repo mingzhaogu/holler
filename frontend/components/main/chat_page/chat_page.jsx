@@ -12,6 +12,12 @@ class ChatPage extends React.Component {
     this.props.fetchConversation(this.props.chatId)
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props !== nextProps) {
+  //     this.props.fetchConversation(nextProps.chatId)
+  //   }
+  // }
+
   render() {
     return (
       <main className="chat-page">
