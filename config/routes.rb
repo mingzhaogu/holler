@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:new, :create, :index]
     resource :session, only: [:create, :destroy]
     resources :conversations do
-      resources :messages, only: [:new, :create, :show]
+      resources :messages, only: [:new, :create, :show, :index]
     end
   end
 
