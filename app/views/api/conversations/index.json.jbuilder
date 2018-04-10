@@ -1,3 +1,9 @@
+if @conversations.length == 0
+  json.conversations({})
+  json.users({})
+  json.messages({})
+end
+
 json.conversations do
   @conversations.each do |conv|
     json.partial! "api/conversations/conversation", conversation: conv
