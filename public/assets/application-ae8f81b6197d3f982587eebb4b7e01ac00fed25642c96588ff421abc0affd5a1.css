@@ -155,6 +155,32 @@ body {
   font-weight: lighter;
 }
 
+/* line 56, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/base/globals.scss */
+::-webkit-scrollbar {
+  width: 0.6em;
+}
+
+/* line 60, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/base/globals.scss */
+::-webkit-scrollbar:hover {
+  width: 1em;
+}
+
+/* line 65, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/base/globals.scss */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* line 69, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/base/globals.scss */
+::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* line 75, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/base/globals.scss */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #F9B9F2;
+}
+
 /* frontend/components/session_form/session_form.jsx */
 /* line 3, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/session_form.scss */
 .login-logo {
@@ -307,7 +333,7 @@ body {
 }
 /* line 17, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/nav_bar.scss */
 .nav-col .nav-bar i, .nav-col .nav-bar h2 {
-  padding: 8px;
+  padding: 10px;
 }
 /* line 21, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/nav_bar.scss */
 .nav-col .nav-bar .fa {
@@ -414,7 +440,7 @@ body {
 }
 /* line 16, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/friend_bar.scss */
 .friend-bar .friend-bar-icons {
-  padding: 9px 8px;
+  padding: 10px;
 }
 /* line 22, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/friend_bar.scss */
 .friend-bar .friend-bar-icons .fa {
