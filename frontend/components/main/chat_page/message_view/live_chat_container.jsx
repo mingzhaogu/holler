@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+
 import { receiveMessage } from '../../../../actions/message_actions';
 import LiveChat from './live_chat';
 import { withRouter } from 'react-router';
