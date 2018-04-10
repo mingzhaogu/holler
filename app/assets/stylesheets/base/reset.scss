@@ -63,7 +63,14 @@ button {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-}
+	background-color: white;
+	-webkit-rtl-ordering: none;
+	padding: 0;
+	border-width: 0;
+	border-style: none;
+	border-color: none;
+	border-image: none;
+	}
 
 input[type="password"]:focus,
 input[type="email"]:focus,
