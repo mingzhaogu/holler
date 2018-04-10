@@ -1,6 +1,6 @@
 .message-view {
   display: flex;
-  flex-grow: 1;
+  flex: 1;
 
   .message-view-main {
     flex: 1;
@@ -8,7 +8,7 @@
     flex-direction: column;
 
     .live-chat {
-      flex-grow: 1;
+      flex: 1;
       margin: 12px;
       overflow: scroll;
       overflow-x: hidden;
