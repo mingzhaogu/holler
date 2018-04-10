@@ -14,6 +14,7 @@ class MessageInput extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateCurrentMessage = this.updateCurrentMessage.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.getGiphyWidIt = this.getGiphyWidIt.bind(this)
   }
 
   updateCurrentMessage(e) {
@@ -38,10 +39,10 @@ class MessageInput extends React.Component {
 
   getGiphyWidIt(e) {
     e.preventDefault();
-    this.props.
+
     this.setState({
-      giphyOn: !this.setState.giphyOn,
-      giphyOffset: this.setState.giphyOffset + 5
+      giphyOn: !this.state.giphyOn,
+      giphyOffset: this.state.giphyOffset + 5
     })
 
   }
@@ -52,10 +53,8 @@ class MessageInput extends React.Component {
       <form className="message-form"
       onSubmit={this.handleSubmit}>
 
-        <ToggleGiphyContainer
-          open={this.state.giphyOn}
-          giphys={this.props.giphys}
-        />
+        <div className="giphy-popup">
+        </div>
 
         <textarea
           className="message-form-input"

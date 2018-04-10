@@ -2,6 +2,7 @@ import React from 'react';
 
 // import LiveChat
 import LiveChatContainer from './live_chat_container';
+import ToggleGiphyContainer from './toggle_giphy_container';
 import MessageInputContainer from './message_input_container';
 import FriendDetailsContainer from './friend_details_container';
 

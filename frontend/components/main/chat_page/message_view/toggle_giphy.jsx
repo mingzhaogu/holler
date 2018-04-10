@@ -3,11 +3,14 @@ import React from 'react';
 const ToggleGiphy = (props) => {
   const { open, giphys } = props;
 
-  if (!open) return <div></div>
+  if (!open) return <div>yo</div>;
 
   return (
-    <div>
-      show giphys
+    <div className="giphy-container">
+      <div className="display-giphys">
+      </div>
+
+
     </div>
   )
 }

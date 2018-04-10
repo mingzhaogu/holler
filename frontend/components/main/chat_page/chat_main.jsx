@@ -7,6 +7,7 @@ import ChatSplashContainer from './chat_splash_container'
 const ChatMain = () => (
   <div className="chat-main">
     <Switch>
+      <Route exact path="/new" component={ChatPageContainer} />
       <Route exact path="/:convId" component={ChatPageContainer} />
       <Route exact path="/" component={ChatSplashContainer} />
     </Switch>

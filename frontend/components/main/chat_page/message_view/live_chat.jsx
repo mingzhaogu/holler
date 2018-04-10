@@ -55,9 +55,10 @@ class LiveChat extends React.Component {
         <li key={`chat-msg-${msg.id}`}
           className={`chat-msg chat-msg-align-${align}`}
         >
-          <img src={senderPic} className="chat-msg-pic left" />
-          <div className={`chat-msg-body chat-msg-body${align}`}>{msg.body}</div>
-          <img src={senderPic} className="chat-msg-pic right" />
+          <img src={senderPic} className="chat-msg-pic" />
+          <div className={`chat-msg-body chat-msg-body${align}`}>
+            {msg.body}
+          </div>
         </li>
       )
     })
