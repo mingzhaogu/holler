@@ -8,64 +8,164 @@
 
 User.destroy_all
 
-usernames = ['lilopelekai', 'stitch626', 'pleakley', 'evilgeniusjumba']
-image_urls = [
-  "https://freeclipartimage.com//storage/upload/lilo-and-stitch-clip-art/lilo-and-stitch-clip-art-7.gif",
-  "https://uploads.scratch.mit.edu/users/avatars/1361/0949.png",
-  "https://2.bp.blogspot.com/-CtNhmCNtIqI/VsDY9PxwlLI/AAAAAAAACVo/u50tvlqikJA/s1600/pleakley12.jpg",
-  "https://vignette.wikia.nocookie.net/stitchipediaalilostitch/images/f/f2/Jumba.gif/revision/latest/scale-to-width-down/350?cb=20110516163835"
+users = [
+  {
+    username: "lilopelekai", password: "password", name: "Lilo",
+    image_url: "https://i.imgur.com/AuoaDo4.jpg",
+  },
+  {
+    username: "stitch626", password: "password", name: "Stich",
+    image_url: "https://i.imgur.com/EDbcCZ6.jpg"
+  },
+  {
+    username: "pleakley", password: "password", name: "Pleakley",
+    image_url: "https://i.imgur.com/G2DpXn8.jpg"
+  },
+  {
+    username: "evilgeniusjumba", password: "password", name: "Jumba",
+    image_url: "https://i.imgur.com/mOBiDtq.jpg"
+  },
+  {
+    username: "nanipelekai", password: "password", name: "Nani",
+    image_url: "https://i.imgur.com/8f1cGrK.jpg"
+  },
+  {
+    username: "davidkawena", password: "password", name: "David",
+    image_url: "https://i.imgur.com/Ztraem1.jpg"
+  },
+  {
+    username: "gantu", password: "password", name: "Gantu",
+    image_url: "https://i.imgur.com/0SbO2bQ.jpg"
+  },
+  {
+    username: "iloveicecream", password: "password", name: "C}>",
+    image_url: "https://i.imgur.com/fOcYWZw.png"
+  },
 ]
-names = ['Lilo Pelekai', 'Stitch', 'Wendy Pleakley', 'Jumba Jookiba']
 
-usernames.length.times do |i|
-  User.create(
-    username: usernames[i],
-    password: 'password',
-    image_url: image_urls[i],
-    name: names[i],
-  )
+users.each do |user|
+  User.create!(user)
 end
+
 
 Conversation.destroy_all
 
-2.times do |i|
-  Conversation.create(
-    chat_name: Faker::Dog.meme_phrase
-  )
-end
-
-1.times do |i|
-  Conversation.create()
-end
-
-Message.destroy_all
-
-senders = [2, 4, 3, 4, 2]
-conversations = [3, 3, 2, 2, 1]
-body = [
-  "Yoo porma dissy!",
-  "Leave my mother out of this!",
-  "Oh great! He's loose!",
-  "His destructive programming is taking effect. He will be irresistibly drawn to large cities, where he will back up sewers, reverse street signs, and steal everyone's left shoe.",
-  "Cousin!"
+conversations = [
+  {chat_name: "Lilo, Stitch"},
+  {chat_name: "Lilo, Stitch, Pleakley, Jumba"},
+  {chat_name: "Lilo, Nani"},
+  {chat_name: "Lilo, Stitch, Nani"},
+  {chat_name: "Ohana"},
+  {chat_name: "Pleakley, Jumba"},
+  {chat_name: "Stitch, Gantu"}
 ]
 
-senders.length.times do |i|
-  Message.create(
-    sender_id: senders[i],
-    conversation_id: conversations[i],
-    body: body[i]
-  )
+conversations.each do |convo|
+  Conversation.create!(convo)
 end
+
 
 ConversationUser.destroy_all
 
-conversation = [1, 1, 2, 2, 3, 3, 3, 3]
-user = [1, 2, 3, 4, 1, 2, 3, 4]
+conv_users = [
+  [1, 1], [1, 2],
+  [2, 1], [2, 2], [2, 3], [2, 4],
+  [3, 1], [3, 5],
+  [4, 1], [4, 2], [4, 5],
+  [5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6],
+  [6, 3], [6, 4],
+  [7, 2], [7, 7],
+]
 
-(conversation.length).times do |i|
-  ConversationUser.create(
-    conversation_id: conversation[i],
-    user_id: user[i]
+conv_users.each do |entry|
+  ConversationUser.create!(
+    conversation_id: entry[0],
+    user_id: entry[1]
   )
+end
+
+
+Message.destroy_all
+
+messages = [
+  {
+    conversation_id: 2, sender_id: 2,
+    body: "Yoo porma dissy!"
+  },
+  {
+    conversation_id: 2, sender_id: 4,
+    body: "Leave my mother out of this!"
+  },
+  {
+    conversation_id: 3, sender_id: 5,
+    body: "You're such a pain!"
+  },
+  {
+    conversation_id: 3, sender_id: 1,
+    body: "So why don't you sell me and buy a rabbit instead?"
+  },
+  {
+    conversation_id: 3, sender_id: 5,
+    body: "At least a rabbit would behave better than you!"
+  },
+  {
+    conversation_id: 3, sender_id: 1,
+    body: "Go ahead then you'll be happy because it'll be smarter than me too!"
+  },
+  {
+    conversation_id: 3, sender_id: 5,
+    body: "And quieter!"
+  },
+  {
+    conversation_id: 3, sender_id: 1,
+    body: "You'll like it better because it's stinky like you!"
+  },
+  {
+    conversation_id: 3, sender_id: 5,
+    body: "I shouldn't have yelled at you..."
+  },
+  {
+    conversation_id: 3, sender_id: 1,
+    body: "We're sisters... It's our job."
+  },
+  {
+    conversation_id: 3, sender_id: 5,
+    body: "Yeah, well, from now on..."
+  },
+  {
+    conversation_id: 3, sender_id: 1,
+    body: "I like you better as a sister than a mom."
+  },
+  {
+    conversation_id: 3, sender_id: 5,
+    body: "Yeah?"
+  },
+  {
+    conversation_id: 3, sender_id: 1,
+    body: "And you like me better as a sister than a rabbit, right?"
+  },
+  {
+    conversation_id: 6, sender_id: 3,
+    body: "Oh great! He's loose!"
+  },
+  {
+    conversation_id: 6, sender_id: 4,
+    body: "His destructive programming is taking effect. He will be irresistibly drawn to large cities, where he will back up sewers, reverse street signs, and steal everyone's left shoe."
+  },
+  {
+    conversation_id: 7, sender_id: 2,
+    body: "Aloha!"
+  },
+  {
+    conversation_id: 7, sender_id: 7,
+    body: "Ah! You're vile; you're foul; you're flawed!"
+  },
+  {
+    conversation_id: 7, sender_id: 2,
+    body: "Also cute and fluffy!"
+  },
+]
+
+messages.each do |msg|
+  Message.create!(msg)
 end
