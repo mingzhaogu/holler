@@ -19,7 +19,6 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchAllConversations: () => (dispatch(fetchAllConversations())),
   fetchConversation: (id) => (dispatch(fetchConversation(id))),
 })
 

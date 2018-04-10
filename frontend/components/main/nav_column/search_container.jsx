@@ -7,14 +7,7 @@ import {
   findLastMessages
 } from '../../../reducers/selectors';
 import { fetchAllConversations,
-  fetchConversation
 } from '../../../actions/conversation_actions';
-
-// import { fetchAllConversations,
-//   fetchConversation
-// } from '../../../actions/conversation_actions';
-
-import { fetchConversations } from '../../../util/conversation_api_util';
 
 const mapStateToProps = (state, ownProps) => ({
   conversations: selectAllConversations(state),
@@ -22,8 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchConversations: (query) => fetchConversations(query),
-  fetchAllConversations: () => (dispatch(fetchAllConversations())),
+  fetchAllConversations: (query) => (dispatch(fetchAllConversations(query))),
 })
 
 export default withRouter(connect(

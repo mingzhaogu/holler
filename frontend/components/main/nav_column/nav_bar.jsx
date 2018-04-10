@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // pencil -> on click compose message
 
@@ -49,10 +50,10 @@ class NavBar extends React.Component {
 
         <h2 className="holler main-holler">Holler</h2>
 
-        <i className="fa fa-pencil-square-o"
+        <Link to="/new"><i className="fa fa-pencil-square-o"
           aria-hidden="true"
           onClick={createConversation}
-        />
+        /></Link>
       </nav>
     )
   }

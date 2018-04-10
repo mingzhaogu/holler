@@ -6,32 +6,18 @@ class Search extends React.Component {
     super(props)
     this.state = {
       query: "",
-      conversations: []
     }
 
     this.handleInput = this.handleInput.bind(this)
   }
 
   componentDidMount() {
-    this.props.fetchAllConversations();
-    this.props.fetchConversations().then(
-      (payload) => {
-        this.setState({
-          conversations: Object.values(payload.conversations)
-        })
-      }
-    )
+    this.props.fetchAllConversations("")
   }
 
   handleInput(e) {
     this.setState({ query: e.target.value })
-    this.props.fetchConversations(e.target.value).then(
-      (payload) => {
-        this.setState({
-          conversations: Object.values(payload.conversations)
-        })
-      }
-    )
+    this.props.fetchAllConversations(e.target.value)
   }
 
   render() {
@@ -47,7 +33,7 @@ class Search extends React.Component {
           />
         </div>
 
-        <MessageListContainer convos={this.state.conversations} />
+        <MessageListContainer convos={this.props.conversations} />
       </section>
     )
   }
