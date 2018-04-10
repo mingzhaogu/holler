@@ -1,5 +1,5 @@
 import React from 'react';
-import MessageListContainer from './message_list_container';
+import ConversationListContainer from '../conversations/conversation_list_container';
 
 class Search extends React.Component {
   constructor(props) {
@@ -33,7 +33,7 @@ class Search extends React.Component {
           />
         </div>
 
-        <MessageListContainer convos={this.props.conversations} />
+        <ConversationListContainer convos={this.props.conversations} />
       </section>
     )
   }

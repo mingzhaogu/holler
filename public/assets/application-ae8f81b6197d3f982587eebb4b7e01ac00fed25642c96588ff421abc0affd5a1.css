@@ -373,7 +373,7 @@ body {
 }
 
 /* line 6, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/message_list.scss */
-.nav-col .search-col .message-list .message-list-item {
+.nav-col .search-col .conversation-list .conversation-list-item {
   height: 64px;
   padding-left: 12px;
   display: flex;
@@ -382,31 +382,31 @@ body {
   text-decoration: none;
 }
 /* line 17, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/message_list.scss */
-.nav-col .search-col .message-list .message-list-item .message-list-item-pic {
+.nav-col .search-col .conversation-list .conversation-list-item .conversation-list-item-pic {
   display: block;
   height: 50px;
   width: 50px;
   margin-right: 9px;
 }
 /* line 24, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/message_list.scss */
-.nav-col .search-col .message-list .message-list-item .message-list-item-body {
+.nav-col .search-col .conversation-list .conversation-list-item .conversation-list-item-body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 /* line 29, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/message_list.scss */
-.nav-col .search-col .message-list .message-list-item .message-list-item-body .message-list-item-convo-name {
+.nav-col .search-col .conversation-list .conversation-list-item .conversation-list-item-body .conversation-list-item-convo-name {
   font-weight: bolder;
   line-height: 1.4;
 }
 /* line 34, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/message_list.scss */
-.nav-col .search-col .message-list .message-list-item .message-list-item-body .message-list-item-body {
+.nav-col .search-col .conversation-list .conversation-list-item .conversation-list-item-body .conversation-list-item-body {
   height: 18px;
   font-size: 13px;
   color: #999999;
 }
 /* line 42, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/nav_column/message_list.scss */
-.nav-col .search-col .message-list .active, .nav-col .search-col .message-list .message-list-item:hover {
+.nav-col .search-col .conversation-list .active, .nav-col .search-col .conversation-list .conversation-list-item:hover {
   background-color: #e9ebee;
 }
 

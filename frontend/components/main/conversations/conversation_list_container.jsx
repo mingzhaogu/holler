@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import MessageList from './message_list';
+import ConversationList from './conversation_list';
 import { withRouter } from 'react-router';
 import {
   selectAllConversations,
   findLastMessages
-} from '../../../reducers/selectors'
-
-import { fetchAllConversations,
+} from '../../../reducers/selectors';
+import {
   fetchConversation
 } from '../../../actions/conversation_actions';
 
@@ -25,4 +24,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(MessageList));
+)(ConversationList));

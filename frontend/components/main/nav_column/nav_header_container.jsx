@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../../actions/session_actions';
 import { createConversation } from '../../../actions/conversation_actions';
-import NavBar from './nav_bar';
+import NavHeader from './nav_header';
 
 const mapStateToProps = (state, ownProps) => ({
 

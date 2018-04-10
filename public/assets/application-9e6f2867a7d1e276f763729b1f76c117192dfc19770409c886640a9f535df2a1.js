@@ -57504,7 +57504,7 @@ var MessageList = function (_React$Component) {
       console.log("props", this.props);
       return _react2.default.createElement(
         'section',
-        { className: 'message-list' },
+        { className: 'conversation-list' },
         _react2.default.createElement(
           'ul',
           null,
@@ -57550,22 +57550,22 @@ var MessageListItem = function MessageListItem(props) {
   return _react2.default.createElement(
     _reactRouterDom.NavLink,
     { to: '/' + props.conv.id,
-      className: 'message-list-item',
+      className: 'conversation-list-item',
       activeClassName: 'active'
     },
     _react2.default.createElement('img', { src: 'https://i.imgur.com/XSTheUg.png',
-      className: 'message-list-item-pic' }),
+      className: 'conversation-list-item-pic' }),
     _react2.default.createElement(
       'main',
-      { className: 'message-list-item-body' },
+      { className: 'conversation-list-item-body' },
       _react2.default.createElement(
         'span',
-        { className: 'message-list-item-convo-name' },
+        { className: 'conversation-list-item-convo-name' },
         props.conv.chatName
       ),
       _react2.default.createElement(
         'div',
-        { className: 'message-list-item-body' },
+        { className: 'conversation-list-item-body' },
         props.lastMsg.body
       )
     )

@@ -1,23 +1,23 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const MessageListItem = (props) => {
+const ConversationListItem = (props) => {
 
   return (
     <NavLink to={`/${props.conv.id}`}
-      className="message-list-item"
+      className="conversation-list-item"
       activeClassName="active"
     >
 
       <img src="https://i.imgur.com/XSTheUg.png"
-        className="message-list-item-pic" />
+        className="conversation-list-item-pic" />
 
-      <main className="message-list-item-body">
-        <span className="message-list-item-convo-name">
+      <main className="conversation-list-item-body">
+        <span className="conversation-list-item-convo-name">
           {props.conv.chatName}
         </span>
 
-        <div className="message-list-item-body">
+        <div className="conversation-list-item-body">
           {props.lastMsg.body}
         </div>
       </main>
@@ -25,4 +25,4 @@ const MessageListItem = (props) => {
   )
 }
 
-export default MessageListItem;
+export default ConversationListItem;
