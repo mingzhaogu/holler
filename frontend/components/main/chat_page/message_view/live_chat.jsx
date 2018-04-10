@@ -13,7 +13,7 @@ class LiveChat extends React.Component {
   }
 
   setUpChatRoom(convId, receiveMessage) {
-    const chatroom = ActionCable.createConsumer("ws://localhost:3001/cable");
+    const chatroom = ActionCable.createConsumer();
     chatroom.subscriptions.create({
       channel: 'ChatChannel',
       room: `chat-${convId}`,
