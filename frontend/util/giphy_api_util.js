@@ -1,8 +1,11 @@
-export const fetchGiphys = (searchTerm, offset) => (
+export const fetchGiphys = (query, offset) => (
   $.ajax({
     method: 'GET',
     url: 'http://api.giphy.com/v1/gifs/search',
-    limit: 5,
-    offset: offset
+    data: {
+      q: query,
+      limit: 5,
+      offset: offset
+    }
   })
 );
