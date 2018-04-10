@@ -25,8 +25,14 @@ class Api::ConversationsController < ApplicationController
     # @conversations.sort_by do |conv|
     #   - conv.last_message.created_at.to_i
     # end
-
-    @conversations = current_user.conversations.includes(:users, :messages)
+    if !params[:query]
+      @conversations = current_user.conversations
+        .includes(:users, :messages)
+    else
+      @conversations = current_user.conversations
+        .includes(:users, :messages)
+        .where("chat_name LIKE ?", "#{params[:query]}%")
+    end
   end
 
   def show
