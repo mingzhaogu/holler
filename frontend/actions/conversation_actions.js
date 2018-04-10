@@ -19,8 +19,8 @@ export const receiveConversation = (payload) => ({
 //   conversationId
 // });
 
-export const fetchAllConversations = () => (dispatch) => (
-  ConversationUtil.fetchConversations()
+export const fetchAllConversations = (query) => (dispatch) => (
+  ConversationUtil.fetchConversations(query)
     .then((payload) => dispatch(receiveAllConversations(payload)))
 );
 
