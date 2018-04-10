@@ -1,11 +1,14 @@
 import React from 'react';
 import { createMessage } from '../../../../util/message_api_util';
+import ToggleGiphyContainer from './toggle_giphy_container'
 
 class MessageInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentMessage: ''
+      currentMessage: '',
+      giphyOn: false,
+      giphyOffset: 0
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,10 +36,26 @@ class MessageInput extends React.Component {
     this.setState({ currentMessage: "" })
   }
 
+  getGiphyWidIt(e) {
+    e.preventDefault();
+    this.props.
+    this.setState({
+      giphyOn: !this.setState.giphyOn,
+      giphyOffset: this.setState.giphyOffset + 5
+    })
+
+  }
+
   render() {
+    const { fetchGiphys } = this.props;
     return (
       <form className="message-form"
       onSubmit={this.handleSubmit}>
+
+        <ToggleGiphyContainer
+          open={this.state.giphyOn}
+          giphys={this.props.giphys}
+        />
 
         <textarea
           className="message-form-input"
@@ -45,6 +64,13 @@ class MessageInput extends React.Component {
           onKeyPress={this.handleKeyPress}
           onChange={this.updateCurrentMessage}
         />
+
+        <div className="fun-icons">
+          <i className="fa fa-gift"
+            aria-hidden="true"
+            onClick={this.getGiphyWidIt}
+          />
+        </div>
 
         <button onClick={this.handleSubmit}>
           Send

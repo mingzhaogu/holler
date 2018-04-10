@@ -12,6 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   convId: ownProps.match.params.convId,
   currentUser: state.session.currentUser,
   messages: Object.values(state.entities.messages),
+  giphys: state.giphys,
 
   chatName: findConversationName(state, ownProps),
   showFriendDetails: state.ui.showFriendDetails
@@ -20,7 +21,6 @@ const mapStateToProps = (state, ownProps) => ({
 
   //get users of the conversation, call on compnentWillMount
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  createMessage: (message) => console.log(message)
 })
 
 export default withRouter(connect(
