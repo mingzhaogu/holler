@@ -5,11 +5,17 @@ class LiveChat extends React.Component {
   constructor(props) {
     super(props);
     this.setUpChatRoom = this.setUpChatRoom.bind(this);
+    this.scrollToBottom = this.scrollToBottom.bind(this);
   }
 
   componentWillMount() {
     const { convId, receiveMessage } = this.props;
     this.setUpChatRoom(convId, receiveMessage);
+    this.scrollToBottom();
+  }
+
+  componentDidUpdate() {
+    this.scrollToBottom();
   }
 
   setUpChatRoom(convId, receiveMessage) {
@@ -26,6 +32,13 @@ class LiveChat extends React.Component {
       },
     });
   };
+
+  scrollToBottom() {
+    const chatContainer = document.getElementsByClassName('live-chat')[0];
+    if (chatContainer) {
+      chatContainer.scrollTop = chatContainer.scrollHeight;
+    }
+  }
 
   render() {
     const { messages, currentUser, chatUsers } = this.props;
