@@ -1,7 +1,8 @@
-export const fetchConversations = () => (
+export const fetchConversations = (query) => (
   $.ajax({
     url: 'api/conversations',
-    method: 'GET'
+    method: 'GET',
+    data: { query }
   })
 );
 
@@ -32,7 +33,7 @@ export const createConversation = (conversation) => (
 
 // export const deleteConversation = (id) => (
 //   $.ajax({
-//     url: `api/conversatons/${id}`,
+//     url: `api/conversations/${id}`,
 //     method: 'DELETE'
 //   })
 // );

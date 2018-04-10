@@ -42,6 +42,7 @@ export const findAllMessages = (state, ownProps) => {
 
 export const findLastMessages = (state) => {
   let result = {};
+    console.log("selectAll", state);
   selectAllConversations(state).forEach((conv) => {
     const lastMsgId = last(conv.messageIds);
     if (lastMsgId) {
