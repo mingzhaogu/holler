@@ -8,7 +8,7 @@ import {
   RECEIVE_MESSAGE
 } from '../actions/message_actions';
 
-const ConversationReducer = (oldState = {}, action) => {
+const ConversationsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
@@ -33,4 +33,4 @@ const ConversationReducer = (oldState = {}, action) => {
   }
 };
 
-export default ConversationReducer;
+export default ConversationsReducer;

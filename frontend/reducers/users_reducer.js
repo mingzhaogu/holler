@@ -4,7 +4,7 @@ import {
   RECEIVE_CONVERSATION
 } from '../actions/conversation_actions';
 
-const UserReducer = (oldState = {}, action) => {
+const UsersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
@@ -20,4 +20,4 @@ const UserReducer = (oldState = {}, action) => {
   }
 };
 
-export default UserReducer;
+export default UsersReducer;
