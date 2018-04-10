@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from './nav_bar_container';
-import MessageListContainer from './message_list_container';
+import SearchContainer from './search_container';
 
 const NavColumn = (props) => {
 
@@ -8,7 +8,7 @@ const NavColumn = (props) => {
   return (
     <nav className="nav-col">
       <NavBarContainer />
-      <MessageListContainer />
+      <SearchContainer />
     </nav>
   )
 }
