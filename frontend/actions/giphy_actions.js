@@ -1,9 +1,9 @@
 import * as GiphyUtil from '../util/giphy_api_util';
 
-export const RECIVE_GIPHYS = 'RECIVE_GIPHYS';
+export const RECEIVE_GIPHYS = 'RECEIVE_GIPHYS';
 
 export const receiveGiphys = (giphys) => ({
-  type: RECIVE_GIPHYS,
+  type: RECEIVE_GIPHYS,
   giphys
 });
 
