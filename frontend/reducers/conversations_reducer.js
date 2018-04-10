@@ -12,7 +12,7 @@ const ConversationsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_ALL_CONVERSATIONS:
       return merge({}, action.payload.conversations);
     case RECEIVE_CONVERSATION:
