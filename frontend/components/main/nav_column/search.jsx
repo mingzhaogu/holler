@@ -38,7 +38,7 @@ class Search extends React.Component {
     return (
       <section className="search-col">
         <div className="search-bar">
-          <i class="fa fa-search" aria-hidden="true"></i>
+          <i className="fa fa-search" aria-hidden="true"></i>
           <input type="text"
             className="search-bar-input"
             onChange={this.handleInput}

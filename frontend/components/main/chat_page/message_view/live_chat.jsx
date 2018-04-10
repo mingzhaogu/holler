@@ -19,18 +19,15 @@ class LiveChat extends React.Component {
       room: `chat-${convId}`,
     }, {
       connected: function() {
-        console.log("connected");
       },
       disconnected: function() {},
       received: ({ payload }) => {
-        console.log("payload", payload);
         receiveMessage(payload)
       },
     });
   };
 
   render() {
-    console.log('livechatprops', this.props);
     const { messages, currentUser, chatUsers } = this.props;
 
     const displayMessages = messages.map((msg) => {
