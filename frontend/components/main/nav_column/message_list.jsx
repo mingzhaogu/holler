@@ -17,12 +17,9 @@ class MessageList extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    this.props.fetchAllConversations();
-  }
-
   render() {
     // WILL NEED TO ADD SEARCH BAR BEFORE <UL>
+    console.log("props", this.props);
     return (
       <section className="message-list">
         <ul>
