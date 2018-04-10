@@ -1,8 +1,7 @@
 export const fetchConversations = (query) => (
   $.ajax({
-    url: 'api/conversations',
-    method: 'GET',
-    data: { query }
+    url: `api/conversations?query=${query}`,
+    method: 'GET'
   })
 );
 
