@@ -52,7 +52,6 @@ class NavBar extends React.Component {
 
         <Link to="/new"><i className="fa fa-pencil-square-o"
           aria-hidden="true"
-          onClick={createConversation}
         /></Link>
       </nav>
     )
