@@ -10,7 +10,7 @@ class Api::ConversationsController < ApplicationController
     @conversation = Conversation.create(conversation_params)
 
     #create ConversationUser
-    conversation_params.users.each do |userId|
+    conversation_params.userIds.each do |userId|
       ConversationUser.create({
         user_id: userId,
         conversation_id: @conversation.id
@@ -25,13 +25,13 @@ class Api::ConversationsController < ApplicationController
     # @conversations.sort_by do |conv|
     #   - conv.last_message.created_at.to_i
     # end
-    if !params[:query]
+    if params[:query] == ""
       @conversations = current_user.conversations
         .includes(:users, :messages)
     else
       @conversations = current_user.conversations
         .includes(:users, :messages)
-        .where("chat_name LIKE ?", "#{params[:query]}%")
+        .where("lower(chat_name) LIKE ?", "%#{params[:query].downcase}%")
     end
   end
 
