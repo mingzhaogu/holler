@@ -7,7 +7,7 @@ export const receiveGiphys = (giphys) => ({
   giphys
 });
 
-export const fetchGiphys = (searchTerm, offset) => (dispatch) => (
-  GiphyUtil.fetchGiphys(searchTerm, offset)
+export const fetchGiphys = (query, offset) => (dispatch) => (
+  GiphyUtil.fetchGiphys(query, offset)
     .then((giphys) => dispatch(receiveGiphys(giphys)))
 );
