@@ -5,6 +5,9 @@
     box-sizing: border-box;
     height: 50px;
     display: flex;
+    position: sticky;
+    top: 0px;
+    background-color: #FFFFFF;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;

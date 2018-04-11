@@ -7,6 +7,7 @@
 
     .friend-details-header {
       border-bottom: 1px solid $boxBorder;
+      box-sizing: border-box;
       height: 64px;
       // padding: 0 10px 0 12px;
       padding: 16px 14px; // 16px 14px;
@@ -14,6 +15,10 @@
       align-items: center;
       // cursor: pointer;
       text-decoration: none;
+      position: sticky;
+      top: 50px;
+      background-color: #FFFFFF;
+
 
       img {
         display: block;
@@ -41,6 +46,9 @@
       align-items: center;
       font-size: 50px;
       color: $magenta;
+      position: sticky;
+      top: 114px;
+      background-color: #FFFFFF;
 
       a {
         padding: 5px;
@@ -55,6 +63,8 @@
     .friend-details-users {
       display: flex;
       flex-direction: column;
+      overflow: scroll;
+      overflow-x: hidden;
 
       .friend-details-users-label {
         width: auto;
@@ -75,8 +85,9 @@
           border-radius: 50%;
         }
 
-        label {
-          text-overflow: ellipsis;
+        .friend-details-username {
+          // overflow-x: visible;
+          // text-overflow: ellipsis;
           // font-size: $fontSizeMain;
         }
       }

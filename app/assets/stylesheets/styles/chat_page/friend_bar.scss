@@ -1,5 +1,8 @@
 .friend-bar {
   height: 50px;
+  position: sticky;
+  top: 0px;
+  background-color: #FFFFFF;
   border-bottom: 1px solid $boxBorder;
   display: flex;
   justify-content: space-between;
