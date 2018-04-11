@@ -1,13 +1,56 @@
 //giphys.jsx
 
 .giphy-container {
+  // border-top: 1px solid $boxBorder;
   overflow: hidden;
-  // width: 278px;
-  width: 56vw;
+  align-items: center;
+  width: 55vw;
 
-  .giphy-search-input {
+  .giphy-search {
+    position: relative;
+    margin: 12px;
+    color: $darkgrey;
+    // width: 100%;
 
+    .fa {
+      position: absolute;
+      top: 9px;
+      font-size: 12px;
+    }
+
+    .fa-search {
+      // position: absolute;
+      font-size: 12px;
+      // top: 9px;
+      left: 8px;
+    }
+
+    .giphy-search-input {
+      display: block;
+      width: 100%;
+      // flex: 1;
+      padding: 0 28px;
+      height: 30px;
+      background-color: #f6f7f9;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: $fontSizeMain;
+    }
+
+    .fa-plus {
+      // position: absolute;
+      // top: 9px;
+      right: 8px;
+      // padding: 10px;
+      color: $magenta;
+      font-size: $fontSizeMain;
+    }
+
+    .fa-plus:hover {
+      color: $pink;
+    }
   }
+
 
   .display-giphys {
     display: flex;

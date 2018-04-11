@@ -47,7 +47,7 @@ class ToggleGiphy extends React.Component {
     createMessage({
       sender_id: this.props.currentUser.id,
       conversation_id: this.props.convId,
-      body: e.target,
+      body: e.target.src,
       message_type: "gif"
     });
     this.setState({ query: "" })
@@ -59,14 +59,21 @@ class ToggleGiphy extends React.Component {
     if (!showGiphys) return <div></div>;
     return (
       <div className="giphy-container">
-        <input type="text"
-          className="giphy-search-input"
-          onChange={this.handleInput}
-          value={this.state.query}
-          placeholder="Search Giphy"
-        />
+        <div className="giphy-search">
+          <i className="fa fa-search" aria-hidden="true" />
+          <input type="text"
+            className="giphy-search-input"
+            onChange={this.handleInput}
+            value={this.state.query}
+            placeholder="Search Giphy"
+          />
 
-        <button onClick={this.fetchMoreGiphys}>{">"}</button>
+          <i className="fa fa-plus"
+            aria-hidden="true"
+            onClick={this.fetchMoreGiphys}
+          />
+        </div>
+
 
         <ul className="display-giphys">
           {this.displayGiphys()}
