@@ -84,26 +84,43 @@
     .message-form {
       display: flex;
       border: none;
-      // border-top: 1px solid $boxBorder;
+      border-top: 1px solid $boxBorder;
+      // align-items: center;
 
       textarea {
         font-size: 14px;
-        border: inherit;
-        border-top: 1px solid $boxBorder;
+        // border: inherit;
+        // border-top: 1px solid $boxBorder;
         font-weight: lighter;
         resize: none;
         flex-grow: 1;
-        padding: 8px;
+        padding: 10px;
+      }
+
+      .fun-icons {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .fa {
+          color: $magenta;
+          font-size: $fontSizeH2;
+        }
+
+        .fa:hover {
+          color: $pink;
+        }
       }
 
       button {
-        border: inherit;
-        border-top: 1px solid $boxBorder;
+        // border: inherit;
+        // border-top: 1px solid $boxBorder;
         font-weight: 400;
-        font-size: $fontSizeMain;
+        font-size: $fontSizeH3;
         color: $pink;
         min-width: 33px;
-        padding: 8px;
+        padding: 10px;
       }
 
     }
