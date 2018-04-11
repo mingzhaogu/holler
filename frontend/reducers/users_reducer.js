@@ -1,4 +1,5 @@
 import { merge } from 'lodash';
+import { RECEIVE_USERS } from '../actions/user_actions';
 import {
   RECEIVE_ALL_CONVERSATIONS,
   RECEIVE_CONVERSATION
@@ -9,10 +10,11 @@ const UsersReducer = (oldState = {}, action) => {
   let newState;
 
   switch(action.type) {
+    case RECEIVE_USERS:
+      return merge({}, action.payload.users);
     case RECEIVE_ALL_CONVERSATIONS:
       return merge({}, action.payload.users);
     case RECEIVE_CONVERSATION:
-      console.log("user red RECEIVE_CONVERSATION", action.payload);
       newState = merge({}, action.payload.users);
       return newState;
     default:
