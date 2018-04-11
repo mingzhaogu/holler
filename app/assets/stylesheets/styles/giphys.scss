@@ -37,16 +37,20 @@
       font-size: $fontSizeMain;
     }
 
-    .fa-plus {
-      // position: absolute;
-      // top: 9px;
-      right: 8px;
-      // padding: 10px;
+    .fa-plus, .fa-minus {
       color: $magenta;
       font-size: $fontSizeMain;
     }
 
-    .fa-plus:hover {
+    .fa-plus {
+      right: 8px;
+    }
+
+    .fa-minus {
+      right: 20px;
+    }
+
+    .fa-plus:hover, .fa-minus:hover {
       color: $pink;
     }
   }

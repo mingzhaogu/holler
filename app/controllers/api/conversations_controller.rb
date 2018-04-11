@@ -28,6 +28,7 @@ class Api::ConversationsController < ApplicationController
     if params[:query] == ""
       @conversations = current_user.conversations
         .includes(:users, :messages)
+        .order("messages.created_at DESC")
     else
       @conversations = current_user.conversations
         .includes(:users, :messages)

@@ -12,6 +12,7 @@ class ToggleGiphy extends React.Component {
 
     this.handleInput = this.handleInput.bind(this);
     this.fetchMoreGiphys = this.fetchMoreGiphys.bind(this);
+    this.fetchLessGiphys = this.fetchLessGiphys.bind(this);
     this.displayGiphys = this.displayGiphys.bind(this);
     this.sendExpression = this.sendExpression.bind(this);
   }
@@ -35,6 +36,13 @@ class ToggleGiphy extends React.Component {
   fetchMoreGiphys(offset) {
     this.setState({ offset: this.state.offset + 5 });
     this.props.fetchGiphys(this.state.query, this.state.offset + 5)
+  }
+
+  fetchLessGiphys(offset) {
+    const oldOffset = this.state.offset;
+    let newOffset = (oldOffset < 5) ? oldOffset : oldOffset - 5;
+    this.setState({ offset: newOffset });
+    this.props.fetchGiphys(this.state.query, newOffset)
   }
 
   handleInput(e) {
@@ -66,6 +74,10 @@ class ToggleGiphy extends React.Component {
             onChange={this.handleInput}
             value={this.state.query}
             placeholder="Search Giphy"
+          />
+
+          <i className="fa fa-minus" aria-hidden="true"
+
           />
 
           <i className="fa fa-plus"

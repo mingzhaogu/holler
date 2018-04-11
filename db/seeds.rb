@@ -89,12 +89,40 @@ Message.destroy_all
 
 messages = [
   {
+    conversation_id: 1, sender_id: 2,
+    body: "...she's touching me..."
+  },
+  {
+    conversation_id: 1, sender_id: 1,
+    body: "I'm not touching you..."
+  },
+  {
+    conversation_id: 1, sender_id: 2,
+    body: "AAAAH YOU'RE TOUCHING ME!!"
+  },
+  {
+    conversation_id: 1, sender_id: 1,
+    body: "Not touching."
+  },
+  {
+    conversation_id: 1, sender_id: 2,
+    body: "TOUCHING ME."
+  },
+  {
+    conversation_id: 1, sender_id: 1, message_type: "gif",
+    body: "https://media2.giphy.com/media/QmkMGTMpGELDi/200.gif?cid=e1bb72ff5ace5466667a4d644da2ca08"
+  },
+  {
     conversation_id: 2, sender_id: 2,
     body: "Yoo porma dissy!"
   },
   {
     conversation_id: 2, sender_id: 4,
     body: "Leave my mother out of this!"
+  },
+  {
+    conversation_id: 2, sender_id: 2, message_type: "gif",
+    body: "https://media2.giphy.com/media/mmD5t45gfX6U0/200.gif?cid=e1bb72ff5ace55e3656d784c4dca8a9a"
   },
   {
     conversation_id: 3, sender_id: 5,
