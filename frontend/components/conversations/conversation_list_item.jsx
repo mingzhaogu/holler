@@ -17,7 +17,7 @@ const ConversationListItem = (props) => {
           {props.conv.chatName}
         </span>
 
-        <div className="conversation-list-item-body">
+        <div className="conversation-list-item-last-msg">
           {props.lastMsg.body}
         </div>
       </main>
