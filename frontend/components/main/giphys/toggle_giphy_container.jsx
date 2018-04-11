@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import ToggleGiphy from './toggle_giphy';
-import { fetchGiphys } from '../../../../actions/giphy_actions';
+import { fetchGiphys } from '../../../actions/giphy_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   open: ownProps.open,

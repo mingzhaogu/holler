@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { logout } from '../../actions/session_actions';
-//add compose message action
+
 import Main from './main';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
 

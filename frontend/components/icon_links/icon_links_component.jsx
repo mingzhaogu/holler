@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { GithubIconLink, LinkedInIconLink } from './icon_links';
 
 const Footer = () => {

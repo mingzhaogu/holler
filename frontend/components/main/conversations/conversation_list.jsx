@@ -1,4 +1,5 @@
 import React from 'react';
+
 import ConversationListItem from './conversation_list_item';
 
 class ConversationList extends React.Component {

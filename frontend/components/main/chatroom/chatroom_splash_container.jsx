@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ChatPage from './chat_page';
-// import MessageView(container?) from './';
+import Chatroom from './chatroom';
+// import { fetchConversation } from "../../../actions/conversation_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   chatHead : 'Welcome!'
@@ -14,4 +14,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChatPage)
+)(Chatroom);

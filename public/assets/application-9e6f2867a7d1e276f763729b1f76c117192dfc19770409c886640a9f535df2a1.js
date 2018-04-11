@@ -57824,10 +57824,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var MessageView = function MessageView(props) {
   return _react2.default.createElement(
     'div',
-    { className: 'message-view' },
+    { className: 'chat-view' },
     _react2.default.createElement(
       'section',
-      { className: 'message-view-main' },
+      { className: 'chat-view-main' },
       _react2.default.createElement(_live_chat_container2.default, null),
       _react2.default.createElement(_message_input_container2.default, null)
     ),

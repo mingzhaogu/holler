@@ -1,6 +1,7 @@
 import React from 'react';
-import { createMessage } from '../../../../util/message_api_util';
-import ToggleGiphyContainer from './toggle_giphy_container'
+
+// import ToggleGiphyContainer from './toggle_giphy_container';
+import { createMessage } from '../../../util/message_api_util';
 
 class MessageInput extends React.Component {
   constructor(props) {

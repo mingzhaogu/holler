@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ConversationList from './conversation_list';
 import { withRouter } from 'react-router';
+
+import ConversationList from './conversation_list';
 import {
   selectAllConversations,
   findLastMessages
@@ -10,7 +11,6 @@ import {
   fetchConversation
 } from '../../../actions/conversation_actions';
 
-// pencil -> on click compose message
 
 const mapStateToProps = (state, ownProps) => ({
   conversations: ownProps.convos,

@@ -1,7 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { GithubIconLink, LinkedInIconLink } from '../../../footer/icon_links';
-import FriendDetailsItem from './friend_details_item'
+
+import FriendDetailsItem from './friend_details_item';
+import { GithubIconLink, LinkedInIconLink } from '../../footer/icon_links';
 
 class FriendDetails extends React.Component {
   constructor(props) {

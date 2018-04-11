@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
+import NavHeader from './nav_header';
 import { logout } from '../../../actions/session_actions';
 import { createConversation } from '../../../actions/conversation_actions';
-import NavHeader from './nav_header';
 
 const mapStateToProps = (state, ownProps) => ({
 
@@ -16,4 +17,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   null,
   mapDispatchToProps
-)(NavBar);
+)(NavHeader);

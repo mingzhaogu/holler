@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// pencil -> on click compose message
-
 class NavHeader extends React.Component {
   constructor(props) {
     super(props)
@@ -50,9 +48,11 @@ class NavHeader extends React.Component {
 
         <h2 className="holler main-holler">Holler</h2>
 
-        <Link to="/new"><i className="fa fa-pencil-square-o"
-          aria-hidden="true"
-        /></Link>
+        <Link to="/new">
+          <i className="fa fa-pencil-square-o"
+            aria-hidden="true"
+          />
+        </Link>
       </nav>
     )
   }

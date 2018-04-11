@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Footer from '../footer/footer'
+
+import IconLinks from '../icon_links/icon_links_component';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -94,14 +95,11 @@ class SessionForm extends React.Component {
         </form>
 
         <section className="session-footer">
-          <Footer />
+          <IconLinks />
         </section>
       </div>
     )
   }
 }
 
-// <aside className="login-side">
-//   <img src="https://i.pinimg.com/736x/1d/d2/e4/1dd2e45a1e167916be88ed04f093f68b--italia.jpg" />
-// </aside>
 export default withRouter(SessionForm);

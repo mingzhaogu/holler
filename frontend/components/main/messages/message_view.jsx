@@ -1,16 +1,16 @@
 import React from 'react';
 import ActionCable from 'actioncable';
 
-class LiveChat extends React.Component {
+class MessageView extends React.Component {
   constructor(props) {
     super(props);
-    this.setUpChatRoom = this.setUpChatRoom.bind(this);
+    this.setUpChatroom = this.setUpChatroom.bind(this);
     this.scrollToBottom = this.scrollToBottom.bind(this);
   }
 
   componentWillMount() {
     const { convId, receiveMessage } = this.props;
-    this.setUpChatRoom(convId, receiveMessage);
+    this.setUpChatroom(convId, receiveMessage);
     this.scrollToBottom();
   }
 
@@ -18,7 +18,7 @@ class LiveChat extends React.Component {
     this.scrollToBottom();
   }
 
-  setUpChatRoom(convId, receiveMessage) {
+  setUpChatroom(convId, receiveMessage) {
     const chatroom = ActionCable.createConsumer();
     chatroom.subscriptions.create({
       channel: 'ChatChannel',
@@ -74,4 +74,4 @@ class LiveChat extends React.Component {
   }
 }
 
-export default LiveChat;
+export default MessageView;

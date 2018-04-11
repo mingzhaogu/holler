@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Search from './search';
 import { withRouter } from 'react-router';
+
+import Search from './search';
 import {
   selectAllConversations,
   findLastMessages
