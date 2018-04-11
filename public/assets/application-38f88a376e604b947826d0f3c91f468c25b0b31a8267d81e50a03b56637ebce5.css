@@ -523,24 +523,25 @@ body {
 /* line 11, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat {
   flex: 1;
-  margin: 12px;
+  padding: 12px;
   overflow: scroll;
   overflow-x: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-/* line 17, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 18, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg {
   margin-bottom: 15px;
   border: 1px solid #f1f0f0;
   border-radius: 1.3em;
 }
-/* line 23, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 24, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-pic {
   width: 28px;
   height: 28px;
   display: float;
   border-radius: 50%;
 }
-/* line 32, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 33, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-align-left {
   margin-right: 50%;
   margin-left: 36px;
@@ -549,17 +550,17 @@ body {
   background-color: #f1f0f0;
   position: relative;
 }
-/* line 40, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 41, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-align-left .right {
   display: none;
 }
-/* line 44, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 45, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-align-left .chat-msg-pic {
   left: -32px;
   position: absolute;
   bottom: 0;
 }
-/* line 51, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 52, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-align-right {
   margin-left: 50%;
   margin-right: 36px;
@@ -569,28 +570,28 @@ body {
   color: #FFFFFF;
   position: relative;
 }
-/* line 65, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 66, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-align-right .left {
   display: none;
 }
-/* line 69, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 70, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-align-right .chat-msg-pic {
   position: absolute;
   right: -32px;
   bottom: 0;
 }
-/* line 76, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 77, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .live-chat .chat-msg-body {
   padding: 6px 12px;
 }
 
-/* line 84, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 85, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .message-form {
   display: flex;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
 }
-/* line 90, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 91, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .message-form textarea {
   font-size: 14px;
   font-weight: lighter;
@@ -598,23 +599,23 @@ body {
   flex-grow: 1;
   padding: 10px;
 }
-/* line 100, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 101, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .message-form .fun-icons {
-  padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 /* line 106, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .message-form .fun-icons .fa {
+  padding: 10px;
   color: #F092DD;
   font-size: 24px;
 }
-/* line 111, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 112, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .message-form .fun-icons .fa:hover {
   color: #ff6da9;
 }
-/* line 116, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
+/* line 117, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/chat_page/message_view.scss */
 .message-form button {
   font-weight: 400;
   font-size: 16px;
@@ -705,6 +706,78 @@ body {
   height: 50px;
   margin: 6px 12px;
   border-radius: 50%;
+}
+
+/* line 3, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container {
+  overflow: hidden;
+  align-items: center;
+  width: 55vw;
+}
+/* line 9, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search {
+  position: relative;
+  margin: 12px;
+  color: #97A7B3;
+}
+/* line 15, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .fa {
+  position: absolute;
+  top: 9px;
+  font-size: 12px;
+}
+/* line 21, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .fa-search {
+  font-size: 12px;
+  left: 8px;
+}
+/* line 28, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .giphy-search-input {
+  display: block;
+  width: 100%;
+  padding: 0 28px;
+  height: 30px;
+  background-color: #f6f7f9;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+/* line 40, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .fa-plus, .giphy-container .giphy-search .fa-minus {
+  color: #F092DD;
+  font-size: 14px;
+}
+/* line 45, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .fa-plus {
+  right: 8px;
+}
+/* line 49, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .fa-minus {
+  right: 20px;
+}
+/* line 53, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .giphy-search .fa-plus:hover, .giphy-container .giphy-search .fa-minus:hover {
+  color: #ff6da9;
+}
+/* line 59, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .display-giphys {
+  display: flex;
+  max-width: 100%;
+  flex-direction: col;
+  overflow: scroll;
+  overflow-y: hidden;
+  height: 150px;
+}
+/* line 67, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+.giphy-container .display-giphys li img {
+  height: 100%;
+  width: auto;
+  padding: 3px;
+}
+
+/* line 75, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
+body {
+  max-width: 100vw;
 }
 
 /* line 1, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/footer.scss */
