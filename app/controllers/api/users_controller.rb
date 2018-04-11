@@ -13,10 +13,12 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    if params[:conversation_id]
-      @users = Conversation.find(params[:conversation_id]).users
-    elsif params[:search]
+    # if params[:conversation_id]
+    #   @users = Conversation.find(params[:conversation_id]).users
+    if params[:query] == ""
       @users = User.all
+    else
+      @users = User.where("lower(username) LIKE ?", "%#{params[:query].downcase}%")
     end
   end
 
