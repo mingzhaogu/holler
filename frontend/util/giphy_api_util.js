@@ -3,7 +3,7 @@ export const fetchGiphys = (query, offset) => {
   return (
     $.ajax({
       method: 'GET',
-      url: `http://api.giphy.com/v1/gifs/${url}`,
+      url: `https://api.giphy.com/v1/gifs/${url}`,
       data: {
         q: query,
         limit: 5,
@@ -19,7 +19,7 @@ export const fetchStickers = (query, offset) => {
   return (
     $.ajax({
       method: 'GET',
-      url: `http://api.giphy.com/v1/stickers/${url}`,
+      url: `https://api.giphy.com/v1/stickers/${url}`,
       data: {
         q: query,
         limit: 5,
