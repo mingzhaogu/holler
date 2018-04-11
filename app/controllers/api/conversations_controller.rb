@@ -32,7 +32,7 @@ class Api::ConversationsController < ApplicationController
       @conversations = current_user.conversations
         .includes(:users, :messages)
         .where("lower(chat_name) LIKE ?", "%#{params[:query].downcase}%")
-        .order("last_message_timestamp DESC")
+        .order("messages.created_at DESC")
     end
   end
 

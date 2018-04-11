@@ -3,17 +3,22 @@ import {
   RECEIVE_GIPHYS
 } from '../actions/giphy_actions';
 
-const GiphysReducer = (oldState = {}, action) => {
+const GiphysReducer = (oldState = [], action) => {
   Object.freeze(oldState);
   let newState;
 
   switch (action.type) {
     case RECEIVE_GIPHYS:
       newState = merge({}, oldState);
-      action.data.forEach((gif) =>{
-        newState = merge(newState, { [gif.id]: gif} );
-      });
-      return newState;
+      // if (action.giphys.data === []) {
+      //   action.giphys.data.forEach((gif) => {
+      //     console.log(gif);
+      //     newState = merge(newState, { [gif.id]: gif} );
+      //   });
+      // }
+      // return newState;
+      console.log("action", action);
+      return action.giphys.data;
     default:
       return oldState;
   }

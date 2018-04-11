@@ -1,0 +1,28 @@
+//giphys.jsx
+
+.giphy-container {
+  overflow: hidden;
+  width: 100%;
+
+  .giphy-search-input {
+
+  }
+
+  .display-giphys {
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    overflow: scroll;
+    overflow-y: hidden;
+    height: 200px;
+
+    li img{
+      height: 200px;
+      width: auto;
+    }
+  }
+}
+
+body {
+  max-width: 100vw;
+}

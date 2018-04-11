@@ -6,11 +6,11 @@ import { fetchGiphys } from '../../actions/giphy_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   showGiphys: state.ui.showGiphys,
-  giphys: ownProps.giphys
+  giphys: state.giphys
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchGiphys: (query, offset) => dispatch(fetchGiphys(query, offset))
+  fetchGiphys: (query, offset = 0) => dispatch(fetchGiphys(query, offset))
 })
 
 export default connect(

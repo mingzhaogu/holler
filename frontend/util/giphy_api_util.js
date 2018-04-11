@@ -5,7 +5,8 @@ export const fetchGiphys = (query, offset) => (
     data: {
       q: query,
       limit: 5,
-      offset: offset
+      offset: offset,
+      api_key: "dc6zaTOxFJmzC"
     }
   })
 );
