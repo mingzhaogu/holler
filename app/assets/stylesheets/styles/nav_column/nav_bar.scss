@@ -5,9 +5,7 @@
     box-sizing: border-box;
     height: 50px;
     display: flex;
-    position: sticky;
-    top: 0px;
-    background-color: #FFFFFF;
+    position: relative;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -29,7 +27,7 @@
     .nav-bar-dropdown {
       display: none;
       position: absolute;
-      top: 50px;
+      top: 49px;
       left: 3px;
       padding: 5px 0;
       background-color: #FFFFFF;
