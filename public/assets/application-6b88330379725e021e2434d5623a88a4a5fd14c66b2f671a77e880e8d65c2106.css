@@ -743,20 +743,20 @@ body {
   font-size: 14px;
 }
 /* line 40, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
-.giphy-container .giphy-search .fa-plus, .giphy-container .giphy-search .fa-minus {
+.giphy-container .giphy-search .fa-plus, .giphy-container .giphy-search .fa-times-circle {
   color: #F092DD;
   font-size: 14px;
 }
 /* line 45, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
 .giphy-container .giphy-search .fa-plus {
-  right: 8px;
+  right: 27px;
 }
 /* line 49, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
-.giphy-container .giphy-search .fa-minus {
-  right: 20px;
+.giphy-container .giphy-search .fa-times-circle {
+  right: 8px;
 }
 /* line 53, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
-.giphy-container .giphy-search .fa-plus:hover, .giphy-container .giphy-search .fa-minus:hover {
+.giphy-container .giphy-search .fa-plus:hover, .giphy-container .giphy-search .fa-times-circle:hover {
   color: #ff6da9;
 }
 /* line 59, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/giphys.scss */
