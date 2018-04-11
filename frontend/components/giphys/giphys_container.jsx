@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import ToggleGiphy from './toggle_giphy';
+import Giphys from './giphys';
 import { fetchGiphys } from '../../actions/giphy_actions';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ToggleGiphy);
+)(Giphys);
