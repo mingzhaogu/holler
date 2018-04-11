@@ -6,5 +6,7 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:ece834d243d956715bf26c7a88b86be4@koi.redistogo.com:11123/
+  host: koi.redistogo.com
+  port: 11123
   channel_prefix: Holler_production

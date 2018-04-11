@@ -78,6 +78,7 @@ Rails.application.configure do
 
   config.middleware.use ChatActionCable
   config.web_socket_server_url = "wss://holler-messenger.herokuapp.com/"
+  config.action_cable.allowed_request_origins = ['https://holler-messenger.herokuapp.com', 'http://holler-messenger.herokuapp.com']
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
