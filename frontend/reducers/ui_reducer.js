@@ -1,10 +1,12 @@
 import { merge } from 'lodash';
 import {
   TOGGLE_FRIEND_DETAILS_VIEW,
+  TOGGLE_GIPHYS
 } from '../actions/ui_actions';
 
 const _nullState = {
-  showFriendDetails: true
+  showFriendDetails: true,
+  showGiphys: false
 };
 
 const UIReducer = (oldState = _nullState, action) => {
@@ -13,7 +15,10 @@ const UIReducer = (oldState = _nullState, action) => {
   let newState;
   switch(action.type) {
     case TOGGLE_FRIEND_DETAILS_VIEW:
-      newState = merge({}, { showFriendDetails: !oldState.showFriendDetails});
+      newState = merge({}, oldState, { showFriendDetails: !oldState.showFriendDetails });
+      return newState;
+    case TOGGLE_GIPHYS:
+      newState = merge({}, oldState, { showGiphys: !oldState.showGiphys });
       return newState;
     default:
       return oldState;
