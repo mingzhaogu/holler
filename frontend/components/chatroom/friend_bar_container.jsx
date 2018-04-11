@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleView: () => dispatch(toggleFriendDetailsView())
+  toggleFriendDetails: () => dispatch(toggleFriendDetailsView())
 })
 
 export default withRouter(connect(

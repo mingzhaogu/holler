@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 
 import MessageInput from './message_input';
 import { findConversationName } from '../../reducers/selectors';
-import { createMessage } from '../../actions/message_actions';
+import { toggleGiphys } from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   convId: ownProps.match.params.convId,
@@ -18,6 +18,7 @@ const mapStateToProps = (state, ownProps) => ({
 
   //get users of the conversation, call on compnentWillMount
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  toggleGiphys: () => dispatch(toggleGiphys())
 })
 
 export default withRouter(connect(

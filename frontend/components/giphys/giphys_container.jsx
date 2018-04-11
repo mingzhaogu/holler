@@ -5,7 +5,7 @@ import Giphys from './giphys';
 import { fetchGiphys } from '../../actions/giphy_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  open: ownProps.open,
+  showGiphys: state.ui.showGiphys,
   giphys: ownProps.giphys
 })
 

@@ -12,7 +12,7 @@ const FriendBar = (props) => {
         <li>
           <i className="fa fa-info-circle"
             aria-hidden="true"
-            onClick={props.toggleView}
+            onClick={props.toggleFriendDetails}
           />
         </li>
       </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MessageViewContainer from '../messages/message_view_container';
-// import ToggleGiphyContainer from './toggle_giphy_container';
+import GiphysContainer from '../giphys/giphys_container';
 import MessageInputContainer from '../messages/message_input_container';
 import FriendDetailsContainer from './friend_details_container';
 
@@ -11,6 +11,7 @@ const ChatView = (props) => {
     <div className="chat-view">
       <section className="chat-view-main">
         <MessageViewContainer />
+        <GiphysContainer />
         <MessageInputContainer />
       </section>
 

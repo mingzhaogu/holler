@@ -1,6 +1,6 @@
 import React from 'react';
 
-import GiphyContainer from '../giphys/giphys_container';
+import GiphysContainer from '../giphys/giphys_container';
 import { createMessage } from '../../util/message_api_util';
 
 class MessageInput extends React.Component {
@@ -40,12 +40,7 @@ class MessageInput extends React.Component {
 
   getGiphyWidIt(e) {
     e.preventDefault();
-
-    this.setState({
-      giphyOn: !this.state.giphyOn,
-      giphyOffset: this.state.giphyOffset + 5
-    })
-
+    this.props.toggleGiphys();
   }
 
   render() {
@@ -53,10 +48,6 @@ class MessageInput extends React.Component {
     return (
       <form className="message-form"
       onSubmit={this.handleSubmit}>
-
-        <div className="giphy-popup">
-          <GiphyContainer offset={this.state.giphyOffset} />
-        </div>
 
         <textarea
           className="message-form-input"
