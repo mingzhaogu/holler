@@ -12,11 +12,22 @@ export const fetchConversation = (id) => (
   })
 );
 
-export const createConversation = (conversation) => (
+// export const fetchConversation = (id) => {
+//   console.log("fetch convo in conapiutil");
+//   return ($.ajax({
+//     url: `api/conversations/${id}`,
+//     method: 'GET'
+//   }))
+// };
+
+export const createConversation = (users, chatName) => (
   $.ajax({
     url: 'api/conversations',
     method: 'POST',
-    data: { conversation }
+    data: {
+      users,
+      chatName
+    }
   })
 );
 
