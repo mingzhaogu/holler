@@ -2,6 +2,7 @@ import React from 'react';
 
 import FriendBarContainer from './friend_bar_container';
 import MessageViewContainer from '../messages/message_view_container';
+import MessageInputContainer from '../messages/message_input_container';
 
 class Chatroom extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Chatroom extends React.Component {
       <main className="chat-page">
         <FriendBarContainer />
         <MessageViewContainer />
+        <MessageInputContainer />
       </main>
     )
   }
