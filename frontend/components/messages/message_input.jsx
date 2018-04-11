@@ -8,14 +8,13 @@ class MessageInput extends React.Component {
     super(props);
     this.state = {
       currentMessage: '',
-      giphyOn: false,
-      giphyOffset: 0
     }
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.updateCurrentMessage = this.updateCurrentMessage.bind(this)
     this.handleKeyPress = this.handleKeyPress.bind(this)
     this.getGiphyWidIt = this.getGiphyWidIt.bind(this)
+    this.getStickyWidIt = this.getStickyWidIt.bind(this)
   }
 
   updateCurrentMessage(e) {
@@ -43,6 +42,11 @@ class MessageInput extends React.Component {
     this.props.toggleGiphys();
   }
 
+  getStickyWidIt(e) {
+    e.preventDefault();
+    this.props.toggleStickys();
+  }
+
   render() {
     const { fetchGiphys } = this.props;
     return (
@@ -58,6 +62,11 @@ class MessageInput extends React.Component {
         />
 
         <div className="fun-icons">
+          <i className="fa fa-paw"
+            aria-hidden="true"
+            onClick={this.getStickyWidIt}
+          />
+
           <i className="fa fa-gift"
             aria-hidden="true"
             onClick={this.getGiphyWidIt}

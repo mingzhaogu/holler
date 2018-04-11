@@ -4,13 +4,13 @@ import { withRouter } from 'react-router';
 
 import MessageInput from './message_input';
 import { findConversationName } from '../../reducers/selectors';
-import { toggleGiphys } from '../../actions/ui_actions';
+import { toggleGiphys, toggleStickys } from '../../actions/ui_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   convId: ownProps.match.params.convId,
   currentUser: state.session.currentUser,
   messages: Object.values(state.entities.messages),
-  giphys: state.giphys,
+  giphys: state.entities.giphys,
 
   chatName: findConversationName(state, ownProps),
   showFriendDetails: state.ui.showFriendDetails
@@ -18,7 +18,8 @@ const mapStateToProps = (state, ownProps) => ({
 
   //get users of the conversation, call on compnentWillMount
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  toggleGiphys: () => dispatch(toggleGiphys())
+  toggleGiphys: () => dispatch(toggleGiphys()),
+  toggleStickys: () => dispatch(toggleStickys())
 })
 
 export default withRouter(connect(

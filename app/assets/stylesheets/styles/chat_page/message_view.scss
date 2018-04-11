@@ -98,12 +98,12 @@
       }
 
       .fun-icons {
-        padding: 10px;
         display: flex;
         flex-direction: row;
         align-items: center;
 
         .fa {
+          padding: 10px;
           color: $magenta;
           font-size: $fontSizeH2;
         }

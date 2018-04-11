@@ -2,7 +2,8 @@
 
 .giphy-container {
   overflow: hidden;
-  width: 100%;
+  // width: 278px;
+  width: 56vw;
 
   .giphy-search-input {
 
@@ -11,14 +12,15 @@
   .display-giphys {
     display: flex;
     max-width: 100%;
-    flex-direction: row;
+    flex-direction: col;
     overflow: scroll;
     overflow-y: hidden;
-    height: 200px;
+    height: 150px;
 
     li img{
-      height: 200px;
+      height: 100%;
       width: auto;
+      padding: 3px;
     }
   }
 }
