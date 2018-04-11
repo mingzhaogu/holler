@@ -37,20 +37,20 @@
       font-size: $fontSizeMain;
     }
 
-    .fa-plus, .fa-minus {
+    .fa-plus, .fa-times-circle {
       color: $magenta;
       font-size: $fontSizeMain;
     }
 
     .fa-plus {
+      right: 27px;
+    }
+
+    .fa-times-circle {
       right: 8px;
     }
 
-    .fa-minus {
-      right: 20px;
-    }
-
-    .fa-plus:hover, .fa-minus:hover {
+    .fa-plus:hover, .fa-times-circle:hover {
       color: $pink;
     }
   }

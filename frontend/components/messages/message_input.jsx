@@ -1,6 +1,5 @@
 import React from 'react';
 
-import GiphysContainer from '../giphys/giphys_container';
 import { createMessage } from '../../util/message_api_util';
 
 class MessageInput extends React.Component {
@@ -40,15 +39,16 @@ class MessageInput extends React.Component {
   getGiphyWidIt(e) {
     e.preventDefault();
     this.props.toggleGiphys();
+    this.props.fetchGiphys();
   }
 
   getStickyWidIt(e) {
     e.preventDefault();
     this.props.toggleStickys();
+    this.props.fetchStickys();
   }
 
   render() {
-    const { fetchGiphys } = this.props;
     return (
       <form className="message-form"
       onSubmit={this.handleSubmit}>

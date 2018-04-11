@@ -49,6 +49,7 @@ class MessageView extends React.Component {
       if (!chatUsers[msg.senderId]) return null;
       else return (
         <MessageViewItem
+          key={msg.id}
           msg={msg}
           currentUser={currentUser}
           senderPic={chatUsers[msg.senderId].imageUrl}

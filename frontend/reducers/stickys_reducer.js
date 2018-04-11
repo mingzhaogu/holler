@@ -1,24 +1,26 @@
 import { merge } from 'lodash';
 import {
-  RECEIVE_STICKYS
+  RECEIVE_GIPHYS,
+  RECEIVE_STICKYS,
+  RECEIVE_MORE_STICKYS
 } from '../actions/giphy_actions';
 
-const StickysReducer = (oldState = [], action) => {
+const StickysReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
   switch (action.type) {
     case RECEIVE_STICKYS:
-      newState = merge({}, oldState);
-      // if (action.giphys.data === []) {
-      //   action.giphys.data.forEach((gif) => {
-      //     console.log(gif);
-      //     newState = merge(newState, { [gif.id]: gif} );
-      //   });
-      // }
-      // return newState;
-      console.log("action", action);
       return action.stickys.data;
+    case RECEIVE_MORE_STICKYS:
+      let receivedData = {};
+      action.stickys.data.forEach(
+        (sticker) => (receivedData[sticker.id] = sticker)
+      );
+      newState = merge({}, oldState, receivedData);
+      return newState;
+    case RECEIVE_GIPHYS:
+      return {};
     default:
       return oldState;
   }

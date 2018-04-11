@@ -6,7 +6,7 @@ const MessageViewItem = ({ msg, currentUser, senderPic }) => {
   else align = "left";
 
   let body;
-  if (msg.messageType === "gif") {
+  if (msg.messageType !== "text") {
     body = <img src={msg.body} />
   } else {
     body = msg.body

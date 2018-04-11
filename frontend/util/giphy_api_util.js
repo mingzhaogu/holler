@@ -14,7 +14,7 @@ export const fetchGiphys = (query, offset) => {
   );
 };
 
-export const fetchStickers = (query, offset) => {
+export const fetchStickys = (query, offset) => {
   let url = (query === "") ? "trending" : "search";
   return (
     $.ajax({
