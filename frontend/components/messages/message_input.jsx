@@ -1,6 +1,6 @@
 import React from 'react';
 
-// import ToggleGiphyContainer from './toggle_giphy_container';
+import GiphyContainer from '../giphys/giphys_container';
 import { createMessage } from '../../util/message_api_util';
 
 class MessageInput extends React.Component {
@@ -55,6 +55,7 @@ class MessageInput extends React.Component {
       onSubmit={this.handleSubmit}>
 
         <div className="giphy-popup">
+          <GiphyContainer offset={this.state.giphyOffset} />
         </div>
 
         <textarea
