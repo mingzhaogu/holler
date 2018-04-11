@@ -34,8 +34,8 @@ export const fetchConversation = (id) => (dispatch) => (
     .then(conversation => dispatch(receiveConversation(conversation)))
 );
 
-export const createConversation = (convo) => (dispatch) => (
-  ConversationUtil.createConversation(convo)
+export const createConversation = (userIds, chatName) => (dispatch) => (
+  ConversationUtil.createConversation(userIds, chatName)
     .then((conversation) => dispatch(receiveConversation(conversation)))
 );
 
