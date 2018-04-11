@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import MessageInput from './message_input';
-import { findConversationName } from '../../../reducers/selectors';
-import { createMessage } from '../../../actions/message_actions';
+import { findConversationName } from '../../reducers/selectors';
+import { createMessage } from '../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   convId: ownProps.match.params.convId,

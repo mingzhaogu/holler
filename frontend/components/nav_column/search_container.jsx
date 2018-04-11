@@ -6,9 +6,9 @@ import Search from './search';
 import {
   selectAllConversations,
   findLastMessages
-} from '../../../reducers/selectors';
+} from '../../reducers/selectors';
 import { fetchAllConversations,
-} from '../../../actions/conversation_actions';
+} from '../../actions/conversation_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   conversations: selectAllConversations(state),

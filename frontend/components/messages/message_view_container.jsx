@@ -6,9 +6,9 @@ import MessageView from './message_view';
 import { findConvoId,
   findConversationName,
   findAllMessages
-} from '../../../reducers/selectors';
-import { fetchConversation } from "../../../actions/conversation_actions";
-import { receiveMessage } from '../../../actions/message_actions';
+} from '../../reducers/selectors';
+import { fetchConversation } from "../../actions/conversation_actions";
+import { receiveMessage } from '../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   convId: findConvoId(state, ownProps),

@@ -6,10 +6,10 @@ import ConversationList from './conversation_list';
 import {
   selectAllConversations,
   findLastMessages
-} from '../../../reducers/selectors';
+} from '../../reducers/selectors';
 import {
   fetchConversation
-} from '../../../actions/conversation_actions';
+} from '../../actions/conversation_actions';
 
 
 const mapStateToProps = (state, ownProps) => ({

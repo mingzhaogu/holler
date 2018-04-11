@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NavColumn from './nav_column/nav_column';
-import ChatroomRouter from './chatroom/chatroom_router';
+import NavColumn from '../nav_column/nav_column';
+import ChatroomRouter from '../chatroom/chatroom_router';
 
 const Main = () => {
   return (
