@@ -3,7 +3,7 @@
   .search-bar {
     padding: 13px;
     border-bottom: 1px solid $boxBorder;
-    min-height: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -31,6 +31,32 @@
       // resize: none;
       flex-grow: 1;
       padding: 0 8px;
+    }
+
+    .compose-message {
+      height: 24px;
+      width: 200px;
+      font-size: $fontSizeMain;
+      border-radius: 4px;
+      color: #FFFFFF;
+      background-color: $pink;
+      align-items: center;
+      transition: 200ms;
+      box-sizing: content-box;
+    }
+
+    .compose-message:hover {
+      background-color: $darkgrey;
+      cursor: pointer;
+    }
+
+    .compose-message:focus {
+      box-shadow: 0 0 1px 2px rgba(255,109,169,0.75)
+    }
+
+    .compose-message:active {
+      transform: scale(0.98);
+      opacity: 0.2;
     }
   }
 

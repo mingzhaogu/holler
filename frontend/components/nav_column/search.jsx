@@ -12,7 +12,7 @@ class Search extends React.Component {
     this.handleInput = this.handleInput.bind(this)
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchAllConversations("")
   }
 

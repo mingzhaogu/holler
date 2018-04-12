@@ -16,7 +16,7 @@ class NewConversation extends React.Component {
     this.showQueryResults = this.showQueryResults.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchUsers();
   }
 
@@ -45,11 +45,13 @@ class NewConversation extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const users = this.state.selectedUserIds;
-    users.push(this.props.currentUserId);
-    this.props.createConversation(
-      users
-    ).then((action) => this.props.history.push(`${Object.keys(action.payload.conversation)[0]}`))
+    if (this.state.selectedUserIds.length > 0) {
+      const users = this.state.selectedUserIds;
+      users.push(this.props.currentUserId);
+      this.props.createConversation(
+        users
+      ).then((action) => this.props.history.push(`${Object.keys(action.payload.conversation)[0]}`))
+    }
   }
 
   showQueryResults() {
@@ -87,7 +89,8 @@ class NewConversation extends React.Component {
             placeholder="Type the name of a person or select from below"
           />
 
-          <button onClick={this.handleSubmit}>compose message</button>
+          <button className="compose-message"
+            onClick={this.handleSubmit}>compose message</button>
         </div>
 
         <ul className="search-users-results">
