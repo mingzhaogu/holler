@@ -9,7 +9,7 @@ const ConversationListItem = (props) => {
       activeClassName="active"
     >
 
-      <img src="https://i.imgur.com/XSTheUg.png"
+      <img src={props.conv.imageUrl}
         className="conversation-list-item-pic" />
 
       <main className="conversation-list-item-body">

@@ -10,12 +10,12 @@ class FriendDetails extends React.Component {
   }
 
   toggleDetails() {
-    const chatName = this.props.chatName || "Hello there!";
+    const chatName = this.props.convoName || "Hello there!";
     if (this.props.showFriendDetails) {
       return (
         <div className="friend-details">
           <div className="friend-details-header">
-            <img src="https://i.imgur.com/XSTheUg.png"
+            <img src={this.props.convoImage}
               className="friend-details-convo-pic" />
 
             <span className="friend-details-convo-name">
@@ -30,7 +30,7 @@ class FriendDetails extends React.Component {
 
           <ul className="friend-details-users">
             <label className="friend-details-users-label">People</label>
-            {this.props.chatUsers.map((user) => (
+            {this.props.convoUsers.map((user) => (
               <FriendDetailsItem
                 key={user.id}
                 user={user}

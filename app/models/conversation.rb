@@ -6,6 +6,7 @@
 #  chat_name  :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  image_url  :string
 #
 
 class Conversation < ApplicationRecord
@@ -16,7 +17,7 @@ class Conversation < ApplicationRecord
   has_many :users,
     through: :conversation_users
 
-  before_validation :set_default_name
+  before_validation :set_default_name, :set_default_image
 
   # def self.sort_by_last_message
   #   to_a.sort { |c1, c2| c2.last_message_timestamp <=> c1.last_message_timestamp  }
@@ -30,7 +31,13 @@ class Conversation < ApplicationRecord
     last_message.nil? ? Time.now : last_message.created_at
   end
 
+  private
+
   def set_default_name
     self.chat_name ||= SecureRandom.hex(8)
+  end
+
+  def set_default_image
+    self.image_url ||= 'https://i.imgur.com/XSTheUg.png'
   end
 end

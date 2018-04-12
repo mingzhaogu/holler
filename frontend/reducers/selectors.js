@@ -55,6 +55,17 @@ export const findLastMessages = (state) => {
   return result;
 };
 
+export const findConversationImage = (state, ownProps) => {
+  const convoId = ownProps.match.params.convId;
+  const currentConvo = state.entities.conversations[convoId];
+
+  if (currentConvo) {
+    return currentConvo.imageUrl;
+  } else {
+    return undefined;
+  }
+};
+
 export const findConversationName = (state, ownProps) => {
   const convoId = ownProps.match.params.convId;
   const currentConvo = state.entities.conversations[convoId];

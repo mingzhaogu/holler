@@ -38,6 +38,10 @@ users = [
     image_url: "https://i.imgur.com/0SbO2bQ.jpg"
   },
   {
+    username: "scrump", password: "password", name: "Scrump",
+    image_url: "https://i.imgur.com/l8KrqH2.png"
+  },
+  {
     username: "iloveicecream", password: "password", name: "C}>",
     image_url: "https://i.imgur.com/fOcYWZw.png"
   },
@@ -55,7 +59,7 @@ conversations = [
   {chat_name: "Lilo, Stitch, Pleakley, Jumba"},
   {chat_name: "Lilo, Nani"},
   {chat_name: "Lilo, Stitch, Nani"},
-  {chat_name: "Ohana"},
+  {chat_name: "Ohana", image_url: "https://i.imgur.com/Tb6ZJGI.png"},
   {chat_name: "Pleakley, Jumba"},
   {chat_name: "Stitch, Gantu"}
 ]
@@ -72,7 +76,7 @@ conv_users = [
   [2, 1], [2, 2], [2, 3], [2, 4],
   [3, 1], [3, 5],
   [4, 1], [4, 2], [4, 5],
-  [5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6],
+  [5, 1], [5, 2], [5, 3], [5, 4], [5, 5], [5, 6], [5, 8],
   [6, 3], [6, 4],
   [7, 2], [7, 7],
 ]
@@ -109,7 +113,7 @@ messages = [
     body: "TOUCHING ME."
   },
   {
-    conversation_id: 1, sender_id: 1, message_type: "gif",
+    conversation_id: 1, sender_id: 1, message_type: "Giphy",
     body: "https://media2.giphy.com/media/QmkMGTMpGELDi/200.gif?cid=e1bb72ff5ace5466667a4d644da2ca08"
   },
   {
@@ -121,7 +125,7 @@ messages = [
     body: "Leave my mother out of this!"
   },
   {
-    conversation_id: 2, sender_id: 2, message_type: "gif",
+    conversation_id: 2, sender_id: 2, message_type: "Giphy",
     body: "https://media2.giphy.com/media/mmD5t45gfX6U0/200.gif?cid=e1bb72ff5ace55e3656d784c4dca8a9a"
   },
   {
@@ -192,6 +196,27 @@ messages = [
     conversation_id: 7, sender_id: 2,
     body: "Also cute and fluffy!"
   },
+  {
+    conversation_id: 5, sender_id: 2, message_type: "Sticky",
+    body: "https://media2.giphy.com/media/zQZsoCpu3Ipq0/200.gif?cid=e1bb72ff5acf0caa72702e55598ea62f"
+  },
+  {
+    conversation_id: 5, sender_id: 2, message_type: "Giphy",
+    body: "https://media0.giphy.com/media/I0IavIJOpDpCg/200.gif?cid=e1bb72ff5acf0b872e4e6279418eaae2"
+  },
+  {
+    conversation_id: 5, sender_id: 2, message_type: "Giphy",
+    body: "https://media2.giphy.com/media/f8YTKdAHrx9gQ/200.gif?cid=e1bb72ff5acf0b6941633249363a2ffb"
+  },
+  {
+    conversation_id: 5, sender_id: 8, message_type: "Giphy",
+    body: "https://media2.giphy.com/media/cQys4y6ESMyxq/200.gif?cid=e1bb72ff5acf0b2d4279576a63e096d8"
+  },
+  {
+    conversation_id: 5, sender_id: 6, message_type: "Giphy",
+    body: "https://media3.giphy.com/media/mQFE7siDwCrcY/200.gif?cid=e1bb72ff5acf0d33367a4d5749dee610"
+  },
+
 ]
 
 messages.each do |msg|

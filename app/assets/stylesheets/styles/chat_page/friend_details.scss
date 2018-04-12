@@ -3,6 +3,8 @@
     width: 22vw;
     border-left: 1px solid $boxBorder;
     height: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
     //padding-top: 14px; // maybe remove?
 
     .friend-details-header {
@@ -15,7 +17,7 @@
       align-items: center;
       // cursor: pointer;
       text-decoration: none;
-      position: sticky;
+      // position: sticky;
       top: 50px;
       background-color: #FFFFFF;
 
@@ -46,7 +48,7 @@
       align-items: center;
       font-size: 50px;
       color: $magenta;
-      position: sticky;
+      // position: sticky;
       top: 114px;
       background-color: #FFFFFF;
 
@@ -63,8 +65,8 @@
     .friend-details-users {
       display: flex;
       flex-direction: column;
-      overflow: scroll;
-      overflow-x: hidden;
+      // overflow: scroll;
+      // overflow-x: hidden;
 
       .friend-details-users-label {
         width: auto;

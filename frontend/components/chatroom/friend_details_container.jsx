@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import FriendDetails from './friend_details';
-import { findConversationName } from '../../reducers/selectors';
+import { findConversationImage, findConversationName } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
-  chatName: findConversationName(state, ownProps),
+  convoName: findConversationName(state, ownProps),
+  convoImage: findConversationImage(state, ownProps),
   showFriendDetails: state.ui.showFriendDetails,
-  chatUsers: Object.values(state.entities.users)
+  convoUsers: Object.values(state.entities.users)
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
