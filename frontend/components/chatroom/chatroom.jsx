@@ -15,7 +15,10 @@ class Chatroom extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.chatId !== nextProps.chatId) {
+    if (!nextProps.chatId) {
+      this.props.fetchAllUsers
+    }
+    else if (this.props.chatId !== nextProps.chatId) {
       this.props.fetchConversation(nextProps.chatId)
     }
   }
