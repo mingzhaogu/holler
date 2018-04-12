@@ -419,7 +419,7 @@ body {
 .new-conversation .search-bar {
   padding: 13px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  min-height: 50px;
+  height: 50px;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -439,27 +439,53 @@ body {
   flex-grow: 1;
   padding: 0 8px;
 }
-/* line 37, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+/* line 36, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+.new-conversation .search-bar .compose-message {
+  height: 24px;
+  width: 200px;
+  font-size: 14px;
+  border-radius: 4px;
+  color: #FFFFFF;
+  background-color: #ff6da9;
+  align-items: center;
+  transition: 200ms;
+  box-sizing: content-box;
+}
+/* line 48, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+.new-conversation .search-bar .compose-message:hover {
+  background-color: #97A7B3;
+  cursor: pointer;
+}
+/* line 53, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+.new-conversation .search-bar .compose-message:focus {
+  box-shadow: 0 0 1px 2px rgba(255, 109, 169, 0.75);
+}
+/* line 57, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+.new-conversation .search-bar .compose-message:active {
+  transform: scale(0.98);
+  opacity: 0.2;
+}
+/* line 63, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
 .new-conversation .search-users-results {
   padding-top: 8px;
   overflow: scroll;
 }
-/* line 41, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+/* line 67, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
 .new-conversation .search-users-results li {
   display: flex;
   align-items: center;
   cursor: pointer;
   padding: 8px 8px 8px 32px;
 }
-/* line 47, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+/* line 73, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
 .new-conversation .search-users-results li img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 20px;
 }
-/* line 55, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
-.new-conversation .search-users-results li:hover {
+/* line 81, /Users/anniegu/Documents/appAcademy/Bootcamp/aA-fullstack-messenger/Holler/app/assets/stylesheets/styles/new_conversation.scss */
+.new-conversation .search-users-results li:hover, .new-conversation .search-users-results .selected-for-new-convo {
   background-color: #f1f0f0;
 }
 
