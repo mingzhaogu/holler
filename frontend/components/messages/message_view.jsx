@@ -11,7 +11,6 @@ class MessageView extends React.Component {
   }
 
   componentWillMount() {
-    // debugger
     const { convId, receiveMessage } = this.props;
     this.setUpChatroom(convId, receiveMessage);
     this.scrollToBottom();
@@ -30,7 +29,6 @@ class MessageView extends React.Component {
   }
 
   setUpChatroom(convId, receiveMessage) {
-    debugger
     const chatroom = ActionCable.createConsumer();
     chatroom.subscriptions.create({
       channel: 'ChatChannel',

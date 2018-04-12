@@ -13,7 +13,6 @@ class NewConversation extends React.Component {
     this.handleInput = this.handleInput.bind(this);
     this.handleSelection = this.handleSelection.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.showSelectedUsers = this.showSelectedUsers.bind(this);
     this.showQueryResults = this.showQueryResults.bind(this);
   }
 
@@ -26,62 +25,61 @@ class NewConversation extends React.Component {
     this.props.fetchUsers(e.target.value);
   }
 
-  handleSelection(e) {
+  handleSelection(user) {
     // this.setState({selectedUsers: , selectedUserIds})
-    console.log("handleSelection", e.target.innerText);
+    return (e) => {
+      const selectedIds = this.state.selectedUserIds;
+
+      if (this.state.selectedUserIds.includes(user.id)) {
+        e.currentTarget.classList.remove("selected-for-new-convo");
+        const index = selectedIds.indexOf(user.id);
+        selectedIds.splice(index, 1);
+      } else {
+        e.currentTarget.classList.add("selected-for-new-convo");
+        selectedIds.push(user.id);
+      }
+
+      this.setState({ selectedUserIds: selectedIds }, console.log(this.state.selectedUserIds));
+    }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const users = this.selectedUserIds.push(this.props.currentUser.id);
+    const users = this.state.selectedUserIds;
+    users.push(this.props.currentUser.id);
     this.props.createConversation(
       users,
       nil
     )
   }
 
-  showSelectedUsers() {
-    return (
-      this.state.selectedUsers.map((user) => (
-        <li key={user.id}>
-          {user.username}
-        </li>
-      ))
-    )
-  }
-
   showQueryResults() {
     return (
       this.props.userResults.map((user) => {
-        if (this.state.selectedUsers.includes(user)) return nil;
-        else {
-          return (
-            <li key={user.id}
-            onClick={this.handleSelection}>
-              <img src={user.imageUrl} width="50px" height="50px"/>
-              <label>{user.username}</label>
-            </li>
-          )
+        if (this.props.currentUserId === user.id) return null;
+
+        let selected = "";
+        if (this.state.selectedUserIds.includes(user.id)) {
+          selected = "selected-for-new-convo";
         }
+        return (
+          <li key={user.id}
+            onClick={this.handleSelection(user)}
+            className={selected}>
+            <img src={user.imageUrl} width="50px" height="50px"/>
+            <label>{user.username}</label>
+          </li>
+        )
       })
     )
   }
 
   render() {
-    //display selected users
 
-    //search, submit
-    //selectedUsers
-
-    //display all users in search
     return(
       <section className="new-conversation">
         <div className="search-bar">
           <label className="search-bar-to">To:</label>
-
-          <ul className="search-bar-selected-users">
-            {this.showSelectedUsers()}
-          </ul>
 
           <input type="text"
             className="search-bar-input"
@@ -89,14 +87,23 @@ class NewConversation extends React.Component {
             value={this.state.query}
             placeholder="Type the name of a person"
           />
+
+          <button onClick={this.handleSubmit}>
+          </button>
         </div>
 
         <ul className="search-users-results">
           {this.showQueryResults()}
         </ul>
+
+
       </section>
     )
   }
 }
+//
+// <ul className="search-bar-selected-users">
+// {this.showSelectedUsers()}
+// </ul>
 
 export default NewConversation;

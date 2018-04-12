@@ -14,7 +14,7 @@ users = [
     image_url: "https://i.imgur.com/AuoaDo4.jpg",
   },
   {
-    username: "stitch626", password: "password", name: "Stich",
+    username: "stitch626", password: "password", name: "Stitch",
     image_url: "https://i.imgur.com/EDbcCZ6.jpg"
   },
   {
