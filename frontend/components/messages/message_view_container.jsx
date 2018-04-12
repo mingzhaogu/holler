@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
   chatUsers: state.entities.users,
   messages: findAllMessages(state, ownProps),
+  expressionsOpen: state.ui.showGiphys || state.ui.showStickys
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

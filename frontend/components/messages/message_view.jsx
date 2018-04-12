@@ -52,6 +52,7 @@ class MessageView extends React.Component {
 
   render() {
     const { messages, currentUser, chatUsers } = this.props;
+    const borderBottom = (!this.props.expressionsOpen) ? {borderBottom: "0"} : null;
 
     const displayMessages = messages.map((msg) => {
       if (!chatUsers[msg.senderId]) return null;
@@ -66,7 +67,7 @@ class MessageView extends React.Component {
     })
 
     return (
-      <div className="live-chat">
+      <div className="live-chat" style={borderBottom}>
         <ul>
           {displayMessages}
         </ul>
