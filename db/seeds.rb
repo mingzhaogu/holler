@@ -201,6 +201,14 @@ messages = [
     body: "https://media2.giphy.com/media/zQZsoCpu3Ipq0/200.gif?cid=e1bb72ff5acf0caa72702e55598ea62f"
   },
   {
+    conversation_id: 5, sender_id: 2,
+    body: "Aloha!"
+  },
+  {
+    conversation_id: 5, sender_id: 1,
+    body: "Welcome to Holler -- a messaging application based off Facebook Messenger."
+  },
+  {
     conversation_id: 5, sender_id: 2, message_type: "Giphy",
     body: "https://media0.giphy.com/media/I0IavIJOpDpCg/200.gif?cid=e1bb72ff5acf0b872e4e6279418eaae2"
   },

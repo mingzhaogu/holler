@@ -8,8 +8,9 @@ import { findConversationImage, findConversationName } from '../../reducers/sele
 const mapStateToProps = (state, ownProps) => ({
   convoName: findConversationName(state, ownProps),
   convoImage: findConversationImage(state, ownProps),
+  convoUsers: Object.values(state.entities.users),
   showFriendDetails: state.ui.showFriendDetails,
-  convoUsers: Object.values(state.entities.users)
+  isEditing: state.ui.isEditing
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

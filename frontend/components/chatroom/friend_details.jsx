@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
-import FriendDetailsItem from './friend_details_item';
+import FriendDetailsUserItem from './friend_details_user_item';
 import { GithubIconLink, LinkedInIconLink } from '../icon_links/icon_links';
 
 class FriendDetails extends React.Component {
@@ -21,6 +21,8 @@ class FriendDetails extends React.Component {
             <span className="friend-details-convo-name">
               {chatName}
             </span>
+
+            <i className="fa fa-pencil" aria-hidden="true" />
           </div>
 
           <div className="annie-links">
@@ -31,7 +33,7 @@ class FriendDetails extends React.Component {
           <ul className="friend-details-users">
             <label className="friend-details-users-label">People</label>
             {this.props.convoUsers.map((user) => (
-              <FriendDetailsItem
+              <FriendDetailsUserItem
                 key={user.id}
                 user={user}
               />

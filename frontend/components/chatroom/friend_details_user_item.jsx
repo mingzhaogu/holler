@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FriendDetailsItem = ({user}) => {
+const FriendDetailsUserItem = ({user}) => {
   return (
     <li key={user.id}
       className="friend-details-users">
@@ -12,4 +12,4 @@ const FriendDetailsItem = ({user}) => {
   )
 }
 
-export default FriendDetailsItem;
+export default FriendDetailsUserItem;
