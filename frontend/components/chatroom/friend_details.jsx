@@ -14,6 +14,7 @@ class FriendDetails extends React.Component {
     }
 
     this.togglePencil = this.togglePencil.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.saveConvoName = this.saveConvoName.bind(this);
   }
@@ -27,13 +28,23 @@ class FriendDetails extends React.Component {
     }
   }
 
+  handleKeyPress(e) {
+    if (e.key === "Enter" && e.shiftKey === false) {
+      this.saveConvoName(e)
+    }
+  }
+
   handleInput(e) {
     this.setState({ convoName: e.target.value })
   }
 
   saveConvoName(e) {
     e.preventDefault();
-    this.props.updateConversation(this.props.currentConvo);
+    this.props.updateConversation({
+      id: this.props.currentConvo.id,
+      chatName: this.state.convoName
+    });
+    this.setState({ isEditing: false })
   }
 
   togglePencil(e) {
@@ -67,6 +78,7 @@ class FriendDetails extends React.Component {
 
         <input className="friend-details-convo-name"
           value={this.state.convoName}
+          onKeyPress={this.handleKeyPress}
           onChange={this.handleInput}
         />
 

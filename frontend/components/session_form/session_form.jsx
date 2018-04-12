@@ -94,9 +94,7 @@ class SessionForm extends React.Component {
           </button>
         </form>
 
-        <section className="session-footer">
-          <IconLinks />
-        </section>
+        <IconLinks />
       </div>
     )
   }

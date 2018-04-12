@@ -55,7 +55,7 @@ end
 Conversation.destroy_all
 
 conversations = [
-  {chat_name: "Lilo, Stitch"},
+  {chat_name: "Lilo and Stitch"},
   {chat_name: "Lilo, Stitch, Pleakley, Jumba"},
   {chat_name: "Lilo, Nani"},
   {chat_name: "Lilo, Stitch, Nani"},
@@ -113,8 +113,12 @@ messages = [
     body: "TOUCHING ME."
   },
   {
-    conversation_id: 1, sender_id: 1, message_type: "Giphy",
+    conversation_id: 1, sender_id: 2, message_type: "Giphy",
     body: "https://media2.giphy.com/media/QmkMGTMpGELDi/200.gif?cid=e1bb72ff5ace5466667a4d644da2ca08"
+  },
+  {
+    conversation_id: 1, sender_id: 1, message_type: "Giphy",
+    body: "https://media0.giphy.com/media/heYtu4tcSEdJ6/200.gif?cid=e1bb72ff5acfa80b79636731455d2129"
   },
   {
     conversation_id: 2, sender_id: 2,
@@ -206,7 +210,7 @@ messages = [
   },
   {
     conversation_id: 5, sender_id: 1,
-    body: "Welcome to Holler -- a messaging application based off Facebook Messenger."
+    body: "Welcome to Holler -- a messaging application inspired by Facebook Messenger."
   },
   {
     conversation_id: 5, sender_id: 2, message_type: "Giphy",

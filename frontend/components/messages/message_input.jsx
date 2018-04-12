@@ -51,7 +51,7 @@ class MessageInput extends React.Component {
   render() {
     return (
       <form className="message-form"
-      onSubmit={this.handleSubmit}>
+        onSubmit={this.handleSubmit}>
 
         <textarea
           className="message-form-input"
@@ -71,11 +71,12 @@ class MessageInput extends React.Component {
             aria-hidden="true"
             onClick={this.getGiphyWidIt}
           />
-        </div>
 
-        <button onClick={this.handleSubmit}>
-          Send
-        </button>
+          <i class="fa fa-paper-plane"
+          aria-hidden="true"
+          onClick={this.handleSubmit}
+          />
+        </div>
       </form>
     )
   }

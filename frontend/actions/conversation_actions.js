@@ -2,6 +2,7 @@ import * as ConversationUtil from '../util/conversation_api_util';
 
 export const RECEIVE_ALL_CONVERSATIONS = 'RECEIVE_ALL_CONVERSATIONS';
 export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION';
+export const RECEIVE_NEW_CONV_NAME = 'RECEIVE_NEW_CONV_NAME';
 // export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION';
 
 export const receiveAllConversations = (payload) => ({
@@ -12,6 +13,11 @@ export const receiveAllConversations = (payload) => ({
 export const receiveConversation = (payload) => ({
   type: RECEIVE_CONVERSATION,
   payload
+});
+
+export const receiveNewConvName = (conversation) => ({
+  type: RECEIVE_NEW_CONV_NAME,
+  conversation
 });
 
 // export const removeConversation = (conversationId) => ({
