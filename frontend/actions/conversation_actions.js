@@ -39,10 +39,10 @@ export const createConversation = (userIds, chatName) => (dispatch) => (
     .then((conversation) => dispatch(receiveConversation(conversation)))
 );
 
-// export const updateConversation = (convo) => (dispatch) => (
-//   ConversationUtil.updateConversation(convo)
-//     .then((conversation) => dispatch(receiveConversation(conversation)))
-// );
+export const updateConversation = (convo) => (dispatch) => (
+  ConversationUtil.updateConversation(convo)
+    .then((conversation) => dispatch(receiveConversation(conversation)))
+);
 
 // export const deleteConversation = (conversationId) => (dispatch) => (
 //   ConversationUtil.deleteConversation(conversationId)

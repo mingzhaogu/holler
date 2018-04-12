@@ -32,10 +32,18 @@
       .friend-details-convo-name {
         // text-align: center;
         // margin: 0 auto;
+        font-size: $fontSizeH3;
+        flex: 1;
         font-weight: 400;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+      }
+
+      .fa {
+        margin-left: 9px;
+        color: $magenta;
+        font-size: $fontSizeH2;
       }
     }
 

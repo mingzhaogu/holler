@@ -1,10 +1,18 @@
 //giphys.jsx
+// .giphy-container::after {
+//   content: "";
+//   display: flex;
+//   clear: both;
+// }
 
 .giphy-container {
   // border-top: 1px solid $boxBorder;
   overflow: hidden;
+  // overflow: visible;
+  // position: relative;
   align-items: center;
   width: 55vw;
+  // width: 100%;
 
   .giphy-search {
     position: relative;
@@ -59,10 +67,12 @@
   .display-giphys {
     display: flex;
     max-width: 100%;
-    flex-direction: col;
+    // flex-direction: column;
     overflow: scroll;
     overflow-y: hidden;
     height: 150px;
+    // position: absolute;
+    // top: 100%;
 
     li img{
       height: 100%;
