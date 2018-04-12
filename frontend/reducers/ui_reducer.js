@@ -12,8 +12,7 @@ import {
 const _nullState = {
   showFriendDetails: true,
   showGiphys: false,
-  showStickys: false,
-  isEditing: false,
+  showStickys: false
 };
 
 const UIReducer = (oldState = _nullState, action) => {

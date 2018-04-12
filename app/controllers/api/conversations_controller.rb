@@ -20,6 +20,17 @@ class Api::ConversationsController < ApplicationController
     render 'api/conversations/show'
   end
 
+  def edit
+  end
+
+  def update
+    @conversation = Conversation.find(params[:id])
+    @conversation.update(conversation_params)
+    @messages = @conversation.messages.includes(:user)
+
+    render 'api/conversations/show'
+  end
+
   def index
     if params[:query] == ""
       @conversations = current_user.conversations
@@ -42,7 +53,7 @@ class Api::ConversationsController < ApplicationController
 
   private
 
-  # def conversation_params
-  #   params.require().permit(:users, :chatName)
-  # end
+  def conversation_params
+    params.require().permit(:users, :chatName)
+  end
 end

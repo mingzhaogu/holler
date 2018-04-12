@@ -24,16 +24,40 @@ export const selectAllConversations = (state) => {
   return Object.values(state.entities.conversations);
 };
 
-export const findConvoId = (state, ownProps) => (
+export const findConversationId = (state, ownProps) => (
   ownProps.match.params.convId
 );
 
-export const findAllMessages = (state, ownProps) => {
-  const convoId = findConvoId(state, ownProps);
-  const convo = state.entities.conversations[convoId];
+export const findConversation = (state, ownProps) => (
+  state.entities.conversations[findConversationId(state, ownProps)]
+);
 
-  if (convo && convo.messageIds) {
-    const messageIds = convo.messageIds;
+export const findConversationImage = (state, ownProps) => {
+  const currentConvo = findConversation(state, ownProps);
+
+  if (currentConvo) {
+    return currentConvo.imageUrl;
+  } else {
+    return undefined;
+  }
+};
+
+export const findConversationName = (state, ownProps) => {
+  const currentConvo = findConversation(state, ownProps);
+
+  if (currentConvo) {
+    return currentConvo.chatName;
+  } else {
+    return undefined;
+  }
+};
+
+export const findAllMessages = (state, ownProps) => {
+  // const convoId = findConversationId(state, ownProps);
+  const currentConvo = findConversation(state, ownProps);
+
+  if (currentConvo && currentConvo.messageIds) {
+    const messageIds = currentConvo.messageIds;
     return messageIds.map((id) => state.entities.messages[id]);
   } else {
     return [];
@@ -42,7 +66,6 @@ export const findAllMessages = (state, ownProps) => {
 
 export const findLastMessages = (state) => {
   let result = {};
-    console.log("selectAll", state);
   selectAllConversations(state).forEach((conv) => {
     const lastMsgId = last(conv.messageIds);
     if (lastMsgId) {
@@ -53,26 +76,4 @@ export const findLastMessages = (state) => {
   });
 
   return result;
-};
-
-export const findConversationImage = (state, ownProps) => {
-  const convoId = ownProps.match.params.convId;
-  const currentConvo = state.entities.conversations[convoId];
-
-  if (currentConvo) {
-    return currentConvo.imageUrl;
-  } else {
-    return undefined;
-  }
-};
-
-export const findConversationName = (state, ownProps) => {
-  const convoId = ownProps.match.params.convId;
-  const currentConvo = state.entities.conversations[convoId];
-
-  if (currentConvo) {
-    return currentConvo.chatName;
-  } else {
-    return undefined;
-  }
 };

@@ -12,14 +12,6 @@ export const fetchConversation = (id) => (
   })
 );
 
-// export const fetchConversation = (id) => {
-//   console.log("fetch convo in conapiutil");
-//   return ($.ajax({
-//     url: `api/conversations/${id}`,
-//     method: 'GET'
-//   }))
-// };
-
 export const createConversation = (users, chatName) => (
   $.ajax({
     url: 'api/conversations',
@@ -33,13 +25,13 @@ export const createConversation = (users, chatName) => (
 
 // BONUSES:
 
-// export const updateConversation = (conversation) => (
-//   $.ajax({
-//     url: `api/conversations/${conversation.id}`,
-//     method: 'PATCH',
-//     data: { conversation }
-//   })
-// );
+export const updateConversation = (conversation) => (
+  $.ajax({
+    url: `api/conversations/${conversation.id}`,
+    method: 'PATCH',
+    data: { conversation }
+  })
+);
 
 // export const deleteConversation = (id) => (
 //   $.ajax({
