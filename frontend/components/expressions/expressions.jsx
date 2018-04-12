@@ -2,7 +2,7 @@ import React from 'react';
 
 import { createMessage } from '../../util/message_api_util';
 
-class ToggleExpressions extends React.Component {
+class Expressions extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -94,4 +94,4 @@ class ToggleExpressions extends React.Component {
   }
 }
 
-export default ToggleExpressions;
+export default Expressions;

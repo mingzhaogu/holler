@@ -11,9 +11,18 @@ class MessageView extends React.Component {
   }
 
   componentWillMount() {
+    // debugger
     const { convId, receiveMessage } = this.props;
     this.setUpChatroom(convId, receiveMessage);
     this.scrollToBottom();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps.convId !== this.props.convId) {
+      const { convId, receiveMessage } = newProps;
+      this.setUpChatroom(convId, receiveMessage);
+      this.scrollToBottom();
+    }
   }
 
   componentDidUpdate() {
@@ -21,6 +30,7 @@ class MessageView extends React.Component {
   }
 
   setUpChatroom(convId, receiveMessage) {
+    debugger
     const chatroom = ActionCable.createConsumer();
     chatroom.subscriptions.create({
       channel: 'ChatChannel',

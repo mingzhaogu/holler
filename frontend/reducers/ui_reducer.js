@@ -4,6 +4,10 @@ import {
   TOGGLE_GIPHYS,
   TOGGLE_STICKYS
 } from '../actions/ui_actions';
+import {
+  RECEIVE_ALL_CONVERSATIONS,
+  RECEIVE_CONVERSATION
+} from '../actions/conversation_actions';
 
 const _nullState = {
   showFriendDetails: true,
@@ -39,6 +43,10 @@ const UIReducer = (oldState = _nullState, action) => {
         { showGiphys: false }
       );
       return newState;
+    case RECEIVE_ALL_CONVERSATIONS:
+      return _nullState;
+    case RECEIVE_CONVERSATION:
+      return _nullState;
     default:
       return oldState;
   }

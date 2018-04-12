@@ -25,3 +25,5 @@ json.messages do
     end
   end
 end
+
+json.orderedIds @conversations.map(&:id)

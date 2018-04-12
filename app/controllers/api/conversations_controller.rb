@@ -21,19 +21,15 @@ class Api::ConversationsController < ApplicationController
   end
 
   def index
-    # @conversations = Conversation.select { |conv| conv.last_message }
-    # @conversations.sort_by do |conv|
-    #   - conv.last_message.created_at.to_i
-    # end
     if params[:query] == ""
       @conversations = current_user.conversations
         .includes(:users, :messages)
-        .order("messages.created_at DESC")
+        .sort { |x, y| y.last_message_timestamp <=> x.last_message_timestamp }
     else
       @conversations = current_user.conversations
         .includes(:users, :messages)
         .where("lower(chat_name) LIKE ?", "%#{params[:query].downcase}%")
-        .order("messages.created_at DESC")
+        .sort { |x, y| y.last_message_timestamp <=> x.last_message_timestamp }
     end
   end
 

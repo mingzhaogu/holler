@@ -9,10 +9,12 @@ export const setMessages = (messages) => ({
   messages
 });
 
-export const receiveMessage = (payload) => ({
-  type: RECEIVE_MESSAGE,
-  payload
-});
+export const receiveMessage = (payload) => {
+  return {
+    type: RECEIVE_MESSAGE,
+    payload
+  };
+};
 
 // export const receiveMessages = (messages) => ({
 //   type: RECEIVE_MESSAGES,
