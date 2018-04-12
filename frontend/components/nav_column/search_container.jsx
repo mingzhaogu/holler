@@ -12,8 +12,9 @@ import { fetchAllConversations,
 
 const mapStateToProps = (state, ownProps) => ({
   conversations: selectAllConversations(state),
-  lastMessages: findLastMessages(state)
+  lastMessages: findLastMessages(state),
 })
+// loading: state.ui.loading
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchAllConversations: (query) => (dispatch(fetchAllConversations(query))),

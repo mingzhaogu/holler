@@ -1,4 +1,5 @@
 import { merge } from 'lodash';
+
 import {
   TOGGLE_FRIEND_DETAILS_VIEW,
   TOGGLE_GIPHYS,
@@ -6,13 +7,25 @@ import {
 } from '../actions/ui_actions';
 import {
   RECEIVE_ALL_CONVERSATIONS,
-  RECEIVE_CONVERSATION
+  RECEIVE_CONVERSATION,
+  // START_LOADING_CONVERSATIONS,
+  // START_LOADING_SINGLE_CONVERSATION
 } from '../actions/conversation_actions';
+// import {
+//   RECEIVE_GIPHYS,
+//   RECEIVE_MORE_GIPHYS,
+//   RECEIVE_STICKYS,
+//   RECEIVE_MORE_STICKYS
+// } from '../actions/giphy_actions';
+// import {
+//   RECEIVE_USERS
+// } from '../actions/user_actions';
 
 const _nullState = {
   showFriendDetails: true,
   showGiphys: false,
-  showStickys: false
+  showStickys: false,
+  loading: false
 };
 
 const UIReducer = (oldState = _nullState, action) => {
@@ -31,22 +44,33 @@ const UIReducer = (oldState = _nullState, action) => {
       newState = merge(
         {},
         oldState,
-        { showGiphys: !oldState.showGiphys },
-        { showStickys: false }
+        { showGiphys: !oldState.showGiphys,
+          showStickys: false }
       );
       return newState;
     case TOGGLE_STICKYS:
       newState = merge(
         {},
         oldState,
-        { showStickys: !oldState.showStickys },
-        { showGiphys: false }
+        { showStickys: !oldState.showStickys,
+          showGiphys: false }
       );
       return newState;
     case RECEIVE_ALL_CONVERSATIONS:
-      return _nullState;
     case RECEIVE_CONVERSATION:
-      return _nullState;
+      return merge({}, _nullState);
+    // case RECEIVE_ALL_CONVERSATIONS:
+    // case RECEIVE_CONVERSATION:
+    //   return merge({}, _nullState, { loading: false });
+    // case RECEIVE_GIPHYS:
+    // case RECEIVE_MORE_GIPHYS:
+    // case RECEIVE_STICKYS:
+    // case RECEIVE_MORE_STICKYS:
+    // case RECEIVE_USERS:
+    //   return merge({}, oldState, { loading: false });
+    // case START_LOADING_CONVERSATIONS:
+    // case START_LOADING_SINGLE_CONVERSATION:
+    //   return merge({}, oldState, { loading: true });
     default:
       return oldState;
   }

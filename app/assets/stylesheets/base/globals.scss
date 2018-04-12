@@ -2,6 +2,7 @@
 
 $boxBorder: rgba(0,0,0,0.2);
 $blue: #0084ff;
+$lightpink: #F9B9F2;
 $pink: #ff6da9;
 $magenta: #F092DD;
 // $gray: #c0c0c0;
@@ -76,7 +77,7 @@ body {
 ::-webkit-scrollbar-thumb {
   // background-color: black;
   border-radius: 10px;
-  background-color: #F9B9F2;
+  background-color: $lightpink;
   // outline: 1px solid slategrey;
 }
 

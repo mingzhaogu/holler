@@ -1,6 +1,7 @@
 import React from 'react';
 
 import ConversationListContainer from './conversation_list_container';
+import LoadingIcon from '../main/loading_icon';
 
 class Search extends React.Component {
   constructor(props) {
@@ -22,6 +23,13 @@ class Search extends React.Component {
   }
 
   render() {
+    const {
+      conversations,
+      // loading
+    } = this.props;
+
+    // if (loading) { return <LoadingIcon />; }
+
     return (
       <section className="search-col">
         <div className="search-bar">
@@ -34,7 +42,7 @@ class Search extends React.Component {
           />
         </div>
 
-        <ConversationListContainer convos={this.props.conversations} />
+        <ConversationListContainer convos={conversations} />
       </section>
     )
   }

@@ -4,10 +4,10 @@ export const SET_MESSAGES = 'SET_MESSAGES';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 // export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 
-export const setMessages = (messages) => ({
-  type: SET_MESSAGES,
-  messages
-});
+// export const setMessages = (messages) => ({
+//   type: SET_MESSAGES,
+//   messages
+// });
 
 export const receiveMessage = (payload) => {
   return {

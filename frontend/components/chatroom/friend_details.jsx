@@ -53,7 +53,6 @@ class FriendDetails extends React.Component {
   }
 
   staticHeader() {
-    console.log("props, convoname, header", this.props);
     return (
       <div className="friend-details-header">
         <img src={this.props.convoImage}
