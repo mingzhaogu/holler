@@ -1,7 +1,8 @@
 import { merge } from 'lodash';
 
 import {
-  RECEIVE_CURRENT_USER
+  RECEIVE_CURRENT_USER,
+  SESSION_LOGOUT
 } from '../actions/session_actions';
 
 const _nullUser = Object.freeze({
@@ -10,13 +11,12 @@ const _nullUser = Object.freeze({
 
 const sessionReducer = (oldState = _nullUser, action) => {
   Object.freeze(oldState);
-  let newState;
+  let currentUser = action.currentUser;
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      console.log("is it coming from sessionReducer", action);
-      const currentUser = action.currentUser;
-      newState = merge({}, { currentUser });
-      return newState;
+      return merge({}, { currentUser });
+    case SESSION_LOGOUT:
+      return merge({}, { currentUser });
     default:
       return oldState;
   }

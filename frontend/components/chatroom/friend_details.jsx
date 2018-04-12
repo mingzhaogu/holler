@@ -11,6 +11,7 @@ class FriendDetails extends React.Component {
 
     this.state = {
       isEditing: false,
+      convoName: ""
     }
 
     this.togglePencil = this.togglePencil.bind(this);

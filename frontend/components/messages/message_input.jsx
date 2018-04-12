@@ -72,7 +72,7 @@ class MessageInput extends React.Component {
             onClick={this.getGiphyWidIt}
           />
 
-          <i class="fa fa-paper-plane"
+          <i className="fa fa-paper-plane"
           aria-hidden="true"
           onClick={this.handleSubmit}
           />
