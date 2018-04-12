@@ -10,7 +10,7 @@ const ChatroomRouter = () => (
     <Switch>
       <Route exact path="/new" component={NewConversationContainer} />
       <Route exact path="/:convId" component={ChatroomContainer} />
-      <Route exact path="/" render={() => <Redirect to="/5" />}/>
+      <Route exact path="/" render={() => <Redirect to="/1" />}/>
     </Switch>
   </div>
 )
