@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+###
+### CREATE USER SEEDS
+###
+
 User.destroy_all
 
 users = [
@@ -51,6 +56,9 @@ users.each do |user|
   User.create!(user)
 end
 
+###
+### CREATE CONVERSATION SEEDS
+###
 
 Conversation.destroy_all
 
@@ -68,6 +76,9 @@ conversations.each do |convo|
   Conversation.create!(convo)
 end
 
+###
+### CREATE CONVERSATIONUSER SEEDS
+###
 
 ConversationUser.destroy_all
 
@@ -88,6 +99,9 @@ conv_users.each do |entry|
   )
 end
 
+###
+### CREATE MESSAGE SEEDS
+###
 
 Message.destroy_all
 
@@ -197,8 +211,20 @@ messages = [
     body: "Ah! You're vile; you're foul; you're flawed!"
   },
   {
+    conversation_id: 7, sender_id: 7, message_type: "Giphy",
+    body: "https://media3.giphy.com/media/QOFQt0i5vcoSs/200.gif?cid=e1bb72ff5acfbfdd592e6753732652f4"
+  },
+  {
     conversation_id: 7, sender_id: 2,
     body: "Also cute and fluffy!"
+  },
+  {
+    conversation_id: 7, sender_id: 2, message_type: "Giphy",
+    body: "https://media0.giphy.com/media/rRLj72JejzeKc/200.gif?cid=e1bb72ff5acfc0c3756a457559051bf8"
+  },
+  {
+    conversation_id: 7, sender_id: 7, message_type: "Giphy",
+    body: "https://media0.giphy.com/media/xjCKXaZeHcRqg/200.gif?cid=e1bb72ff5acfbfdd592e6753732652f4"
   },
   {
     conversation_id: 1, sender_id: 2, message_type: "Sticky",
