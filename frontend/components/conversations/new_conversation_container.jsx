@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import NewConversation from './new_conversation';
 import { createConversation } from "../../actions/conversation_actions";
@@ -15,7 +16,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchUsers: (query) => dispatch(fetchUsers(query))
 })
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(NewConversation);
+)(NewConversation));

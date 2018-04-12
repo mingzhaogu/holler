@@ -6,16 +6,16 @@ class Api::ConversationsController < ApplicationController
   end
 
   def create
-    #use inverse_of
-    @conversation = Conversation.create(conversation_params)
+    @conversation = Conversation.create(chat_name: params[:chatname])
 
-    #create ConversationUser
-    conversation_params.userIds.each do |user_id|
+    params[:users].each do |user_id|
       ConversationUser.create({
         user_id: user_id,
         conversation_id: @conversation.id
       })
     end
+
+    @messages = []
 
     render 'api/conversations/show'
   end
@@ -42,7 +42,7 @@ class Api::ConversationsController < ApplicationController
 
   private
 
-  def conversation_params
-    params.require(:conversation).permit(:userIds, :chatName)
-  end
+  # def conversation_params
+  #   params.require().permit(:users, :chatName)
+  # end
 end

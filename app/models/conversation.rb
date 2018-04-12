@@ -27,7 +27,7 @@ class Conversation < ApplicationRecord
   end
 
   def last_message_timestamp
-    last_message.created_at
+    last_message.nil? ? Time.now : last_message.created_at
   end
 
   def set_default_name

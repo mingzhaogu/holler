@@ -46,11 +46,10 @@ class NewConversation extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const users = this.state.selectedUserIds;
-    users.push(this.props.currentUser.id);
+    users.push(this.props.currentUserId);
     this.props.createConversation(
-      users,
-      nil
-    )
+      users
+    ).then((action) => this.props.history.push(`${Object.keys(action.payload.conversation)[0]}`))
   }
 
   showQueryResults() {
@@ -85,17 +84,15 @@ class NewConversation extends React.Component {
             className="search-bar-input"
             onChange={this.handleInput}
             value={this.state.query}
-            placeholder="Type the name of a person"
+            placeholder="Type the name of a person or select from below"
           />
 
-          <button onClick={this.handleSubmit}>
-          </button>
+          <button onClick={this.handleSubmit}>compose message</button>
         </div>
 
         <ul className="search-users-results">
           {this.showQueryResults()}
         </ul>
-
 
       </section>
     )
