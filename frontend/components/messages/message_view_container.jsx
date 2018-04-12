@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import MessageView from './message_view';
-import { findConvoId,
+import { findConversationId,
   findConversationName,
   findAllMessages
 } from '../../reducers/selectors';
@@ -11,7 +11,7 @@ import { fetchConversation } from "../../actions/conversation_actions";
 import { receiveMessage } from '../../actions/message_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  convId: findConvoId(state, ownProps),
+  convId: findConversationId(state, ownProps),
   currentUser: state.session.currentUser,
   chatUsers: state.entities.users,
   messages: findAllMessages(state, ownProps),

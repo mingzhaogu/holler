@@ -2,13 +2,13 @@ import React from 'react';
 
 import { GithubIconLink, LinkedInIconLink } from './icon_links';
 
-const Footer = () => {
+const IconLinks = () => {
   return (
-    <footer className="footer">
+    <div className="annie-links">
       <GithubIconLink />
       <LinkedInIconLink />
-    </footer>
+    </div>
   )
 }
 
-export default Footer;
+export default IconLinks;
