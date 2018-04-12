@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ConversationListContainer from '../conversations/conversation_list_container';
+import ConversationListContainer from './conversation_list_container';
 
 class Search extends React.Component {
   constructor(props) {
