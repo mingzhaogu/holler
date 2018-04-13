@@ -88,7 +88,10 @@ class FriendDetails extends React.Component {
     return (
       <div className="friend-details-header">
         <img src={this.props.convoImage}
-          className="friend-details-convo-pic" />
+          className="friend-details-convo-pic"
+          height="50"
+          width="50"
+        />
 
         <span className="friend-details-convo-name">
           {this.props.convoName}
@@ -108,7 +111,10 @@ class FriendDetails extends React.Component {
       <React.Fragment>
         <div className="friend-details-header" style={borderBottom}>
           <img src={this.state.imageUrl}
-            className="friend-details-convo-pic" />
+            className="friend-details-convo-pic"
+            height="50"
+            width="50"
+          />
 
           <input className="friend-details-convo-name"
             value={this.state.convoName}

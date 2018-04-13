@@ -239,12 +239,16 @@ messages = [
     body: "Welcome to Holler -- a messaging application inspired by Facebook Messenger and the developer's love for our ohana."
   },
   {
-    conversation_id: 1, sender_id: 4,
+    conversation_id: 1, sender_id: 5,
     body: "Try creating a message using the 'paper and pencil' icon near the top of your screen."
   },
   {
+    conversation_id: 1, sender_id: 4,
+    body: "If you want to test ride my evil scientific research of live chat, you can open this messaging application in an incognito browser and logging in as a different user."
+  },
+  {
     conversation_id: 1, sender_id: 3,
-    body: "In addition to sending text messages, you can also send stickers and gifs (courtesy of Giphy) via the 'paw' and 'gift' icons below."
+    body: "In addition to sending text messages, you can also send stickers and gifs (courtesy of Giphy) via the 'paw' and 'gift' icons below. Emojis also work (depending on browser and device compatibility)!"
   },
   {
     conversation_id: 1, sender_id: 2, message_type: "Giphy",

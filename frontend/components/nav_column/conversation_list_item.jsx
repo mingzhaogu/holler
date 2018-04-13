@@ -10,7 +10,9 @@ const ConversationListItem = (props) => {
     >
 
       <img src={props.conv.imageUrl}
-        className="conversation-list-item-pic" />
+        className="conversation-list-item-pic"
+        height="50"
+        width="50" />
 
       <main className="conversation-list-item-body">
         <span className="conversation-list-item-convo-name">
