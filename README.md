@@ -107,7 +107,7 @@ export const fetchGiphys = (query, offset) => {
 };
 ```
 
-![Sticker API Demo](https://gph.is/2qwe47x)
+![Sticker API Demo](https://media.giphy.com/media/9JtCgA94Ls4MaxTVrZ/giphy.gif)
 
 ## Technologies Used
 - Ruby on Rails/PostgreSQL — backend
