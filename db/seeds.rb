@@ -47,7 +47,7 @@ users = [
     image_url: "https://i.imgur.com/l8KrqH2.png"
   },
   {
-    username: "iloveicecream", password: "password", name: "C}>",
+    username: "C}> iloveicecream", password: "password", name: "C}>",
     image_url: "https://i.imgur.com/fOcYWZw.png"
   },
 ]
@@ -69,7 +69,7 @@ conversations = [
   {chat_name: "Lilo, Nani"},
   {chat_name: "Lilo, Stitch, Nani"},
   {chat_name: "Pleakley, Jumba"},
-  {chat_name: "Stitch, Gantu"}
+  {chat_name: "Stickers and GIFs"}
 ]
 
 conversations.each do |convo|
