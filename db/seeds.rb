@@ -236,7 +236,15 @@ messages = [
   },
   {
     conversation_id: 1, sender_id: 1,
-    body: "Welcome to Holler -- a messaging application inspired by Facebook Messenger."
+    body: "Welcome to Holler -- a messaging application inspired by Facebook Messenger and the developer's love for our ohana."
+  },
+  {
+    conversation_id: 1, sender_id: 4,
+    body: "Try creating a message using the 'paper and pencil' icon near the top of your screen."
+  },
+  {
+    conversation_id: 1, sender_id: 3,
+    body: "In addition to sending text messages, you can also send stickers and gifs (courtesy of Giphy) via the 'paw' and 'gift' icons below."
   },
   {
     conversation_id: 1, sender_id: 2, message_type: "Giphy",
@@ -245,6 +253,14 @@ messages = [
   {
     conversation_id: 1, sender_id: 2, message_type: "Giphy",
     body: "https://media2.giphy.com/media/f8YTKdAHrx9gQ/200.gif?cid=e1bb72ff5acf0b6941633249363a2ffb"
+  },
+  {
+    conversation_id: 1, sender_id: 2,
+    body: "To the top right, you can edit the name of this conversation and change the conversation image using the 'pencil' icon. You can toggle the conversation details sidebar using the 'information' icon."
+  },
+  {
+    conversation_id: 1, sender_id: 1,
+    body: "Feel free to play around and let me know what you think! You can contact the developer, Annie, using the Github and/or LinkedIn icons in the conversation details sidebar. Enjoy!"
   },
   {
     conversation_id: 1, sender_id: 8, message_type: "Giphy",
