@@ -27,6 +27,7 @@
         height: 50px;
         width: 50px;
         margin-right: 9px;
+        border-radius: 50%;
       }
 
       .friend-details-convo-name {
@@ -45,6 +46,14 @@
         color: $magenta;
         font-size: $fontSizeH2;
       }
+    }
+
+    .friend-details-image-upload {
+      height: 32px;
+      border-bottom: 1px solid $boxBorder;
+      display: flex;
+      align-items: center;
+      padding: 14px;
     }
 
     .annie-links {

@@ -63,7 +63,7 @@ end
 Conversation.destroy_all
 
 conversations = [
-  {chat_name: "Ohana", image_url: "https://i.imgur.com/Tb6ZJGI.png"},
+  {chat_name: "Ohana", image: File.open(File.join(Rails.root, 'app/assets/images/Plumeria-Flower-Logo-Vector.png'))},
   {chat_name: "Lilo and Stitch"},
   {chat_name: "Lilo, Stitch, Pleakley, Jumba"},
   {chat_name: "Lilo, Nani"},

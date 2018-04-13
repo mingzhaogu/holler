@@ -53,6 +53,6 @@ class Api::ConversationsController < ApplicationController
   private
 
   def conversation_params
-    params.require(:conversation).permit(:users, :chat_name)
+    params.require(:conversation).permit(:users, :chat_name, :image)
   end
 end

@@ -17,7 +17,10 @@ class Conversation < ApplicationRecord
   has_many :users,
     through: :conversation_users
 
-  before_validation :set_default_name, :set_default_image
+  has_attached_file :image, default_url: 'flower-icon2.png'
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
+  before_validation :set_default_name # , :set_default_image
 
   # def self.sort_by_last_message
   #   to_a.sort { |c1, c2| c2.last_message_timestamp <=> c1.last_message_timestamp  }
@@ -37,7 +40,7 @@ class Conversation < ApplicationRecord
     self.chat_name ||= SecureRandom.hex(8)
   end
 
-  def set_default_image
-    self.image_url ||= 'https://i.imgur.com/XSTheUg.png'
-  end
+  # def set_default_image
+  #   self.image_url ||= 'https://i.imgur.com/XSTheUg.png'
+  # end
 end
