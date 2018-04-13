@@ -103,9 +103,10 @@ class FriendDetails extends React.Component {
   }
 
   editHeader() {
+    const borderBottom = {borderBottom: "0"};
     return (
       <React.Fragment>
-        <div className="friend-details-header">
+        <div className="friend-details-header" style={borderBottom}>
           <img src={this.state.imageUrl}
             className="friend-details-convo-pic" />
 
