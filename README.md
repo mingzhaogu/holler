@@ -127,9 +127,9 @@ export const fetchGiphys = (query, offset) => {
 };
 ```
 
-![Sticker API Demo](https://media.giphy.com/media/9JtCgA94Ls4MaxTVrZ/giphy.gif)
-
 ![GIF Demo](https://media.giphy.com/media/7zrZcWYRcinuWTtgPz/giphy.gif)
+
+![Sticker API Demo](https://media.giphy.com/media/9JtCgA94Ls4MaxTVrZ/giphy.gif)
 
 ### Keeping Code DRY
 In order to keep code DRY and avoid duplicating HTML, a single component would be shared by multiple similar components. This is the case for the login/signup session forms, as well as the expressions component (Stickers/GIFs).
