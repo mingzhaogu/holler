@@ -25,7 +25,7 @@ class Search extends React.Component {
   render() {
     const {
       conversations,
-      // loading
+      loading
     } = this.props;
 
     // if (loading) { return <LoadingIcon />; }

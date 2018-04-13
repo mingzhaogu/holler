@@ -11,27 +11,32 @@ class FriendDetails extends React.Component {
 
     this.state = {
       isEditing: false,
-      convoName: ""
+      convoName: "",
+      imageFile: null,
+      imageUrl: null,
     }
 
-    this.togglePencil = this.togglePencil.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.handleInput = this.handleInput.bind(this);
-    this.saveConvoName = this.saveConvoName.bind(this);
+    this.submitChanges = this.submitChanges.bind(this);
+    this.togglePencil = this.togglePencil.bind(this);
+    this.updateImg = this.updateImg.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.convoName !== nextProps.convoName) {
       this.setState({
         isEditing: false,
-        convoName: nextProps.convoName
+        convoName: nextProps.convoName,
+        imageFile: null,
+        imageUrl: nextProps.convoImage,
       })
     }
   }
 
   handleKeyPress(e) {
     if (e.key === "Enter" && e.shiftKey === false) {
-      this.saveConvoName(e)
+      this.submitChanges(e)
     }
   }
 
@@ -39,13 +44,40 @@ class FriendDetails extends React.Component {
     this.setState({ convoName: e.target.value })
   }
 
-  saveConvoName(e) {
-    e.preventDefault();
-    this.props.updateConversation({
-      id: this.props.currentConvo.id,
-      chatName: this.state.convoName
-    });
+  // saveConvoName(e) {
+  //   this.props.updateConversation({
+  //     id: this.props.currentConvo.id,
+  //     chatName: this.state.convoName,
+  //   });
+  //   this.setState({ isEditing: false })
+  // }
+
+  submitChanges(e) {
+    var formData = new FormData();
+    formData.append("conversation[chat_name]", this.state.convoName)
+    formData.append("conversation[image]", this.state.imageFile)
+    this.props.updateConversation(formData, this.props.currentConvo.id)
     this.setState({ isEditing: false })
+  }
+
+  // submitChanges(e) {
+  //   e.preventDefault();
+  //   this.saveConvoName(e);
+  //   this.saveImage(e);
+  // }
+
+  updateImg(e) {
+    const file = e.currentTarget.files[0];
+    console.log("file", file);
+    const fileReader = new FileReader();
+    fileReader.onloadend = function() {
+      this.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+    }.bind(this);
+
+    if (file) fileReader.readAsDataURL(file);
   }
 
   togglePencil(e) {
@@ -72,21 +104,27 @@ class FriendDetails extends React.Component {
 
   editHeader() {
     return (
-      <div className="friend-details-header">
-        <img src={this.props.convoImage}
-          className="friend-details-convo-pic" />
+      <React.Fragment>
+        <div className="friend-details-header">
+          <img src={this.state.imageUrl}
+            className="friend-details-convo-pic" />
 
-        <input className="friend-details-convo-name"
-          value={this.state.convoName}
-          onKeyPress={this.handleKeyPress}
-          onChange={this.handleInput}
-        />
+          <input className="friend-details-convo-name"
+            value={this.state.convoName}
+            onKeyPress={this.handleKeyPress}
+            onChange={this.handleInput}
+          />
 
-        <i className="fa fa-floppy-o"
-          aria-hidden="true"
-          onClick={this.saveConvoName}
-        />
-      </div>
+          <i className="fa fa-floppy-o"
+            aria-hidden="true"
+            onClick={this.submitChanges}
+          />
+        </div>
+
+        <div className="friend-details-image-upload">
+          <input type="file" onChange={this.updateImg} />
+        </div>
+      </React.Fragment>
     )
   }
 

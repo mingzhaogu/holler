@@ -33,14 +33,14 @@ export const createConversation = (users, chatName) => (
 //   })
 // );
 
-export const updateConversation = (conversation) => {
+export const updateConversation = (formData, convId) => {
   return (
     $.ajax({
-      url: `api/conversations/${conversation.id}`,
+      url: `api/conversations/${convId}`,
       method: 'PATCH',
-      data: {
-        conversation: { chat_name: conversation.chatName }
-      }
+      contentType: false,
+      processData: false,
+      data: formData
     })
   );
 };

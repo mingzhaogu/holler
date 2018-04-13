@@ -5,8 +5,10 @@ export const RECEIVE_CONVERSATION = 'RECEIVE_CONVERSATION';
 export const RECEIVE_NEW_CONV_NAME = 'RECEIVE_NEW_CONV_NAME';
 // export const REMOVE_CONVERSATION = 'REMOVE_CONVERSATION';
 
-export const START_LOADING_CONVERSATIONS = 'START_LOADING_CONVERSATIONS';
-export const START_LOADING_SINGLE_CONVERSATION = 'START_LOADING_SINGLE_CONVERSATION';
+
+// LOADER STUFF:
+// export const START_LOADING_CONVERSATIONS = 'START_LOADING_CONVERSATIONS';
+// export const START_LOADING_SINGLE_CONVERSATION = 'START_LOADING_SINGLE_CONVERSATION';
 
 export const receiveAllConversations = (payload) => ({
   type: RECEIVE_ALL_CONVERSATIONS,
@@ -18,20 +20,24 @@ export const receiveConversation = (payload) => ({
   payload
 });
 
-export const startLoadingConversations = (payload) => ({
-  type: START_LOADING_CONVERSATIONS,
-  payload
-});
+// LOADER STUFF:
 
-export const startLoadingSingleConversation = (payload) => ({
-  type: START_LOADING_SINGLE_CONVERSATION,
-  payload
-});
+// export const startLoadingConversations = (payload) => ({
+//   type: START_LOADING_CONVERSATIONS,
+//   payload
+// });
+//
+// export const startLoadingSingleConversation = (payload) => ({
+//   type: START_LOADING_SINGLE_CONVERSATION,
+//   payload
+// });
 
 export const fetchAllConversations = (query) => (dispatch) => (
   ConversationUtil.fetchConversations(query)
     .then(payload => dispatch(receiveAllConversations(payload)))
 );
+
+// WITH LOADER:
 
 // export const fetchAllConversations = (query) => (dispatch) => {
 //   dispatch(startLoadingConversations());
@@ -57,6 +63,17 @@ export const fetchConversation = (id) => (dispatch) => (
     .then(conversation => dispatch(receiveConversation(conversation)))
 );
 
+// WITH LOADER:
+
+// export const fetchConversation = (id) => (dispatch) => {
+//   dispatch(startLoadingSingleConversation());
+//   debugger
+//     ConversationUtil.fetchConversation(id).then(payload => {
+//       dispatch(receiveConversation(payload));
+//       return payload;
+//     });
+// };
+
 // export const fetchConversation = (id) => (dispatch) => {
 //   dispatch(startLoadingSingleConversation());
 //   // debugger
@@ -72,8 +89,8 @@ export const createConversation = (userIds, chatName) => (dispatch) => (
     .then((conversation) => dispatch(receiveConversation(conversation)))
 );
 
-export const updateConversation = (convo) => (dispatch) => (
-  ConversationUtil.updateConversation(convo)
+export const updateConversation = (formData, convId) => (dispatch) => (
+  ConversationUtil.updateConversation(formData, convId)
     .then((conversation) => dispatch(receiveConversation(conversation)))
 );
 

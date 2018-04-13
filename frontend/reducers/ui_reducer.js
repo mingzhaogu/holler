@@ -8,18 +8,18 @@ import {
 import {
   RECEIVE_ALL_CONVERSATIONS,
   RECEIVE_CONVERSATION,
-  // START_LOADING_CONVERSATIONS,
-  // START_LOADING_SINGLE_CONVERSATION
+  START_LOADING_CONVERSATIONS,
+  START_LOADING_SINGLE_CONVERSATION
 } from '../actions/conversation_actions';
-// import {
-//   RECEIVE_GIPHYS,
-//   RECEIVE_MORE_GIPHYS,
-//   RECEIVE_STICKYS,
-//   RECEIVE_MORE_STICKYS
-// } from '../actions/giphy_actions';
-// import {
-//   RECEIVE_USERS
-// } from '../actions/user_actions';
+import {
+  RECEIVE_GIPHYS,
+  RECEIVE_MORE_GIPHYS,
+  RECEIVE_STICKYS,
+  RECEIVE_MORE_STICKYS
+} from '../actions/giphy_actions';
+import {
+  RECEIVE_USERS
+} from '../actions/user_actions';
 
 const _nullState = {
   showFriendDetails: true,

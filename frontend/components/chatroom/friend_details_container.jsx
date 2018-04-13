@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  updateConversation: (convo) => dispatch(updateConversation(convo))
+  updateConversation: (formData, convId) => dispatch(updateConversation(formData, convId))
 })
 
 export default withRouter(connect(

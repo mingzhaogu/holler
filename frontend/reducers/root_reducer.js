@@ -22,12 +22,4 @@ const rootReducer = (state, action) => {
   return appReducer(state, action);
 };
 
-// const rootReducer = combineReducers({
-//   entities: EntitiesReducer,
-//   expressions: ExpressionsReducer,
-//   session: SessionReducer,
-//   errors: ErrorsReducer,
-//   ui: UIReducer
-// });
-
 export default rootReducer;
