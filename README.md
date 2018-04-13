@@ -1,6 +1,6 @@
 # Holler :cherry_blossom:
 
-Holler is a Facebook Messenger-inspired peer-to-peer messaging application utilizing a Ruby on Rails/PostgreSQL frontend and a React.js/Redux backend. Its live messaging feature is powered by WebSockets, integrated into the application using Rails ActionCable technology. Other features include real-time messaging, stickers/gifs, image uploading, etc.
+Holler is a Facebook Messenger-inspired, peer-to-peer messaging application utilizing a Ruby on Rails/PostgreSQL frontend and a React.js/Redux backend. Its live messaging feature is powered by WebSockets, integrated into the application using Rails ActionCable technology. Other features include real-time messaging, stickers/gifs, image uploading, etc.
 
 This project was proposed, designed, and built within two weeks, however, I do plan on adding more to it at a later time. (Please see [Potential Future Features](#potential-future-features))
 
@@ -11,7 +11,7 @@ Experience the [live demo](https://holler-messenger.herokuapp.com/).
 - design based on Facebook Messenger
 - creating direct and/or group conversations
 - communicating via real-time messages (utilizing **WebSockets**)
-- sending stickers and gifs (courtesy of **Giphy API**)
+- sending stickers and gifs (courtesy of **GIPHY API**)
 - changing the conversation name
 - uploading images (via **Amazon Web Services**)
 - other features to be implemented in the future
@@ -77,6 +77,8 @@ Sample XHR response:
 }
 ```
 
+Depending on the `messageType`, a `text` message or `img` message will be rendered in the chatroom.
+
 ### GIPHY APIs
 Users can also send Stickers and/or GIFs for additional personalized messages (and increased cuteness level), thanks to the GIPHY's APIs. The following endpoints were used for this project:
 
@@ -104,6 +106,8 @@ export const fetchGiphys = (query, offset) => {
   );
 };
 ```
+
+![Sticker API Demo](https://gph.is/2qwe47x)
 
 ## Technologies Used
 - Ruby on Rails/PostgreSQL — backend
