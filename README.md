@@ -1,13 +1,31 @@
 # Holler :cherry_blossom:
 
-Holler is a Facebook Messenger-inspired, peer-to-peer messaging application utilizing a Ruby on Rails/PostgreSQL frontend and a React.js/Redux backend. Its live messaging feature is powered by WebSockets, integrated into the application using Rails ActionCable technology. Other features include real-time messaging, stickers/gifs, image uploading, etc.
+Holler is a full-stack, Facebook Messenger-inspired, peer-to-peer messaging application utilizing a Ruby on Rails/PostgreSQL frontend and a React.js/Redux backend. Its live messaging feature is powered by WebSockets, integrated into the application using Rails ActionCable technology. Other features include real-time messaging, stickers/gifs, image uploading, etc.
 
-This project was proposed, designed, and built within two weeks, however, I do plan on adding more to it at a later time. (Please see [Potential Future Features](#potential-future-features))
+This project was proposed, designed, and built within two weeks, with the following minimum viable product goals in mind:
+
+- User Authentication (backend and frontend)
+- Direct Conversations
+- Group Conversations
+- Live Chat
+- Emojis/GIFs
+
+The aforementioned goals were reached, however, due to the time constraint, I was not able to implement additional features I had initially wanted to. I do plan on adding more to this project at a later time. (Please see [Potential Future Features](#potential-future-features).)
 
 ## Demo:
 Experience the [live demo](https://holler-messenger.herokuapp.com/).
 
-## Features:
+## Technologies Used
+- Ruby on Rails/PostgreSQL — backend
+- React.js/Redux — frontend
+- User Authentication — from frontend to backend, using BCrypt
+- Rails ActionCable — implement WebSockets for real-time, peer-to-peer messaging
+- jQuery — XHR requests
+- AWS (Amazon Web Services) — image uploading
+- HTML/CSS/SCSS — frontend design
+- GIPHY API — stickers and gifs
+
+## Features and Functionality:
 - design based on Facebook Messenger
 - creating direct and/or group conversations
 - communicating via real-time messages (utilizing **WebSockets**)
@@ -16,7 +34,9 @@ Experience the [live demo](https://holler-messenger.herokuapp.com/).
 - uploading images (via **Amazon Web Services**)
 - other features to be implemented in the future
 
-### Implementing WebSockets Using Rails ActionCable
+## Implementation
+
+### WebSockets Using Rails ActionCable
 When a conversation is mounted or loaded on the frontend, an ActionCable chatroom is set up based on the `conversationId`.
 
 ```javascript
@@ -37,7 +57,7 @@ class MessageView extends React.Component {
 }
 ```
 
-Once a user submits a message (or sticker/gif), a jQuery `$.ajax POST request` is sent to the backend, creating the message. The created message is then broadcasted back to the Redux frontend, and an action is dispatched to update the conversations and messages slices of state.
+Once a user submits a message (or sticker/gif), a jQuery `$.ajax POST request` is sent to the backend, creating the message. The created message is then broadcasted back to the Redux frontend. Any user subscribed to the chatroom will be able to see the chat live update.
 
 ``` ruby
 class MessageCreationEventBroadcastJob < ApplicationJob
@@ -109,19 +129,15 @@ export const fetchGiphys = (query, offset) => {
 
 ![Sticker API Demo](https://media.giphy.com/media/9JtCgA94Ls4MaxTVrZ/giphy.gif)
 
-## Technologies Used
-- Ruby on Rails/PostgreSQL — backend
-- React.js/Redux — frontend
-- User Authentication — from frontend to backend, using BCrypt
-- Rails ActionCable — implement WebSockets for real-time, peer-to-peer messaging
-- jQuery — XHR requests
-- AWS (Amazon Web Services) — image uploading
-- HTML/CSS/SCSS — frontend design
-- GIPHY API — stickers and gifs
+![GIF Demo](https://media.giphy.com/media/7zrZcWYRcinuWTtgPz/giphy.gif)
+
+### Keeping Code DRY
+In order to keep code DRY and avoid duplicating HTML, a single component would be shared by multiple similar components. This is the case for the login/signup session forms, as well as the expressions component (Stickers/GIFs).
 
 ## Potential Future Features
 - add users to existing conversations
-- display message timestamp on hover
-- update user image
 - send images as messages (other than stickers/gifs)
 - display `...` bubble when someone is typing
+- display message timestamp on hover
+- users can react to messages
+- update user image
