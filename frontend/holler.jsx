@@ -23,16 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // TESTING START
-  window.store = store;
-  window.state = store.getState;
-  window.dispatch = store.dispatch;
-  window.testUser = {username: 'evilgeniusjumba', password: 'password'};
-  window.fetchConversations = fetchConversations;
-  window.fetchConversation = fetchConversation;
-  window.createConversation = createConversation;
-  // TESTING END
-
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);
 });
