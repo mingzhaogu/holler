@@ -1,6 +1,6 @@
 # Holler :cherry_blossom:
 
-Holler is a full-stack, Facebook Messenger-inspired, peer-to-peer messaging application utilizing a Ruby on Rails/PostgreSQL frontend and a React.js/Redux backend. Its live messaging feature is powered by WebSockets, integrated into the application using Rails ActionCable technology. Other features include real-time messaging, stickers/gifs, image uploading, etc.
+Holler is a full-stack, Facebook Messenger-inspired, peer-to-peer messaging application utilizing a Ruby on Rails/PostgreSQL backend and a React.js/Redux frontend. Its live messaging feature is powered by WebSockets, integrated into the application using Rails ActionCable technology. Other features include real-time messaging, stickers/gifs, image uploading, etc.
 
 This project was proposed, designed, and built within two weeks, with the following minimum viable product goals in mind:
 
