@@ -2,6 +2,10 @@
   .search-col {
     overflow: scroll;
     // min-width: 250px;
+    .search-bar {
+
+    }
+
     .conversation-list {
       // position: relative;
       .conversation-list-item {
@@ -21,6 +25,7 @@
           width: 50px;
           margin-right: 9px;
           border-radius: 50%;
+          min-width: 50px;
         }
 
         .conversation-list-item-body {
@@ -33,10 +38,11 @@
             line-height: 1.4;
           }
 
-          .conversation-list-item-body {
+          .conversation-list-item-last-msg {
             height: 18px;
             font-size: 13px;
-            color: rgba(153, 153, 153, 1);
+            // color: rgba(153, 153, 153, 1);
+            overflow: hidden;
           }
         }
       }
