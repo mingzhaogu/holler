@@ -34297,16 +34297,6 @@ document.addEventListener('DOMContentLoaded', function () {
     store = (0, _store2.default)();
   }
 
-  // TESTING START
-  window.store = store;
-  window.state = store.getState;
-  window.dispatch = store.dispatch;
-  window.testUser = { username: 'evilgeniusjumba', password: 'password' };
-  window.fetchConversations = _session_actions.fetchConversations;
-  window.fetchConversation = _session_actions.fetchConversation;
-  window.createConversation = _session_actions.createConversation;
-  // TESTING END
-
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
@@ -57871,7 +57861,9 @@ var ConversationListItem = function ConversationListItem(props) {
       activeClassName: 'active'
     },
     _react2.default.createElement('img', { src: props.conv.imageUrl,
-      className: 'conversation-list-item-pic' }),
+      className: 'conversation-list-item-pic',
+      height: '50',
+      width: '50' }),
     _react2.default.createElement(
       'main',
       { className: 'conversation-list-item-body' },
@@ -59799,7 +59791,10 @@ var FriendDetails = function (_React$Component) {
         'div',
         { className: 'friend-details-header' },
         _react2.default.createElement('img', { src: this.props.convoImage,
-          className: 'friend-details-convo-pic' }),
+          className: 'friend-details-convo-pic',
+          height: '50',
+          width: '50'
+        }),
         _react2.default.createElement(
           'span',
           { className: 'friend-details-convo-name' },
@@ -59822,7 +59817,10 @@ var FriendDetails = function (_React$Component) {
           'div',
           { className: 'friend-details-header', style: borderBottom },
           _react2.default.createElement('img', { src: this.state.imageUrl,
-            className: 'friend-details-convo-pic' }),
+            className: 'friend-details-convo-pic',
+            height: '50',
+            width: '50'
+          }),
           _react2.default.createElement('input', { className: 'friend-details-convo-name',
             value: this.state.convoName,
             onKeyPress: this.handleKeyPress,
