@@ -4,6 +4,7 @@
     border-bottom: 1px solid $boxBorder; // get rid of later
     box-sizing: border-box;
     height: 50px;
+    min-height: 50px;
     display: flex;
     position: relative;
     flex-direction: row;
