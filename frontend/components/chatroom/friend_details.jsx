@@ -55,7 +55,11 @@ class FriendDetails extends React.Component {
   submitChanges(e) {
     var formData = new FormData();
     formData.append("conversation[chat_name]", this.state.convoName)
-    formData.append("conversation[image]", this.state.imageFile)
+
+    if (this.state.imageFile !== null) {
+      formData.append("conversation[image]", this.state.imageFile)
+    }
+    
     this.props.updateConversation(formData, this.props.currentConvo.id)
     this.setState({ isEditing: false })
   }

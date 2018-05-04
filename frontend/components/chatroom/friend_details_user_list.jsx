@@ -9,7 +9,7 @@ const FriendDetailsUserList = (props) => {
 
   return (
     <ul className="friend-details-users">
-      <label className="friend-details-users-label">People</label>
+      <label className="friend-details-users-label">People In Chat</label>
       {props.convoUsers.map((user) => (
         <FriendDetailsUserItem
           key={user.id}
