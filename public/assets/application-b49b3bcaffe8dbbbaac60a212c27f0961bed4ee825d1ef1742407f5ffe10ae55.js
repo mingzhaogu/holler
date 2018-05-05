@@ -59754,28 +59754,25 @@ var FriendDetails = function (_React$Component) {
       var formData = new FormData();
       formData.append("conversation[chat_name]", this.state.convoName);
       formData.append("conversation[image]", this.state.imageFile);
+
       this.props.updateConversation(formData, this.props.currentConvo.id);
       this.setState({ isEditing: false });
     }
-
-    // submitChanges(e) {
-    //   e.preventDefault();
-    //   this.saveConvoName(e);
-    //   this.saveImage(e);
-    // }
-
   }, {
     key: 'updateImg',
     value: function updateImg(e) {
+      var _this2 = this;
+
       var file = e.currentTarget.files[0];
-      console.log("file", file);
       var fileReader = new FileReader();
+
       fileReader.onloadend = function () {
-        this.setState({
+        _this2.setState({
           imageFile: file,
           imageUrl: fileReader.result
         });
-      }.bind(this);
+        _this2.submitChanges(e);
+      };
 
       if (file) fileReader.readAsDataURL(file);
     }
@@ -59790,14 +59787,24 @@ var FriendDetails = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'friend-details-header' },
-        _react2.default.createElement('img', { src: this.props.convoImage,
-          className: 'friend-details-convo-pic',
-          height: '50',
-          width: '50'
-        }),
         _react2.default.createElement(
-          'span',
-          { className: 'friend-details-convo-name' },
+          'label',
+          { htmlFor: 'file' },
+          _react2.default.createElement('img', { src: this.props.convoImage,
+            className: 'friend-details-convo-pic',
+            height: '50',
+            width: '50'
+          })
+        ),
+        _react2.default.createElement('input', { type: 'file',
+          id: 'file',
+          accept: 'image/*',
+          onChange: this.updateImg }),
+        _react2.default.createElement(
+          'label',
+          { className: 'friend-details-convo-name',
+            onClick: this.togglePencil
+          },
           this.props.convoName
         ),
         _react2.default.createElement('i', { className: 'fa fa-pencil',
@@ -59809,18 +59816,25 @@ var FriendDetails = function (_React$Component) {
   }, {
     key: 'editHeader',
     value: function editHeader() {
-      var borderBottom = { borderBottom: "0" };
       return _react2.default.createElement(
         _react2.default.Fragment,
         null,
         _react2.default.createElement(
           'div',
-          { className: 'friend-details-header', style: borderBottom },
-          _react2.default.createElement('img', { src: this.state.imageUrl,
-            className: 'friend-details-convo-pic',
-            height: '50',
-            width: '50'
-          }),
+          { className: 'friend-details-header' },
+          _react2.default.createElement(
+            'label',
+            { htmlFor: 'file' },
+            _react2.default.createElement('img', { src: this.state.imageUrl,
+              className: 'friend-details-convo-pic',
+              height: '50',
+              width: '50'
+            })
+          ),
+          _react2.default.createElement('input', { type: 'file',
+            id: 'file',
+            accept: 'image/*',
+            onChange: this.updateImg }),
           _react2.default.createElement('input', { className: 'friend-details-convo-name',
             value: this.state.convoName,
             onKeyPress: this.handleKeyPress,
@@ -59830,13 +59844,11 @@ var FriendDetails = function (_React$Component) {
             'aria-hidden': 'true',
             onClick: this.submitChanges
           })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'friend-details-image-upload' },
-          _react2.default.createElement('input', { type: 'file', onChange: this.updateImg })
         )
       );
+      //
+      // <div className="friend-details-image-upload">
+      // </div>
     }
   }, {
     key: 'friendDetails',
@@ -59854,6 +59866,7 @@ var FriendDetails = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.state);
       if (this.props.showFriendDetails) {
         return _react2.default.createElement(
           'div',
@@ -59908,7 +59921,7 @@ var FriendDetailsUserList = function FriendDetailsUserList(props) {
     _react2.default.createElement(
       'label',
       { className: 'friend-details-users-label' },
-      'People'
+      'People In Chat'
     ),
     props.convoUsers.map(function (user) {
       return _react2.default.createElement(_friend_details_user_item2.default, {
