@@ -26,7 +26,6 @@ class Api::ConversationsController < ApplicationController
   def update
     @conversation = Conversation.find(params[:id])
 
-    debugger
     conv_params = conversation_params
 
     if conversation_params['image'] == 'null'

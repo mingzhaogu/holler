@@ -55,31 +55,23 @@ class FriendDetails extends React.Component {
   submitChanges(e) {
     var formData = new FormData();
     formData.append("conversation[chat_name]", this.state.convoName)
+    formData.append("conversation[image]", this.state.imageFile)
 
-    if (this.state.imageFile !== null) {
-      formData.append("conversation[image]", this.state.imageFile)
-    }
-    
     this.props.updateConversation(formData, this.props.currentConvo.id)
     this.setState({ isEditing: false })
   }
 
-  // submitChanges(e) {
-  //   e.preventDefault();
-  //   this.saveConvoName(e);
-  //   this.saveImage(e);
-  // }
-
   updateImg(e) {
     const file = e.currentTarget.files[0];
-    console.log("file", file);
     const fileReader = new FileReader();
-    fileReader.onloadend = function() {
+
+    fileReader.onloadend = () => {
       this.setState({
         imageFile: file,
         imageUrl: fileReader.result
       });
-    }.bind(this);
+      this.submitChanges(e)
+    }
 
     if (file) fileReader.readAsDataURL(file);
   }
@@ -91,15 +83,21 @@ class FriendDetails extends React.Component {
   staticHeader() {
     return (
       <div className="friend-details-header">
-        <img src={this.props.convoImage}
+        <label htmlFor="file"><img src={this.props.convoImage}
           className="friend-details-convo-pic"
           height="50"
           width="50"
-        />
+        /></label>
+        <input type="file"
+          id="file"
+          accept="image/*"
+          onChange={this.updateImg} />
 
-        <span className="friend-details-convo-name">
+        <label className="friend-details-convo-name"
+          onClick={this.togglePencil}
+        >
           {this.props.convoName}
-        </span>
+        </label>
 
         <i className="fa fa-pencil"
           aria-hidden="true"
@@ -110,15 +108,18 @@ class FriendDetails extends React.Component {
   }
 
   editHeader() {
-    const borderBottom = {borderBottom: "0"};
     return (
       <React.Fragment>
-        <div className="friend-details-header" style={borderBottom}>
-          <img src={this.state.imageUrl}
+        <div className="friend-details-header">
+          <label htmlFor="file"><img src={this.state.imageUrl}
             className="friend-details-convo-pic"
             height="50"
             width="50"
-          />
+          /></label>
+          <input type="file"
+            id="file"
+            accept="image/*"
+            onChange={this.updateImg} />
 
           <input className="friend-details-convo-name"
             value={this.state.convoName}
@@ -131,12 +132,11 @@ class FriendDetails extends React.Component {
             onClick={this.submitChanges}
           />
         </div>
-
-        <div className="friend-details-image-upload">
-          <input type="file" onChange={this.updateImg} />
-        </div>
       </React.Fragment>
     )
+    //
+    // <div className="friend-details-image-upload">
+    // </div>
   }
 
   friendDetails() {
@@ -152,6 +152,7 @@ class FriendDetails extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     if (this.props.showFriendDetails) {
       return (
         <div>

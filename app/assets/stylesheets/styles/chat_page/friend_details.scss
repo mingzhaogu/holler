@@ -21,18 +21,31 @@
       top: 50px;
       background-color: #FFFFFF;
 
+      #file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
 
       img {
         display: block;
         height: 50px;
         width: 50px;
-        margin-right: 9px;
+        margin-right: 4px;
+        // margin-right: 0px;
         border-radius: 50%;
       }
 
+      img:hover {
+        cursor: pointer;
+        background-color: $grey;
+      }
+
       .friend-details-convo-name {
-        // text-align: center;
-        // margin: 0 auto;
+        padding: 5px 5px;
         font-size: $fontSizeH3;
         flex: 1;
         font-weight: 400;
@@ -41,22 +54,15 @@
         white-space: nowrap;
       }
 
+      .friend-details-convo-name:hover {
+        cursor: pointer;
+        border: 1px solid $boxBorder;
+      }
+
       .fa {
         margin-left: 9px;
         color: $magenta;
         font-size: $fontSizeH2;
-      }
-    }
-
-    .friend-details-image-upload {
-      height: 32px;
-      border-bottom: 1px solid $boxBorder;
-      display: flex;
-      align-items: center;
-      padding: 0 14px 14px 14px;
-
-      input {
-        font-size: $fontSizeMain;
       }
     }
 
