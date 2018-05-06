@@ -7,6 +7,7 @@ class Api::ConversationsController < ApplicationController
 
   def create
     @conversation = Conversation.create(chat_name: params[:chatname])
+    @messages = []
 
     params[:users].each do |user_id|
       ConversationUser.create({
@@ -14,8 +15,6 @@ class Api::ConversationsController < ApplicationController
         conversation_id: @conversation.id
       })
     end
-
-    @messages = []
 
     render 'api/conversations/show'
   end
@@ -27,7 +26,6 @@ class Api::ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
 
     conv_params = conversation_params
-
     if conversation_params['image'] == 'null'
       conv_params.delete('image')
     end
