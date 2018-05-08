@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 ###
 ### CREATE USER SEEDS
 ###
@@ -236,7 +227,7 @@ messages = [
   },
   {
     conversation_id: 1, sender_id: 1,
-    body: "Welcome to Holler -- a messaging application inspired by Facebook Messenger and the developer's love for our ohana."
+    body: "Welcome to Holler -- a real-time messaging application inspired by Facebook Messenger and the developer's love for our ohana."
   },
   {
     conversation_id: 1, sender_id: 5,
@@ -273,8 +264,7 @@ messages = [
   {
     conversation_id: 1, sender_id: 6, message_type: "Giphy",
     body: "https://media3.giphy.com/media/mQFE7siDwCrcY/200.gif?cid=e1bb72ff5acf0d33367a4d5749dee610"
-  },
-
+  }
 ]
 
 messages.each do |msg|

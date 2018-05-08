@@ -110,14 +110,13 @@
         img {
           width: 50px;
           height: 50px;
+          min-width: 50px;
           margin: 6px 12px;
           border-radius: 50%;
         }
 
         .friend-details-username {
-          // overflow-x: visible;
-          // text-overflow: ellipsis;
-          // font-size: $fontSizeMain;
+
         }
       }
     }
