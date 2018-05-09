@@ -16,69 +16,72 @@
       border-bottom: 1px solid $boxBorder;
 
       .chat-msg {
+        display: flex;
         margin-bottom: 15px;
-        border: 1px solid $grey;
-        border-radius: 1.3em;
-      }
+        align-items: flex-end;
 
-      .chat-msg-pic {
-        width: 28px;
-        height: 28px;
-        display: float;
-        border-radius: 50%;
-        // position: relative;
-        // align-items: end;
+        .chat-msg-pic {
+          display: inline;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+        }
+
+        .chat-msg-body {
+          border: 1px solid $grey;
+          border-radius: 1.3em;
+          padding: 6px 12px;
+          max-width: 50%;
+          text-align: left;
+        }
+
+        .chat-msg-timestamp {
+          background-color: #000000;
+          color: #FFFFFF;
+          padding: 6px 12px;
+          font-size: 12px;
+          overflow: visible;
+          border-radius: 0.3em;
+          max-height: 100%;
+          max-width: 100px;
+        }
+
+        .hide {
+          display: none;
+        }
       }
 
       .chat-msg-align-left {
-        margin-right: 50%;
-        margin-left: 36px;
-        float: left;
-        text-align: left;
-        background-color: $grey;
-        position: relative;
-
-        .right {
-          display: none;
-        }
+        flex-direction: row;
 
         .chat-msg-pic {
-          left: -32px;
-          position: absolute;
-          bottom: 0;
+          margin-right: 4px;
+        }
+
+        .chat-msg-body-left {
+          background-color: $grey;
+        }
+
+        .chat-msg-timestamp {
+          margin-left: 4px;
         }
       }
 
       .chat-msg-align-right {
-        margin-left: 50%;
-        margin-right: 36px;
-        float: right;
-        text-align: right;
-        // border-radius: 1.3em;
-        // border-top-left-radius: 1.3em;
-        // border-bottom-left-radius: 1.3em;
-        background-color: $pink;
-        color: #FFFFFF;
-        // background-color: #F9B9F2;
-        position: relative;
-
-
-        .left {
-          display: none;
-        }
+        flex-direction: row-reverse;
 
         .chat-msg-pic {
-          position: absolute;
-          right: -32px;
-          bottom: 0;
+          margin-left: 4px;
         }
-      }
 
-      .chat-msg-body {
-        // margin-bottom: 15px;
-        padding: 6px 12px;
-        // border: 1px solid $grey;
-        // border-radius: 1.3em;
+        .chat-msg-body-right {
+          background-color: $pink;
+          color: #FFFFFF;
+        }
+
+        .chat-msg-timestamp {
+          margin-right: 4px;
+        }
       }
     }
 
