@@ -135,9 +135,9 @@ export const fetchGiphys = (query, offset) => {
 In order to keep code DRY and avoid duplicating HTML, a single component would be shared by multiple similar components. This is the case for the login/signup session forms, as well as the expressions component (Stickers/GIFs).
 
 ## Potential Future Features
-- add users to existing conversations
-- send images as messages (other than stickers/gifs)
-- display `...` bubble when someone is typing
-- display message timestamp on hover
-- users can react to messages
-- update user image
+- [ ] add users to existing conversations
+- [ ] send images as messages (other than stickers/gifs)
+- [ ] display `...` bubble when someone is typing
+- [x] display message timestamp on hover
+- [ ] users can react to messages
+- [ ] update user image
