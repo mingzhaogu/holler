@@ -39,14 +39,16 @@
       font-size: $fontSizeMain;
       border-radius: 4px;
       color: #FFFFFF;
-      background-color: $pink;
+      // background-color: $pink;
+      background-color: $magenta;
       align-items: center;
       transition: 200ms;
       box-sizing: content-box;
     }
 
     .compose-message:hover {
-      background-color: $darkgrey;
+      // background-color: $darkgrey;
+      background-color: $pink;
       cursor: pointer;
     }
 
@@ -57,6 +59,17 @@
     .compose-message:active {
       transform: scale(0.98);
       opacity: 0.2;
+    }
+
+    .disabled,
+    .disabled:hover,
+    .disabled:focus,
+    .disabled:active {
+      background-color: $darkgrey;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
+      opacity: 1;
     }
   }
 
