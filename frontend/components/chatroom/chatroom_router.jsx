@@ -10,11 +10,9 @@ const ChatroomRouter = () => (
     <Switch>
       <Route exact path="/new" component={NewConversationContainer} />
       <Route exact path="/:convId" component={ChatroomContainer} />
-      <Route exact path="/" render={() => <Redirect to="/1" />}/>
+      <Route exact path="/" render={ () => <Redirect to="/1" /> } />
     </Switch>
   </div>
 )
 
 export default ChatroomRouter;
-
-// <Route exact path="/" component={ChatroomSplashContainer} />

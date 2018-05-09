@@ -39,7 +39,7 @@ class NewConversation extends React.Component {
         selectedIds.push(user.id);
       }
 
-      this.setState({ selectedUserIds: selectedIds }, console.log(this.state.selectedUserIds));
+      this.setState({ selectedUserIds: selectedIds });
     }
   }
 
@@ -76,7 +76,8 @@ class NewConversation extends React.Component {
   }
 
   render() {
-
+    const disabled = (this.state.selectedUserIds.length > 0) ? "" : "disabled"
+    console.log("disabled????", disabled);
     return(
       <section className="new-conversation">
         <div className="search-bar">
@@ -89,7 +90,7 @@ class NewConversation extends React.Component {
             placeholder="Type the name of a person or select from below"
           />
 
-          <button className="compose-message"
+          <button className={`compose-message ${disabled}`}
             onClick={this.handleSubmit}>compose message</button>
         </div>
 
