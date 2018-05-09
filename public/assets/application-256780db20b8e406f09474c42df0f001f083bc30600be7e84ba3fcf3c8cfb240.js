@@ -58108,7 +58108,6 @@ var NewConversation = function (_React$Component) {
     value: function handleSelection(user) {
       var _this2 = this;
 
-      // this.setState({selectedUsers: , selectedUserIds})
       return function (e) {
         var selectedIds = _this2.state.selectedUserIds;
 
@@ -58168,7 +58167,7 @@ var NewConversation = function (_React$Component) {
     key: "render",
     value: function render() {
       var disabled = this.state.selectedUserIds.length > 0 ? "" : "disabled";
-      console.log("disabled????", disabled);
+
       return _react2.default.createElement(
         "section",
         { className: "new-conversation" },
@@ -58204,10 +58203,6 @@ var NewConversation = function (_React$Component) {
 
   return NewConversation;
 }(_react2.default.Component);
-//
-// <ul className="search-bar-selected-users">
-// {this.showSelectedUsers()}
-// </ul>
 
 exports.default = NewConversation;
 
@@ -59239,35 +59234,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-// const MessageViewItem = ({ msg, currentUser, senderPic }) => {
-//   const timestamp = msg.timestamp;
-//
-//   const align = (msg.senderId === currentUser.id) ? "right" : "left";
-//
-//   let body;
-//   if (msg.messageType !== "text") {
-//     body = <img src={msg.body} />
-//   } else {
-//     body = msg.body
-//   }
-//
-//
-//   return (
-//     <li key={`chat-msg-${msg.id}`}
-//       className={`chat-msg chat-msg-align-${align}`}
-//     >
-//       <img src={senderPic} className="chat-msg-pic left" />
-//       <div className={chat-msg-timestamp left} />{timestamp}</div>
-//       <div className={`chat-msg-body chat-msg-body${align}`}>
-//         {body}
-//       </div>
-//       <img src={senderPic} className="chat-msg-pic right" />
-//     </li>
-//   )
-// }
-
-// export default MessageViewItem;
-
 var MessageViewItem = function (_React$Component) {
   _inherits(MessageViewItem, _React$Component);
 
@@ -59309,17 +59275,13 @@ var MessageViewItem = function (_React$Component) {
           currentUser = _props.currentUser,
           senderPic = _props.senderPic;
 
-      var timestamp = msg.timestamp;
       var align = msg.senderId === currentUser.id ? "right" : "left";
-
       var displayTimestamp = this.state.displayTimestamp ? "show" : "hide";
-      console.log(this.state.counter);
 
       return _react2.default.createElement(
         "li",
         { key: "chat-msg-" + msg.id,
-          className: "chat-msg chat-msg-align-" + align
-        },
+          className: "chat-msg chat-msg-align-" + align },
         _react2.default.createElement("img", { src: senderPic, className: "chat-msg-pic" }),
         _react2.default.createElement(
           "div",
@@ -59332,7 +59294,7 @@ var MessageViewItem = function (_React$Component) {
         _react2.default.createElement(
           "div",
           { className: "chat-msg-timestamp " + displayTimestamp },
-          timestamp
+          msg.timestamp
         )
       );
     }
@@ -59340,10 +59302,6 @@ var MessageViewItem = function (_React$Component) {
 
   return MessageViewItem;
 }(_react2.default.Component);
-// <div className={`chat-msg-timestamp right ${displayTimestamp}`}>
-// {timestamp}
-// </div>
-// <img src={senderPic} className="chat-msg-pic right" />
 
 exports.default = MessageViewItem;
 
@@ -59811,15 +59769,6 @@ var FriendDetails = function (_React$Component) {
     value: function handleInput(e) {
       this.setState({ convoName: e.target.value });
     }
-
-    // saveConvoName(e) {
-    //   this.props.updateConversation({
-    //     id: this.props.currentConvo.id,
-    //     chatName: this.state.convoName,
-    //   });
-    //   this.setState({ isEditing: false })
-    // }
-
   }, {
     key: 'submitChanges',
     value: function submitChanges(e) {
@@ -59918,9 +59867,6 @@ var FriendDetails = function (_React$Component) {
           })
         )
       );
-      //
-      // <div className="friend-details-image-upload">
-      // </div>
     }
   }, {
     key: 'friendDetails',
@@ -59938,7 +59884,6 @@ var FriendDetails = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state);
       if (this.props.showFriendDetails) {
         return _react2.default.createElement(
           'div',
@@ -60107,9 +60052,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger2.default));
+  return (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
 };
 
+// applyMiddleware(thunk, logger)
 exports.default = configureStore;
 
 /***/ }),
