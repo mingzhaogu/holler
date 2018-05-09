@@ -44,14 +44,6 @@ class FriendDetails extends React.Component {
     this.setState({ convoName: e.target.value })
   }
 
-  // saveConvoName(e) {
-  //   this.props.updateConversation({
-  //     id: this.props.currentConvo.id,
-  //     chatName: this.state.convoName,
-  //   });
-  //   this.setState({ isEditing: false })
-  // }
-
   submitChanges(e) {
     var formData = new FormData();
     formData.append("conversation[chat_name]", this.state.convoName)
@@ -88,6 +80,7 @@ class FriendDetails extends React.Component {
           height="50"
           width="50"
         /></label>
+        
         <input type="file"
           id="file"
           accept="image/*"
@@ -116,6 +109,7 @@ class FriendDetails extends React.Component {
             height="50"
             width="50"
           /></label>
+
           <input type="file"
             id="file"
             accept="image/*"
@@ -134,9 +128,6 @@ class FriendDetails extends React.Component {
         </div>
       </React.Fragment>
     )
-    //
-    // <div className="friend-details-image-upload">
-    // </div>
   }
 
   friendDetails() {
@@ -152,7 +143,6 @@ class FriendDetails extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     if (this.props.showFriendDetails) {
       return (
         <div>

@@ -26,7 +26,6 @@ class NewConversation extends React.Component {
   }
 
   handleSelection(user) {
-    // this.setState({selectedUsers: , selectedUserIds})
     return (e) => {
       const selectedIds = this.state.selectedUserIds;
 
@@ -77,7 +76,7 @@ class NewConversation extends React.Component {
 
   render() {
     const disabled = (this.state.selectedUserIds.length > 0) ? "" : "disabled"
-    console.log("disabled????", disabled);
+
     return(
       <section className="new-conversation">
         <div className="search-bar">
@@ -97,14 +96,9 @@ class NewConversation extends React.Component {
         <ul className="search-users-results">
           {this.showQueryResults()}
         </ul>
-
       </section>
     )
   }
 }
-//
-// <ul className="search-bar-selected-users">
-// {this.showSelectedUsers()}
-// </ul>
 
 export default NewConversation;
