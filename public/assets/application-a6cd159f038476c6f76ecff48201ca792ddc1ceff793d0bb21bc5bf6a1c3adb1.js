@@ -34098,17 +34098,6 @@ var Chatroom = function (_React$Component) {
         _react2.default.createElement(_chat_view2.default, null)
       );
     }
-
-    // render() {
-    //   return (
-    //     <main className="chat-page">
-    //       <FriendBarContainer />
-    //       <MessageViewContainer />
-    //       <MessageInputContainer />
-    //     </main>
-    //   )
-    // }
-
   }]);
 
   return Chatroom;
