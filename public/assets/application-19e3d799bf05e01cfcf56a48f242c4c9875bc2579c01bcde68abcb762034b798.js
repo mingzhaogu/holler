@@ -57996,8 +57996,6 @@ var ChatroomRouter = function ChatroomRouter() {
 
 exports.default = ChatroomRouter;
 
-// <Route exact path="/" component={ChatroomSplashContainer} />
-
 /***/ }),
 /* 144 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -58123,7 +58121,7 @@ var NewConversation = function (_React$Component) {
           selectedIds.push(user.id);
         }
 
-        _this2.setState({ selectedUserIds: selectedIds }, console.log(_this2.state.selectedUserIds));
+        _this2.setState({ selectedUserIds: selectedIds });
       };
     }
   }, {
@@ -58169,7 +58167,8 @@ var NewConversation = function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-
+      var disabled = this.state.selectedUserIds.length > 0 ? "" : "disabled";
+      console.log("disabled????", disabled);
       return _react2.default.createElement(
         "section",
         { className: "new-conversation" },
@@ -58189,7 +58188,7 @@ var NewConversation = function (_React$Component) {
           }),
           _react2.default.createElement(
             "button",
-            { className: "compose-message",
+            { className: "compose-message " + disabled,
               onClick: this.handleSubmit },
             "compose message"
           )
@@ -59226,41 +59225,125 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var MessageViewItem = function MessageViewItem(_ref) {
-  var msg = _ref.msg,
-      currentUser = _ref.currentUser,
-      senderPic = _ref.senderPic;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var align = void 0;
-  if (msg.senderId === currentUser.id) align = "right";else align = "left";
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-  var body = void 0;
-  if (msg.messageType !== "text") {
-    body = _react2.default.createElement("img", { src: msg.body });
-  } else {
-    body = msg.body;
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// const MessageViewItem = ({ msg, currentUser, senderPic }) => {
+//   const timestamp = msg.timestamp;
+//
+//   const align = (msg.senderId === currentUser.id) ? "right" : "left";
+//
+//   let body;
+//   if (msg.messageType !== "text") {
+//     body = <img src={msg.body} />
+//   } else {
+//     body = msg.body
+//   }
+//
+//
+//   return (
+//     <li key={`chat-msg-${msg.id}`}
+//       className={`chat-msg chat-msg-align-${align}`}
+//     >
+//       <img src={senderPic} className="chat-msg-pic left" />
+//       <div className={chat-msg-timestamp left} />{timestamp}</div>
+//       <div className={`chat-msg-body chat-msg-body${align}`}>
+//         {body}
+//       </div>
+//       <img src={senderPic} className="chat-msg-pic right" />
+//     </li>
+//   )
+// }
+
+// export default MessageViewItem;
+
+var MessageViewItem = function (_React$Component) {
+  _inherits(MessageViewItem, _React$Component);
+
+  function MessageViewItem(props) {
+    _classCallCheck(this, MessageViewItem);
+
+    var _this = _possibleConstructorReturn(this, (MessageViewItem.__proto__ || Object.getPrototypeOf(MessageViewItem)).call(this, props));
+
+    _this.state = {
+      displayTimestamp: false
+    };
+
+    _this.changeTimestampDisplay = _this.changeTimestampDisplay.bind(_this);
+    return _this;
   }
 
-  return _react2.default.createElement(
-    "li",
-    { key: "chat-msg-" + msg.id,
-      className: "chat-msg chat-msg-align-" + align
-    },
-    _react2.default.createElement("img", { src: senderPic, className: "chat-msg-pic left" }),
-    _react2.default.createElement(
-      "div",
-      { className: "chat-msg-body chat-msg-body" + align },
-      body
-    ),
-    _react2.default.createElement("img", { src: senderPic, className: "chat-msg-pic right" })
-  );
-};
+  _createClass(MessageViewItem, [{
+    key: "body",
+    value: function body() {
+      var msg = this.props.msg;
+
+      if (msg.messageType !== "text") {
+        return _react2.default.createElement("img", { src: msg.body });
+      } else {
+        return msg.body;
+      }
+    }
+  }, {
+    key: "changeTimestampDisplay",
+    value: function changeTimestampDisplay(e) {
+      e.preventDefault();
+      this.setState({ displayTimestamp: !this.state.displayTimestamp });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _props = this.props,
+          msg = _props.msg,
+          currentUser = _props.currentUser,
+          senderPic = _props.senderPic;
+
+      var timestamp = msg.timestamp;
+      var align = msg.senderId === currentUser.id ? "right" : "left";
+
+      var displayTimestamp = this.state.displayTimestamp ? "show" : "hide";
+      console.log(this.state.counter);
+
+      return _react2.default.createElement(
+        "li",
+        { key: "chat-msg-" + msg.id,
+          className: "chat-msg chat-msg-align-" + align
+        },
+        _react2.default.createElement("img", { src: senderPic, className: "chat-msg-pic" }),
+        _react2.default.createElement(
+          "div",
+          { className: "chat-msg-body chat-msg-body-" + align,
+            onMouseOver: this.changeTimestampDisplay,
+            onMouseOut: this.changeTimestampDisplay
+          },
+          this.body()
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "chat-msg-timestamp " + displayTimestamp },
+          timestamp
+        )
+      );
+    }
+  }]);
+
+  return MessageViewItem;
+}(_react2.default.Component);
+// <div className={`chat-msg-timestamp right ${displayTimestamp}`}>
+// {timestamp}
+// </div>
+// <img src={senderPic} className="chat-msg-pic right" />
 
 exports.default = MessageViewItem;
 
