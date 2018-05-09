@@ -31,16 +31,6 @@ class Chatroom extends React.Component {
       </main>
     )
   }
-
-  // render() {
-  //   return (
-  //     <main className="chat-page">
-  //       <FriendBarContainer />
-  //       <MessageViewContainer />
-  //       <MessageInputContainer />
-  //     </main>
-  //   )
-  // }
 }
 
 export default Chatroom;

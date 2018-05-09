@@ -14,6 +14,7 @@ class ApplicationController < ActionController::Base
 
   def login(user)
     @current_user = user
+    add_user_to_splash(user)
     session[:session_token] = user.reset_session_token!
   end
 
@@ -22,7 +23,34 @@ class ApplicationController < ActionController::Base
   end
 
   def logout!
+    remove_user_from_splash(@current_user)
     @current_user.reset_session_token!
     session[:session_token] = nil
+  end
+
+  def add_user_to_splash(user)
+    return nil if user.id.between?(1, 9)
+
+    ConversationUser.create!(
+      conversation_id: 1,
+      user_id: @user.id
+    )
+  end
+
+  def remove_user_from_splash(user)
+    return nil if user.id.between?(1, 9)
+
+    cu = ConversationUser.find_by({
+      conversation_id: 1,
+      user_id: user.id
+    })
+    cu.destroy if cu
+
+    # if want to delete messages too
+    # messages = Message.find_by({
+    #   conversation_id: 1,
+    #   sender_id: user.id
+    # })
+    # messages.destroy if messages
   end
 end

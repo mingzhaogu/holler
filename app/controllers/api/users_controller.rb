@@ -4,9 +4,9 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    debugger
+
     if @user.save
-      splash_conversation(@user)
+      # splash_conversation(@user)
       login(@user)
       render 'api/users/show'
     else
