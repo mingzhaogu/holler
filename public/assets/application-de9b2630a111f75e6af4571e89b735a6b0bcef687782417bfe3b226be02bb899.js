@@ -59857,6 +59857,7 @@ var FriendDetails = function (_React$Component) {
             accept: 'image/*',
             onChange: this.updateImg }),
           _react2.default.createElement('input', { className: 'friend-details-convo-name edit-convo-name',
+            autoFocus: true,
             value: this.state.convoName,
             onKeyPress: this.handleKeyPress,
             onChange: this.handleInput
