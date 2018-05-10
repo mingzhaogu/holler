@@ -59856,7 +59856,7 @@ var FriendDetails = function (_React$Component) {
             id: 'file',
             accept: 'image/*',
             onChange: this.updateImg }),
-          _react2.default.createElement('input', { className: 'friend-details-convo-name',
+          _react2.default.createElement('input', { className: 'friend-details-convo-name edit-convo-name',
             value: this.state.convoName,
             onKeyPress: this.handleKeyPress,
             onChange: this.handleInput
