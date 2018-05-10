@@ -80,7 +80,7 @@ class FriendDetails extends React.Component {
           height="50"
           width="50"
         /></label>
-        
+
         <input type="file"
           id="file"
           accept="image/*"
@@ -115,7 +115,7 @@ class FriendDetails extends React.Component {
             accept="image/*"
             onChange={this.updateImg} />
 
-          <input className="friend-details-convo-name"
+          <input className="friend-details-convo-name edit-convo-name"
             value={this.state.convoName}
             onKeyPress={this.handleKeyPress}
             onChange={this.handleInput}

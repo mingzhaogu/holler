@@ -59,6 +59,10 @@
         border: 1px solid $boxBorder;
       }
 
+      .edit-convo-name:hover {
+        cursor: text;
+      }
+
       .fa {
         margin-left: 9px;
         color: $magenta;
