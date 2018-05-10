@@ -116,6 +116,7 @@ class FriendDetails extends React.Component {
             onChange={this.updateImg} />
 
           <input className="friend-details-convo-name edit-convo-name"
+            autoFocus
             value={this.state.convoName}
             onKeyPress={this.handleKeyPress}
             onChange={this.handleInput}
