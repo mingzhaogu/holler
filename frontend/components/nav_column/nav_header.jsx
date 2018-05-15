@@ -42,6 +42,7 @@ class NavHeader extends React.Component {
 
         <menu className={`nav-bar-dropdown ${extended}`}>
           <ul onClick={(e) => e.stopPropagation()}>
+            <li onClick={(e)=> console.log('hi')}>Edit Profile</li>
             <li onClick={logout}>Logout</li>
           </ul>
         </menu>
