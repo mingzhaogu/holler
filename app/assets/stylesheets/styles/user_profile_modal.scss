@@ -58,15 +58,6 @@
         margin-right: 8px;
       }
 
-      #file {
-        width: 0.1px;
-        height: 0.1px;
-        opacity: 0;
-        overflow: hidden;
-        position: absolute;
-        z-index: -1;
-      }
-
       img {
         display: block;
         border-radius: 50%;
@@ -77,7 +68,9 @@
       }
 
       .current-user-name {
+        width: 33%;
         padding: 5px;
+        font-size: $fontSizeH3;
         // flex: 1;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -87,6 +80,16 @@
       .current-user-name:hover {
         cursor: pointer;
         border: 1px solid $boxBorder;
+      }
+
+      .edit-user-name:hover {
+        cursor: text;
+      }
+
+      .fa {
+        margin-left: 9px;
+        color: $magenta;
+        font-size: $fontSizeH2;
       }
     }
   }

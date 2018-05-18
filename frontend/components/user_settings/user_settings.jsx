@@ -44,7 +44,7 @@ class UserSettings extends React.Component {
     if (this.state.editingName) {
       return (
         <React.Fragment>
-          <input className="current-user-name-edit"
+          <input className="current-user-name edit-user-name"
             autoFocus
             value={this.state.name}
             onKeyPress={this.handleKeyPress}
