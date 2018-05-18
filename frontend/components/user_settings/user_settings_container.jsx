@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  toggleUserSettings: () => dispatch(toggleUserSettings())
+  toggleUserSettings: () => dispatch(toggleUserSettings()),
 })
 
 export default connect(

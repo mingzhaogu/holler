@@ -6,27 +6,49 @@ class UserSettings extends React.Component {
     const name = props.currentUser.name
     this.state = {
       name,
+      imageFile: null,
       editingName: false
     }
 
     this.closeModal = this.closeModal.bind(this);
-    this.editName = this.editName.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.updateName = this.updateName.bind(this);
   }
 
   closeModal() {
-    this.props.toggleUserSettings;
+    this.props.toggleUserSettings();
+    this.setState({ editingName: false });
+  }
+
+  handleKeyPress(e) {
+    if (e.key === "Enter" && e.shiftKey === false) {
+      this.submitChanges(e)
+    }
+  }
+
+  submitChanges(e) {
+    var formData = new FormData();
+
+    formData.append("user[name]", this.state.name)
+    formData.append("user[image]", this.state.imageFile)
+
+    // this.props.updateConversation(formData, this.props.currentConvo.id)
     this.setState({ editingName: false })
+  }
+
+  updateName(e) {
+    this.setState({ name: e.target.value })
   }
 
   editName() {
     if (this.state.editingName) {
       return (
         <React.Fragment>
-          <input className="current-user-name"
+          <input className="current-user-name-edit"
             autoFocus
             value={this.state.name}
-            onKeyPress={() => console.log("hello")}
-            onChange={() => console.log("aloha")}
+            onKeyPress={this.handleKeyPress}
+            onChange={this.updateName}
           />
           <i className="fa fa-floppy-o"
             aria-hidden="true"
@@ -54,7 +76,7 @@ class UserSettings extends React.Component {
             <nav className="user-profile-nav">
               <label className="user-profile-settings">Settings</label>
               <label className="user-profile-done"
-                onClick={this.props.toggleUserSettings}
+                onClick={this.closeModal}
               >Done</label>
             </nav>
 
