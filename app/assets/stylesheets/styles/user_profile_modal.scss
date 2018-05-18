@@ -1,0 +1,93 @@
+.user-profile-modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  .user-profile-modal {
+    background-color: rgba(255, 255, 255, 1);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border-radius: 6px;
+    width: 50vw;
+
+    .user-profile-nav {
+      height: 50px;
+      display: flex;
+      // flex-direction: row;
+      align-items: center;
+      border-bottom: 1px solid $boxBorder;
+
+      label {
+        font-weight: 700;
+      }
+
+      .user-profile-settings {
+        padding: 0 0 0 16px;
+        flex: 1;
+        text-align: center;
+      }
+
+      .user-profile-done {
+        padding: 0 16px 0 0;
+        color: $magenta;
+        cursor: pointer;
+      }
+    }
+
+    .account-settings {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      margin: 0 24px;
+
+      .account-settings-label {
+        width: 33%;
+        color: $darkgrey;
+      }
+
+      .current-user {
+        height: 50px;
+        width: 50px;
+        margin-right: 8px;
+      }
+
+      #file {
+        width: 0.1px;
+        height: 0.1px;
+        opacity: 0;
+        overflow: hidden;
+        position: absolute;
+        z-index: -1;
+      }
+
+      img {
+        display: block;
+        border-radius: 50%;
+      }
+
+      img:hover {
+        cursor: pointer;
+      }
+
+      .current-user-name {
+        padding: 5px;
+        // flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .current-user-name:hover {
+        cursor: pointer;
+        border: 1px solid $boxBorder;
+      }
+    }
+  }
+}

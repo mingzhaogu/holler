@@ -5,29 +5,32 @@ class NavHeader extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      displayDropdown: false
+      displayDropdown: false,
     }
 
-    this.toggleGearDropdown = this.toggleGearDropdown.bind(this);
+    this.openGearDropdown = this.openGearDropdown.bind(this);
     this.closeGearDropdown = this.closeGearDropdown.bind(this);
   }
 
   componentDidMount() {
     document.addEventListener("click", this.closeGearDropdown)
-    $('.nav-bar-cog').on("click", this.toggleGearDropdown)
+    $('.nav-bar-cog').on("click", this.openGearDropdown)
   }
 
   componentWillUnmount() {
     document.removeEventListener("click", this.closeGearDropdown)
   }
 
-  toggleGearDropdown(event) {
-    event.stopPropagation()
+  openGearDropdown(event) {
+    event.stopPropagation();
     this.setState({ displayDropdown: !this.state.displayDropdown });
   }
 
   closeGearDropdown() {
-    this.setState({ displayDropdown: false })
+    this.setState({
+      displayDropdown: false,
+      modalOpen: false
+    })
   }
 
   render() {
@@ -42,6 +45,7 @@ class NavHeader extends React.Component {
 
         <menu className={`nav-bar-dropdown ${extended}`}>
           <ul onClick={(e) => e.stopPropagation()}>
+            <li onClick={this.props.toggleUserSettings}>Settings</li>
             <li onClick={logout}>Logout</li>
           </ul>
         </menu>

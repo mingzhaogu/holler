@@ -2,6 +2,7 @@ import { merge } from 'lodash';
 
 import {
   TOGGLE_FRIEND_DETAILS_VIEW,
+  TOGGLE_USER_SETTINGS,
   TOGGLE_GIPHYS,
   TOGGLE_STICKYS
 } from '../actions/ui_actions';
@@ -23,6 +24,7 @@ import {
 
 const _nullState = {
   showFriendDetails: true,
+  showUserSettings: false,
   showGiphys: false,
   showStickys: false,
   loading: false
@@ -38,6 +40,13 @@ const UIReducer = (oldState = _nullState, action) => {
         {},
         oldState,
         { showFriendDetails: !oldState.showFriendDetails }
+      );
+      return newState;
+    case TOGGLE_USER_SETTINGS:
+      newState = merge(
+        {},
+        oldState,
+        { showUserSettings: !oldState.showUserSettings }
       );
       return newState;
     case TOGGLE_GIPHYS:
