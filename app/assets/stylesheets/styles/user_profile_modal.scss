@@ -75,6 +75,19 @@
       img:hover {
         cursor: pointer;
       }
+
+      .current-user-name {
+        padding: 5px;
+        // flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .current-user-name:hover {
+        cursor: pointer;
+        border: 1px solid $boxBorder;
+      }
     }
   }
 }
