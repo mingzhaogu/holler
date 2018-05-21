@@ -1,2 +1,6 @@
-json.extract! user, :id, :username, :name, :image_url
+# json.extract! user, :id, :username, :name, :image
+# json.conversationIds user.conversation_ids
+
+json.extract! user, :id, :username, :name
+json.image_url asset_path(user.image.url)
 json.conversationIds user.conversation_ids
