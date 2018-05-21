@@ -25,13 +25,9 @@ class Api::ConversationsController < ApplicationController
   def update
     @conversation = Conversation.find(params[:id])
 
-    conv_params = conversation_params
-    if conversation_params['image'] == 'null'
-      conv_params.delete('image')
-    end
-
-    @conversation.update_attributes(conv_params)
+    @conversation.update_attributes(conversation_params)
     @messages = @conversation.messages.includes(:user)
+
     render 'api/conversations/show'
   end
 

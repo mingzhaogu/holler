@@ -7,39 +7,39 @@ User.destroy_all
 users = [
   {
     username: "lilopelekai", password: "password", name: "Lilo",
-    image_url: "https://i.imgur.com/AuoaDo4.jpg",
+    image: File.open(File.join(Rails.root, 'app/assets/images/lilo.jpg'))
   },
   {
     username: "stitch626", password: "password", name: "Stitch",
-    image_url: "https://i.imgur.com/EDbcCZ6.jpg"
+    image: File.open(File.join(Rails.root, 'app/assets/images/stitch.jpeg'))
   },
   {
     username: "pleakley", password: "password", name: "Pleakley",
-    image_url: "https://i.imgur.com/G2DpXn8.jpg"
+    image: File.open(File.join(Rails.root, 'app/assets/images/pleakley.jpeg'))
   },
   {
     username: "evilgeniusjumba", password: "password", name: "Jumba",
-    image_url: "https://i.imgur.com/mOBiDtq.jpg"
+    image: File.open(File.join(Rails.root, 'app/assets/images/jumba.jpeg'))
   },
   {
     username: "nanipelekai", password: "password", name: "Nani",
-    image_url: "https://i.imgur.com/8f1cGrK.jpg"
+    image: File.open(File.join(Rails.root, 'app/assets/images/nani.jpg'))
   },
   {
     username: "davidkawena", password: "password", name: "David",
-    image_url: "https://i.imgur.com/Ztraem1.jpg"
+    image: File.open(File.join(Rails.root, 'app/assets/images/david.jpg'))
   },
   {
     username: "gantu", password: "password", name: "Gantu",
-    image_url: "https://i.imgur.com/0SbO2bQ.jpg"
+    image: File.open(File.join(Rails.root, 'app/assets/images/gantu.jpeg'))
   },
   {
     username: "scrump", password: "password", name: "Scrump",
-    image_url: "https://i.imgur.com/l8KrqH2.png"
+    image: File.open(File.join(Rails.root, 'app/assets/images/scrump.png'))
   },
   {
     username: "C}> iloveicecream", password: "password", name: "C}>",
-    image_url: "https://i.imgur.com/fOcYWZw.png"
+    image: File.open(File.join(Rails.root, 'app/assets/images/icecreamguy.png'))
   },
 ]
 

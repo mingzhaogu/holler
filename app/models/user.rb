@@ -24,9 +24,12 @@ class User < ApplicationRecord
   has_many :conversations,
     through: :conversation_users
 
+  has_attached_file :image, default_url: 'default-profile-pic.png'
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
   attr_reader :password
 
-  before_validation :ensure_session_token, :set_default_image
+  before_validation :ensure_session_token, :set_default_name
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
@@ -58,7 +61,7 @@ class User < ApplicationRecord
     self.session_token ||= self.class.generate_session_token
   end
 
-  def set_default_image
-    self.image_url ||= 'https://i.imgur.com/GfeDqkc.png'
+  def set_default_name
+    self.name ||= self.username
   end
 end
