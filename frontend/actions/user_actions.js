@@ -8,9 +8,9 @@ export const receiveUsers = (payload) => ({
   payload
 });
 
-export const receiveUser = (payload) => ({
+export const receiveUser = (currentUser) => ({
   type: RECEIVE_USER,
-  payload
+  currentUser
 });
 
 export const fetchUsers = (query) => (dispatch) => (
@@ -23,7 +23,7 @@ export const updateUser = (formData, userId) => (dispatch) => (
     .then((user) => dispatch(receiveUser(user)))
 );
 //
-// xport const updateConversation = (formData, convId) => (dispatch) => (
+// export const updateConversation = (formData, convId) => (dispatch) => (
 //   ConversationUtil.updateConversation(formData, convId)
 //     .then((conversation) => dispatch(receiveConversation(conversation)))
 // );

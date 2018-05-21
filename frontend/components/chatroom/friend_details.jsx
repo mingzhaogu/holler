@@ -47,7 +47,10 @@ class FriendDetails extends React.Component {
   submitChanges(e) {
     var formData = new FormData();
     formData.append("conversation[chat_name]", this.state.convoName)
-    formData.append("conversation[image]", this.state.imageFile)
+
+    if (this.state.imageFile) {
+      formData.append("conversation[image]", this.state.imageFile)
+    }
 
     this.props.updateConversation(formData, this.props.currentConvo.id)
     this.setState({ isEditing: false })
@@ -113,7 +116,8 @@ class FriendDetails extends React.Component {
           <input type="file"
             id="file"
             accept="image/*"
-            onChange={this.updateImg} />
+            onChange={this.updateImg}
+          />
 
           <input className="friend-details-convo-name edit-convo-name"
             autoFocus

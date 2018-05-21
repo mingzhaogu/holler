@@ -3,16 +3,30 @@ import React from 'react';
 class UserSettings extends React.Component {
   constructor(props) {
     super(props);
+
     const name = props.currentUser.name
     this.state = {
-      name,
+      editingName: false,
+      name: name,
       imageFile: null,
-      editingName: false
+      imageUrl: null,
     }
 
     this.closeModal = this.closeModal.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
+    this.submitChanges = this.submitChanges.bind(this);
     this.updateName = this.updateName.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (this.props.currentUser !== nextProps.currentUser) {
+      this.setState({
+        isEditing: false,
+        name: nextProps.currentUser.name,
+        imageFile: null,
+        imageUrl: nextProps.currentUser.imageUrl,
+      })
+    }
   }
 
   closeModal() {
@@ -27,17 +41,35 @@ class UserSettings extends React.Component {
   }
 
   submitChanges(e) {
+    console.log("hi", this.state)
     var formData = new FormData();
-
     formData.append("user[name]", this.state.name)
-    formData.append("user[image]", this.state.imageFile)
 
-    // this.props.updateConversation(formData, this.props.currentConvo.id)
-    this.setState({ editingName: false })
+    if (this.state.imageFile) {
+      formData.append("user[image]", this.state.imageFile)
+    }
+
+    this.props.updateUser(formData, this.props.currentUser.id)
+    this.setState({ editingName: false }, console.log(this.props.currentUser))
   }
 
   updateName(e) {
     this.setState({ name: e.target.value })
+  }
+
+  updateImg(e) {
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+
+    fileReader.onloadend = () => {
+      this.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+      this.submitChanges(e)
+    }
+
+    if (file) fileReader.readAsDataURL(file);
   }
 
   editName() {
@@ -50,9 +82,10 @@ class UserSettings extends React.Component {
             onKeyPress={this.handleKeyPress}
             onChange={this.updateName}
           />
+
           <i className="fa fa-floppy-o"
             aria-hidden="true"
-            onClick={() => console.log("hiya")}
+            onClick={this.submitChanges}
           />
         </React.Fragment>
       )
@@ -94,7 +127,7 @@ class UserSettings extends React.Component {
               <input type="file"
                 id="file"
                 accept="image/*"
-                onChange={() => console.log("hi")}
+                onChange={this.updateImg}
               />
 
               {this.editName()}
