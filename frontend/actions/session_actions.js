@@ -6,7 +6,7 @@ export const SESSION_LOGOUT = 'SESSION_LOGOUT';
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
-  currentUser
+  currentUser: Object.values(currentUser)[0]
 });
 
 export const receiveErrors = (errors) => ({
