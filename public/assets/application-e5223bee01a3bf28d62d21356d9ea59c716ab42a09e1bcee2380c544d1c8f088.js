@@ -30119,7 +30119,7 @@ var SESSION_LOGOUT = exports.SESSION_LOGOUT = 'SESSION_LOGOUT';
 var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: currentUser
+    currentUser: Object.values(currentUser)[0]
   };
 };
 
