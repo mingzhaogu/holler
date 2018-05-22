@@ -43,7 +43,7 @@ users = [
   },
   {
     username: "anniegu", password: "1q2w3e4r", name: "Annie",
-    image: File.open(File.join(Rails.root, 'app/assets/images/users/annie1.jpg'))
+    image: File.open(File.join(Rails.root, 'app/assets/images/users/annie.jpg'))
   }
 ]
 
