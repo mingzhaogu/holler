@@ -13,7 +13,7 @@ class MessageViewItem extends React.Component {
   body() {
     const { msg } = this.props;
     if (msg.messageType !== "text") {
-      return <img src={msg.body} />
+      return <img style={{ borderRadius: '1.3em' }} src={msg.body} />
     } else {
       return msg.body
     }
@@ -29,6 +29,11 @@ class MessageViewItem extends React.Component {
     const align = (msg.senderId === currentUser.id) ? "right" : "left";
     const displayTimestamp = (this.state.displayTimestamp) ? "show" : "hide";
 
+    let style;
+    if (msg.messageType !== "text") {
+      style = { padding: '0px' };
+    } else { style = {} };
+
     return (
       <li key={`chat-msg-${msg.id}`}
         className={`chat-msg chat-msg-align-${align}`}>
@@ -37,6 +42,7 @@ class MessageViewItem extends React.Component {
         <div className={`chat-msg-body chat-msg-body-${align}`}
           onMouseOver={this.changeTimestampDisplay}
           onMouseOut={this.changeTimestampDisplay}
+          style={style}
         >
           {this.body()}
         </div>

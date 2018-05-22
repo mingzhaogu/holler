@@ -25,7 +25,6 @@ export const fetchMessages = (convId) => {
 };
 
 export const createMessage = (message) => {
-  console.log('msg api util', message);
   return (
     $.ajax({
       url: `api/conversations/${message.conversation_id}/messages`,

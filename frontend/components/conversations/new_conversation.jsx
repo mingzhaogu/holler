@@ -67,7 +67,7 @@ class NewConversation extends React.Component {
             onClick={this.handleSelection(user)}
             className={selected}>
             <img src={user.imageUrl} width="50px" height="50px"/>
-            <label>{user.username}</label>
+            <label>{user.name}</label>
           </li>
         )
       })

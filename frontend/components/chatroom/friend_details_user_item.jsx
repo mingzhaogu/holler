@@ -6,7 +6,7 @@ const FriendDetailsUserItem = ({user}) => {
       className="friend-details-users">
       <img src={user.imageUrl} />
       <label className="friend-details-username">
-        {user.username}
+        {user.name}
       </label>
     </li>
   )

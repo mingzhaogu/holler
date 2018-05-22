@@ -69,7 +69,6 @@
       align-items: center;
       font-size: 50px;
       color: $magenta;
-      // position: sticky;
       top: 114px;
       background-color: #FFFFFF;
 
@@ -86,8 +85,6 @@
     .friend-details-users {
       display: flex;
       flex-direction: column;
-      // overflow: scroll;
-      // overflow-x: hidden;
 
       .friend-details-users-label {
         width: auto;

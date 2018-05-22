@@ -15,19 +15,20 @@ class UserSettings extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleKeyPress = this.handleKeyPress.bind(this);
     this.submitChanges = this.submitChanges.bind(this);
+    this.updateImg = this.updateImg.bind(this);
     this.updateName = this.updateName.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.currentUser !== nextProps.currentUser) {
-      this.setState({
-        isEditing: false,
-        name: nextProps.currentUser.name,
-        imageFile: null,
-        imageUrl: nextProps.currentUser.imageUrl,
-      })
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.currentUser !== nextProps.currentUser) {
+  //     this.setState({
+  //       isEditing: false,
+  //       name: nextProps.currentUser.name,
+  //       imageFile: null,
+  //       imageUrl: nextProps.currentUser.imageUrl,
+  //     })
+  //   }
+  // }
 
   closeModal() {
     this.props.toggleUserSettings();
@@ -58,6 +59,7 @@ class UserSettings extends React.Component {
   }
 
   updateImg(e) {
+    // console.log("hi")
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
@@ -116,7 +118,7 @@ class UserSettings extends React.Component {
             <div className="account-settings">
               <label className="account-settings-label">Account</label>
 
-              <label htmlFor="file" className="current-user pic-overlay">
+              <label htmlFor="user-file" className="current-user pic-overlay">
                 <img src={currentUser.imageUrl}
                   className="current-user-picture"
                   height="50"
@@ -125,10 +127,11 @@ class UserSettings extends React.Component {
               </label>
 
               <input type="file"
-                id="file"
+                id="user-file"
                 accept="image/*"
                 onChange={this.updateImg}
               />
+
 
               {this.editName()}
             </div>
