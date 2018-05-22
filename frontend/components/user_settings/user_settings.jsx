@@ -19,17 +19,6 @@ class UserSettings extends React.Component {
     this.updateName = this.updateName.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.currentUser !== nextProps.currentUser) {
-  //     this.setState({
-  //       isEditing: false,
-  //       name: nextProps.currentUser.name,
-  //       imageFile: null,
-  //       imageUrl: nextProps.currentUser.imageUrl,
-  //     })
-  //   }
-  // }
-
   closeModal() {
     this.props.toggleUserSettings();
     this.setState({ editingName: false });
@@ -42,7 +31,6 @@ class UserSettings extends React.Component {
   }
 
   submitChanges(e) {
-    console.log("hi", this.state)
     var formData = new FormData();
     formData.append("user[name]", this.state.name)
 
@@ -59,7 +47,6 @@ class UserSettings extends React.Component {
   }
 
   updateImg(e) {
-    // console.log("hi")
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
