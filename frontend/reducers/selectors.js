@@ -1,10 +1,7 @@
 import { last } from 'lodash';
 
 export const findCurrentUser = (state) => {
-  console.log("state", state);
-  console.log("statesession", state.session.currentUser);
   const currentUserId = state.session.currentUser.id;
-  console.log("CUI", currentUserId);
   return state.entities.users[currentUserId];
 };
 
