@@ -30119,7 +30119,7 @@ var SESSION_LOGOUT = exports.SESSION_LOGOUT = 'SESSION_LOGOUT';
 var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
-    currentUser: Object.values(currentUser)[0]
+    currentUser: currentUser
   };
 };
 
@@ -30179,10 +30179,7 @@ exports.findLastMessages = exports.findAllMessages = exports.findConversationNam
 var _lodash = __webpack_require__(9);
 
 var findCurrentUser = exports.findCurrentUser = function findCurrentUser(state) {
-  console.log("state", state);
-  console.log("statesession", state.session.currentUser);
   var currentUserId = state.session.currentUser.id;
-  console.log("CUI", currentUserId);
   return state.entities.users[currentUserId];
 };
 
@@ -60356,9 +60353,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(_reduxThunk2.default));
+  return (0, _redux.createStore)(_root_reducer2.default, preloadedState, (0, _redux.applyMiddleware)(_reduxThunk2.default, _reduxLogger2.default));
 };
-// applyMiddleware(thunk, logger)
+// applyMiddleware(thunk)
 
 exports.default = configureStore;
 

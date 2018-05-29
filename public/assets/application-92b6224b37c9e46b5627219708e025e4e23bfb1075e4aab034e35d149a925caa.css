@@ -648,6 +648,7 @@ body {
 .nav-col {
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   width: 22vw;
+  min-width: 22vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
