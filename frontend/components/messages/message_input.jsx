@@ -7,42 +7,36 @@ class MessageInput extends React.Component {
     super(props);
     this.state = {
       currentMessage: '',
-    }
-
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.updateCurrentMessage = this.updateCurrentMessage.bind(this)
-    this.handleKeyPress = this.handleKeyPress.bind(this)
-    this.getGiphyWidIt = this.getGiphyWidIt.bind(this)
-    this.getStickyWidIt = this.getStickyWidIt.bind(this)
+    };
   }
 
-  updateCurrentMessage(e) {
+  updateCurrentMessage = e => {
     this.setState({ currentMessage: e.target.value })
   }
 
-  handleKeyPress(e) {
+  handleKeyPress = e => {
     if (e.key === "Enter" && e.shiftKey === false) {
       this.handleSubmit(e)
     }
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     createMessage({
       sender_id: this.props.currentUser.id,
       conversation_id: this.props.convId,
       body: this.state.currentMessage
     });
-    this.setState({ currentMessage: "" })
+    this.setState({ currentMessage: '' })
   }
 
-  getGiphyWidIt(e) {
+  getGiphyWidIt = e => {
     e.preventDefault();
     this.props.toggleGiphys();
     this.props.fetchGiphys();
   }
 
-  getStickyWidIt(e) {
+  getStickyWidIt = e => {
     e.preventDefault();
     this.props.toggleStickys();
     this.props.fetchStickys();

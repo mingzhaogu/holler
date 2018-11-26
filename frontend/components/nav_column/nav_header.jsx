@@ -7,9 +7,6 @@ class NavHeader extends React.Component {
     this.state = {
       displayDropdown: false,
     }
-
-    this.openGearDropdown = this.openGearDropdown.bind(this);
-    this.closeGearDropdown = this.closeGearDropdown.bind(this);
   }
 
   componentDidMount() {
@@ -21,12 +18,14 @@ class NavHeader extends React.Component {
     document.removeEventListener("click", this.closeGearDropdown)
   }
 
-  openGearDropdown(event) {
-    event.stopPropagation();
-    this.setState({ displayDropdown: !this.state.displayDropdown });
+  openGearDropdown = e => {
+    e.stopPropagation();
+    this.setState(prevState => ({
+      displayDropdown: !prevState.displayDropdown
+    }));
   }
 
-  closeGearDropdown() {
+  closeGearDropdown = () => {
     this.setState({
       displayDropdown: false,
       modalOpen: false

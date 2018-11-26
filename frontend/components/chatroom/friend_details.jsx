@@ -72,7 +72,7 @@ class FriendDetails extends React.Component {
   }
 
   togglePencil(e) {
-    this.setState({ isEditing: !this.state.isEditing })
+    this.setState(prevState => ({ isEditing: !prevState.isEditing }));
   }
 
   staticHeader() {

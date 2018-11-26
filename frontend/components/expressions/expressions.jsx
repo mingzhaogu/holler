@@ -6,22 +6,16 @@ class Expressions extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      query: "",
+      query: '',
       offset: 0
     }
-
-    this.handleInput = this.handleInput.bind(this);
-    this.fetchMoreExpressions = this.fetchMoreExpressions.bind(this);
-    this.clearQuery = this.clearQuery.bind(this);
-    this.displayExpressions = this.displayExpressions.bind(this);
-    this.sendExpression = this.sendExpression.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchExpressions("")
   }
 
-  displayExpressions() {
+  displayExpressions = () => {
     return (
       this.props.expressions.map((exp) => (
       <li key={exp.id}
@@ -33,22 +27,23 @@ class Expressions extends React.Component {
     )
   }
 
-  fetchMoreExpressions(offset) {
-    this.setState({ offset: this.state.offset + 5 });
-    this.props.fetchMoreExpressions(this.state.query, this.state.offset + 5)
+  fetchMoreExpressions = offset => {
+    const newOffset = this.state.offset + 5;
+    this.setState({ offset: newOffset });
+    this.props.fetchMoreExpressions(this.state.query, newOffset);
   }
 
-  clearQuery() {
+  clearQuery = () => {
     this.setState({ query: "", offset: 0 });
     this.props.fetchExpressions("");
   }
 
-  handleInput(e) {
+  handleInput = e => {
     this.setState({ query: e.target.value });
     this.props.fetchExpressions(e.target.value);
   }
 
-  sendExpression(e) {
+  sendExpression = e => {
     e.preventDefault();
     createMessage({
       sender_id: this.props.currentUser.id,
@@ -56,7 +51,7 @@ class Expressions extends React.Component {
       body: e.target.src,
       message_type: this.props.messageType
     });
-    this.setState({ query: "" })
+    this.setState({ query: '' })
   }
 
   render() {

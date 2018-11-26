@@ -8,16 +8,14 @@ class Search extends React.Component {
     super(props)
     this.state = {
       query: "",
-    }
-
-    this.handleInput = this.handleInput.bind(this)
+    };
   }
 
   componentWillMount() {
     this.props.fetchAllConversations("")
   }
 
-  handleInput(e) {
+  handleInput = e => {
     this.setState({ query: e.target.value });
     this.props.fetchAllConversations(e.target.value);
   }

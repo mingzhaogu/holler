@@ -6,8 +6,6 @@ class MessageViewItem extends React.Component {
     this.state = {
       displayTimestamp: false
     }
-
-    this.changeTimestampDisplay = this.changeTimestampDisplay.bind(this)
   }
 
   body() {
@@ -19,9 +17,9 @@ class MessageViewItem extends React.Component {
     }
   }
 
-  changeTimestampDisplay(e) {
+  changeTimestampDisplay = e => {
     e.preventDefault();
-    this.setState({ displayTimestamp: !this.state.displayTimestamp })
+    this.setState(prevState => ({ displayTimestamp: !prevState.displayTimestamp }))
   }
 
   render() {

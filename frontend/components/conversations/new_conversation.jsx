@@ -8,24 +8,19 @@ class NewConversation extends React.Component {
       selectedUsers: [],
       selectedUserIds: [],
       chatName: "",
-    }
-
-    this.handleInput = this.handleInput.bind(this);
-    this.handleSelection = this.handleSelection.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.showQueryResults = this.showQueryResults.bind(this);
+    };
   }
 
   componentDidMount() {
     this.props.fetchUsers();
   }
 
-  handleInput(e) {
+  handleInput = e => {
     this.setState({ query: e.target.value });
     this.props.fetchUsers(e.target.value);
   }
 
-  handleSelection(user) {
+  handleSelection = user => {
     return (e) => {
       const selectedIds = this.state.selectedUserIds;
 
@@ -42,7 +37,7 @@ class NewConversation extends React.Component {
     }
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
     if (this.state.selectedUserIds.length > 0) {
       const users = this.state.selectedUserIds;
@@ -53,7 +48,7 @@ class NewConversation extends React.Component {
     }
   }
 
-  showQueryResults() {
+  showQueryResults = () => {
     return (
       this.props.userResults.map((user) => {
         if (this.props.currentUserId === user.id) return null;

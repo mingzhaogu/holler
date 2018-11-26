@@ -10,27 +10,21 @@ class UserSettings extends React.Component {
       name: name,
       imageFile: null,
       imageUrl: null,
-    }
-
-    this.closeModal = this.closeModal.bind(this);
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.submitChanges = this.submitChanges.bind(this);
-    this.updateImg = this.updateImg.bind(this);
-    this.updateName = this.updateName.bind(this);
+    };
   }
 
-  closeModal() {
+  closeModal = () => {
     this.props.toggleUserSettings();
     this.setState({ editingName: false });
   }
 
-  handleKeyPress(e) {
+  handleKeyPress = e => {
     if (e.key === "Enter" && e.shiftKey === false) {
       this.submitChanges(e)
     }
   }
 
-  submitChanges(e) {
+  submitChanges = e => {
     var formData = new FormData();
     formData.append("user[name]", this.state.name)
 
@@ -42,11 +36,11 @@ class UserSettings extends React.Component {
     this.setState({ editingName: false }, console.log(this.props.currentUser))
   }
 
-  updateName(e) {
+  updateName = e => {
     this.setState({ name: e.target.value })
   }
 
-  updateImg(e) {
+  updateImg = e => {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
@@ -127,7 +121,6 @@ class UserSettings extends React.Component {
       );
     } else { return null }
   }
-
 }
 
 export default UserSettings;

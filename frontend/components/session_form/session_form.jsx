@@ -11,25 +11,23 @@ class SessionForm extends React.Component {
       password: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.defaultLogin = { username: 'stitch626', password: 'password' }
-    this.demoLogin = this.demoLogin.bind(this);
+    this.defaultLogin = { username: 'stitch626', password: 'password' };
   }
 
   componentWillUnmount() {
     this.props.receiveErrors([]);
   }
 
-  demoLogin(e) {
+  demoLogin = e => {
     e.preventDefault();
     this.setState(this.defaultLogin,
       () => this.props.login(this.state)
     )
   }
 
-  handleSubmit(e) {
+  handleSubmit = e => {
     e.preventDefault();
-    this.props.processForm(this.state)
+    this.props.processForm(this.state);
   }
 
   renderErrors() {
