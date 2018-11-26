@@ -6,12 +6,14 @@ import { findConversationImage, findConversationName } from '../../reducers/sele
 
 const FriendDetailsUserList = ({ convoUsers }) => {
   return (
-    <ul className="friend-details-users">
+    <div className="friend-details-users-list">
       <label className="friend-details-users-label">People In Chat</label>
-      {convoUsers.map(user => (
-        <FriendDetailsUserItem key={user.id} user={user} />
-      ))}
-    </ul>
+      <ul className="friend-details-users">
+        {convoUsers.map(user => (
+          <FriendDetailsUserItem key={user.id} user={user} />
+          ))}
+      </ul>
+    </div>
   );
 };
 

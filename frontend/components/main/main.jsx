@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import NavColumn from '../nav_column/nav_column';
 import ChatroomRouter from '../chatroom/chatroom_router';
@@ -6,13 +6,11 @@ import UserSettings from '../user_settings/user_settings_container';
 
 const Main = () => {
   
-  return (
-    <main className="main">
+  return <Fragment>
       <NavColumn />
       <ChatroomRouter />
       <UserSettings />
-    </main>
-  )
+    </Fragment>;
 }
 
 export default Main;

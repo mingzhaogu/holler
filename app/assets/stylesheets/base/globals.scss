@@ -46,8 +46,10 @@ $fontSizeH1: 40px;
   opacity: 0.2;
 }
 
-.main {
+#root {
   display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {

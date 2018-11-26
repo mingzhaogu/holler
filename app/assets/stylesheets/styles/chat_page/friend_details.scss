@@ -3,8 +3,8 @@
     width: 22vw;
     border-left: 1px solid $boxBorder;
     height: 100%;
-    overflow: scroll;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     //padding-top: 14px; // maybe remove?
 
     .friend-details-header {
@@ -81,8 +81,8 @@
         color: $pink;
       }
     }
-
-    .friend-details-users {
+    
+    .friend-details-users-list {
       display: flex;
       flex-direction: column;
 
@@ -92,22 +92,27 @@
         padding: 14px;
         color: $darkgrey;
       }
-
-      li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        img {
-          width: 50px;
-          height: 50px;
-          min-width: 50px;
-          margin: 6px 12px;
-          border-radius: 50%;
-        }
-
-        .friend-details-username {
-
+      
+      .friend-details-users {
+        flex: 1;
+        overflow: hidden scroll;
+        
+        li {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          
+          img {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            margin: 6px 12px;
+            border-radius: 50%;
+          }
+          
+          .friend-details-username {
+            
+          }
         }
       }
     }

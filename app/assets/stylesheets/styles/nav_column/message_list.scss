@@ -1,13 +1,18 @@
 .nav-col {
   .search-col {
-    overflow: scroll;
     // min-width: 250px;
+    display: flex;
+    flex-direction: column;
+
     .search-bar {
 
     }
 
     .conversation-list {
+      flex: 1;
+      overflow-y: scroll;
       // position: relative;
+
       .conversation-list-item {
         height: 64px;
         padding-left: 12px;

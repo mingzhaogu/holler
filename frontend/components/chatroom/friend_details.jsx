@@ -149,11 +149,7 @@ class FriendDetails extends React.Component {
 
   render() {
     if (this.props.showFriendDetails) {
-      return (
-        <div>
-          {this.friendDetails()}
-        </div>
-      )
+      return this.friendDetails()
     } else { return null }
   }
 }
