@@ -13,6 +13,14 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"
   },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.4",
+    "webpack": "^3.10.0"
+  },
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
@@ -20,8 +28,8 @@
     "test": "test"
   },
   "engines": {
-    "node": "4.1.1",
-    "npm": "2.1.x"
+    "node": "11.2.0",
+    "npm": "6.4.1"
   },
   "scripts": {
     "postinstall": "webpack",
@@ -38,13 +46,5 @@
   "bugs": {
     "url": "https://github.com/mingzhaogu/holler/issues"
   },
-  "homepage": "https://github.com/mingzhaogu/holler#readme",
-  "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
-    "babel-loader": "^8.0.4",
-    "webpack": "^3.10.0"
-  }
+  "homepage": "https://github.com/mingzhaogu/holler#readme"
 }
