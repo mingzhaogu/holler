@@ -34,7 +34,8 @@ class MessageViewItem extends React.Component {
 
     return (
       <li key={`chat-msg-${msg.id}`}
-        className={`chat-msg chat-msg-align-${align}`}>
+        className={`chat-msg chat-msg-align-${align}`}
+      >
         <img src={senderPic} className="chat-msg-pic" />
 
         <div className={`chat-msg-body chat-msg-body-${align}`}

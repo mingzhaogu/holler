@@ -35,14 +35,27 @@
         }
 
         .chat-msg-timestamp {
-          background-color: #000000;
-          color: #FFFFFF;
+          position: relative;
+          align-self: center;
+          background-color: $black;
+          color: $white;
           padding: 6px 12px;
           font-size: 12px;
           overflow: visible;
           border-radius: 0.3em;
           max-height: 100%;
           max-width: 100px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+          }
         }
 
         .hide {
@@ -62,7 +75,12 @@
         }
 
         .chat-msg-timestamp {
-          margin-left: 4px;
+          margin-left: 6px;
+
+          &:before {
+            border-right: 5px solid $black;
+            left: -5px;
+          }
         }
       }
 
@@ -79,7 +97,12 @@
         }
 
         .chat-msg-timestamp {
-          margin-right: 4px;
+          margin-right: 6px;
+
+          &:before {
+            border-left: 5px solid $black;
+            right: -5px;
+          }
         }
       }
     }
