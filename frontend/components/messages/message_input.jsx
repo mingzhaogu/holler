@@ -1,5 +1,7 @@
 import React from 'react';
 
+import StickysContainer from "../expressions/stickys_container";
+import GiphysContainer from "../expressions/giphys_container";
 import { createMessage } from '../../util/message_api_util';
 
 class MessageInput extends React.Component {
@@ -60,11 +62,13 @@ class MessageInput extends React.Component {
             aria-hidden="true"
             onClick={this.getStickyWidIt}
           />
+          <StickysContainer />
 
           <i className="fa fa-gift"
             aria-hidden="true"
             onClick={this.getGiphyWidIt}
           />
+          <GiphysContainer />
 
           <i className="fa fa-paper-plane"
           aria-hidden="true"

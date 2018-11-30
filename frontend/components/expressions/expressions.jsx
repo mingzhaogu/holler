@@ -1,6 +1,8 @@
 import React from 'react';
 
+import { Popover } from '../_reusables/popover';
 import { createMessage } from '../../util/message_api_util';
+import { capitalize } from '../../util/format';
 
 class Expressions extends React.Component {
   constructor(props) {
@@ -55,37 +57,21 @@ class Expressions extends React.Component {
   }
 
   render() {
-    const { showExpressions } = this.props;
-
-    if (!showExpressions) return <div></div>;
-    return (
-      <div className="giphy-container">
-        <div className="giphy-search">
+    const { showExpressions, messageType } = this.props;
+    if (!showExpressions) return null;
+    
+    return <Popover customClasses={`expressions-container ${messageType}`} arrow="bottom" extended>
+        <div className="expressions-search">
           <i className="fa fa-search" aria-hidden="true" />
-          <input type="text"
-            className="giphy-search-input"
-            onChange={this.handleInput}
-            value={this.state.query}
-            placeholder={`Search ${this.props.messageType}`}
-          />
+          <input type="text" className="expressions-search-input" onChange={this.handleInput} value={this.state.query} placeholder={`Search ${capitalize(this.props.messageType)}`} />
 
-          <i className="fa fa-plus"
-            aria-hidden="true"
-            onClick={this.fetchMoreExpressions}
-          />
+          <i className="fa fa-plus" aria-hidden="true" onClick={this.fetchMoreExpressions} />
 
-          <i className="fa fa-times-circle"
-            aria-hidden="true"
-            onClick={this.clearQuery}
-          />
+          <i className="fa fa-times-circle" aria-hidden="true" onClick={this.clearQuery} />
         </div>
 
-        <ul className="display-giphys">
-          {this.displayExpressions()}
-        </ul>
-
-      </div>
-    )
+        <ul className="display-expressions">{this.displayExpressions()}</ul>
+      </Popover>;
   }
 }
 

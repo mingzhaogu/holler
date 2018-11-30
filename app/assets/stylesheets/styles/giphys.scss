@@ -1,42 +1,30 @@
-//giphys.jsx
-// .giphy-container::after {
-//   content: "";
-//   display: flex;
-//   clear: both;
-// }
-
-.giphy-container {
-  // border-top: 1px solid $boxBorder;
-  overflow: hidden;
-  // overflow: visible;
-  // position: relative;
+.expressions-container {
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+  width: 30vw;
+  bottom: 50px;
+  padding: 1px 0;
   align-items: center;
-  width: 55vw;
-  // width: 100%;
 
-  .giphy-search {
+  .expressions-search {
     position: relative;
-    margin: 12px;
+    width: 100%;
+    padding: 5px;
     color: $darkgrey;
-    // width: 100%;
 
     .fa {
       position: absolute;
-      top: 9px;
       font-size: 12px;
     }
 
     .fa-search {
-      // position: absolute;
-      font-size: 12px;
-      // top: 9px;
-      left: 8px;
+      top: 4px;
     }
 
-    .giphy-search-input {
+    .expressions-search-input {
       display: block;
       width: 100%;
-      // flex: 1;
       padding: 0 28px;
       height: 30px;
       background-color: #f6f7f9;
@@ -46,6 +34,7 @@
     }
 
     .fa-plus, .fa-times-circle {
+      top: 3px;
       color: $magenta;
       font-size: $fontSizeMain;
     }
@@ -64,19 +53,53 @@
   }
 
 
-  .display-giphys {
-    display: flex;
+  .display-expressions {
+    flex: 1;
     max-width: 100%;
-    // flex-direction: column;
-    overflow: scroll hidden;
+    overflow: hidden scroll;
     height: 150px;
-    // position: absolute;
-    // top: 100%;
 
-    li img{
-      height: 100%;
-      width: auto;
-      padding: 3px;
+    li img {
+      width: 100%;
+      padding: 1px 2px;
+      cursor: pointer;
+    }
+  }
+
+  &.extended:before {
+    // left: 12px;
+    bottom: -8px;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid $boxBorder;
+
+  }
+
+  &.extended:after {
+    // left: 13px;
+    bottom: -7px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid $white;
+  }
+  
+  &.sticky {
+    &.extended:before {
+      left: 12px;
+    }
+    
+    &.extended:after {
+      left: 13px;
+    }
+  }
+
+  &.giphy {
+    &.extended:before {
+      left: 53px;
+    }
+
+    &.extended:after {
+      left: 54px;
     }
   }
 }

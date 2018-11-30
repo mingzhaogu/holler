@@ -26,27 +26,11 @@
     }
 
     .nav-bar-dropdown {
-      display: none;
-      position: absolute;
       top: 49px;
       left: 3px;
       padding: 5px 0;
-      background-color: #FFFFFF;
-      border: 1px solid $boxBorder;
-      border-radius: 3px;
-      box-shadow: 0 3px 8px $boxBorder;
       width: 11vw;
       min-width: 80px;
-      line-height: 1.28;
-      z-index: 1;
-      font-size: 14px;
-
-      &.extended:before, &.extended:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-      }
       
       &.extended:before {
         left: 12px;
@@ -75,8 +59,8 @@
       }
     }
 
-    .extended {
-      display: block;
-    }
+    // .extended {
+    //   display: block;
+    // }
   }
 }

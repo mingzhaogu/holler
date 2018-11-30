@@ -11,6 +11,7 @@
     .conversation-list {
       flex: 1;
       overflow-y: scroll;
+      // @include hover-scrollbar();
       // position: relative;
 
       .conversation-list-item {

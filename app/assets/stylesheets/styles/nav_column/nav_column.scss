@@ -4,23 +4,14 @@
 }
 
 .nav-col {
-  // border: 1px solid red;
   border-right: 1px solid $boxBorder;
   width: 22vw;
   min-width: 22vw;
-  // position: fixed;
-  // max-width: 300px;
   height: 100vh;
-  // background-color: green;
   display: flex;
   flex-direction: column;
-  // align-items: center;
-  // line-height: 1.2;
 
   .search-col {
-    // display: flex;
-    // flex-direction: column;
-
     .search-bar {
       position: relative;
       margin: 12px;
@@ -47,7 +38,6 @@
     }
 
     .conversation-list {
-
     }
   }
 }

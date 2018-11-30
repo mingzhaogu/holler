@@ -1,0 +1,38 @@
+.popover {
+    visibility: hidden;
+    position: absolute;
+    background-color: $white;
+    border: 1px solid $boxBorder;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px $boxBorder;
+    line-height: 1.28;
+    z-index: 1;
+    font-size: 14px;
+
+    &.extended {
+        visibility: visible;
+    }
+
+    &.extended:before, &.extended:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+    }
+
+    // &.extended:before {
+    //     left: 12px;
+    //     top: -8px;
+    //     border-left: 8px solid transparent;
+    //     border-right: 8px solid transparent;
+    //     border-bottom: 8px solid $boxBorder;
+    // }
+
+    // &.extended:after {
+    //     left: 13px;
+    //     top: -7px;
+    //     border-left: 7px solid transparent;
+    //     border-right: 7px solid transparent;
+    //     border-bottom: 7px solid $white;
+    // }
+}

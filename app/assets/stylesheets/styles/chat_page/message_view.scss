@@ -47,10 +47,6 @@
           max-width: 100px;
 
           &:before {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 0;
             top: 50%;
             transform: translate(0, -50%);
             border-top: 4px solid transparent;
@@ -110,13 +106,9 @@
     .message-form {
       display: flex;
       border: none;
-      border-top: 1px solid $boxBorder;
-      // align-items: center;
 
       textarea {
         font-size: 14px;
-        // border: inherit;
-        // border-top: 1px solid $boxBorder;
         font-weight: lighter;
         resize: none;
         flex-grow: 1;
@@ -137,6 +129,24 @@
 
         .fa:hover {
           color: $pink;
+        }
+      }
+
+      @media (max-width: 1275px) {
+        flex-direction: column;
+        margin: 9px 8px 0 12px;
+
+        textarea {
+          height: 17px;
+          padding-top: 8px;
+        }
+
+        .fun-icons {
+          padding: 8px 0;
+
+          .fa {
+            padding: 4px;
+          }
         }
       }
     }

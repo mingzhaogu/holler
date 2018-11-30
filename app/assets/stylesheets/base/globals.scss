@@ -60,25 +60,27 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 0.6em;
+  // width: 0.6em;
+  // width: 0px;
 }
 
 ::-webkit-scrollbar:hover {
-  width: 1em;
-
+  // width: 1em;
 }
 
 ::-webkit-scrollbar-track {
-  border-radius: 10px;
+  // border-radius: 10px;
 }
 
 ::-webkit-scrollbar-track:hover {
-  background-color: $boxBorder;
+  // background-color: $boxBorder;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: $lightpink;
+  // background-color: $lightpink;
+  // background-color: blue;
+  // @include transition(background-color 0.1s ease);
 }
 
 #file, #user-file {

@@ -11,7 +11,7 @@ import {
 const mapStateToProps = (state, ownProps) => ({
   convId: ownProps.match.params.convId,
   currentUser: state.session.currentUser,
-  messageType: "Sticky",
+  messageType: "sticky",
   showExpressions: state.ui.showStickys,
   expressions: Object.values(state.expressions.stickys),
 })

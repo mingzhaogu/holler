@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Popover } from '../_reusables/popover';
+
 class MessageViewItem extends React.Component {
   constructor(props) {
     super(props)
@@ -25,32 +27,23 @@ class MessageViewItem extends React.Component {
   render() {
     const { msg, currentUser, senderPic } = this.props;
     const align = (msg.senderId === currentUser.id) ? "right" : "left";
-    const displayTimestamp = (this.state.displayTimestamp) ? "show" : "hide";
 
     let style;
     if (msg.messageType !== "text") {
       style = { padding: '0px' };
     } else { style = {} };
 
-    return (
-      <li key={`chat-msg-${msg.id}`}
-        className={`chat-msg chat-msg-align-${align}`}
-      >
+    return <li key={`chat-msg-${msg.id}`} className={`chat-msg chat-msg-align-${align}`}>
         <img src={senderPic} className="chat-msg-pic" />
 
-        <div className={`chat-msg-body chat-msg-body-${align}`}
-          onMouseOver={this.changeTimestampDisplay}
-          onMouseOut={this.changeTimestampDisplay}
-          style={style}
-        >
+        <div className={`chat-msg-body chat-msg-body-${align}`} onMouseOver={this.changeTimestampDisplay} onMouseOut={this.changeTimestampDisplay} style={style}>
           {this.body()}
         </div>
 
-        <div className={`chat-msg-timestamp ${displayTimestamp}`}>
+        <Popover customClasses="chat-msg-timestamp" arrow={align} extended={this.state.displayTimestamp}>
           {msg.timestamp}
-        </div>
-      </li>
-    )
+        </Popover>
+      </li>;
   }
 }
 

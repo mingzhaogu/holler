@@ -1,3 +1,13 @@
+### ---------------
+### SEED NOTES
+### - Lilo & Stitch Theme:
+###   > users: 1 - 10
+###   > conversations: 1 - 7
+### - Hamilton Theme:
+###   > users: 11 - n
+###   > conversations: 8 - n
+### ---------------
+
 ###
 ### CREATE USER SEEDS
 ###
@@ -78,6 +88,7 @@ end
 ConversationUser.destroy_all
 
 conv_users = [
+  # [conversationId, userId]
   [1, 1], [1, 2], [1, 3], [1, 4], [1, 5], [1, 6], [1, 8],
   [2, 1], [2, 2],
   [3, 1], [3, 2], [3, 3], [3, 4],
@@ -241,4 +252,37 @@ messages = [
 
 messages.each do |msg|
   Message.create!(msg)
+end
+
+### ---------------
+
+users = [
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+  {
+    username: "alexanderhamilton", password: "password", name: "Alexander Hamilton"
+  },
+]
+
+users.each do |user|
+  User.create!(user)
 end

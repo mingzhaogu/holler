@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Popover } from '../_reusables/popover';
+
 class NavHeader extends React.Component {
   constructor(props) {
     super(props)
@@ -34,30 +36,24 @@ class NavHeader extends React.Component {
 
   render() {
     const { logout, createConversation } = this.props;
-    const extended = this.state.displayDropdown ? "extended" : "";
+    // const extended = this.state.displayDropdown ? "extended" : "";
 
-    return (
-      <nav className="nav-bar">
-        <i className="fa fa-cog nav-bar-cog"
-          aria-hidden="true"
-        />
+    return <nav className="nav-bar">
+        <i className="fa fa-cog nav-bar-cog" aria-hidden="true" />
 
-        <menu className={`nav-bar-dropdown ${extended}`}>
-          <ul onClick={(e) => e.stopPropagation()}>
+        <Popover customClasses="nav-bar-dropdown" arrow="top" extended={this.state.displayDropdown} >
+          <ul onClick={e => e.stopPropagation()}>
             <li onClick={this.props.toggleUserSettings}>Settings</li>
             <li onClick={logout}>Logout</li>
           </ul>
-        </menu>
+        </Popover>
 
         <h2 className="holler main-holler">Holler</h2>
 
         <Link to="/new">
-          <i className="fa fa-pencil-square-o"
-            aria-hidden="true"
-          />
+          <i className="fa fa-pencil-square-o" aria-hidden="true" />
         </Link>
-      </nav>
-    )
+      </nav>;
   }
 }
 
