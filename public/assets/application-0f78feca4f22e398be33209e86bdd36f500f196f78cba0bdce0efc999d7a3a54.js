@@ -33717,8 +33717,8 @@ function (_React$Component) {
       password: ''
     };
     _this.defaultLogin = {
-      username: 'stitch626',
-      password: 'password'
+      username: "demo_user",
+      password: "password"
     };
     return _this;
   }

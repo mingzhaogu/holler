@@ -11,7 +11,7 @@ class SessionForm extends React.Component {
       password: ''
     };
 
-    this.defaultLogin = { username: 'stitch626', password: 'password' };
+    this.defaultLogin = { username: "demo_user", password: "password" };
   }
 
   componentWillUnmount() {
