@@ -44,7 +44,6 @@
           overflow: visible;
           border-radius: 0.3em;
           max-height: 100%;
-          max-width: 100px;
 
           &:before {
             top: 50%;
@@ -112,7 +111,7 @@
         font-weight: lighter;
         resize: none;
         flex-grow: 1;
-        padding: 10px;
+        padding-top: 10px;
       }
 
       .fun-icons {
@@ -143,9 +142,10 @@
 
         .fun-icons {
           padding: 8px 0;
+          justify-content: space-between;
 
           .fa {
-            padding: 4px;
+            padding: 6px;
           }
         }
       }

@@ -45,38 +45,22 @@ class MessageInput extends React.Component {
   }
 
   render() {
-    return (
-      <form className="message-form"
-        onSubmit={this.handleSubmit}>
-
-        <textarea
-          className="message-form-input"
-          placeholder="Type a message..."
-          value={this.state.currentMessage}
-          onKeyPress={this.handleKeyPress}
-          onChange={this.updateCurrentMessage}
-        />
+    return <form className="message-form" onSubmit={this.handleSubmit}>
+        <textarea className="message-form-input" placeholder="Type a message..." value={this.state.currentMessage} onKeyPress={this.handleKeyPress} onChange={this.updateCurrentMessage} />
 
         <div className="fun-icons">
-          <i className="fa fa-paw"
-            aria-hidden="true"
-            onClick={this.getStickyWidIt}
-          />
-          <StickysContainer />
+          <div className="message-additions">
+            <i className="fa fa-paw" aria-hidden="true" onClick={this.getStickyWidIt} />
+            <StickysContainer />
 
-          <i className="fa fa-gift"
-            aria-hidden="true"
-            onClick={this.getGiphyWidIt}
-          />
-          <GiphysContainer />
-
-          <i className="fa fa-paper-plane"
-          aria-hidden="true"
-          onClick={this.handleSubmit}
-          />
+            <i className="fa fa-gift" aria-hidden="true" onClick={this.getGiphyWidIt} />
+            <GiphysContainer />
+          </div>
+          <div className="message-input-submit">
+            <i className="fa fa-paper-plane" aria-hidden="true" onClick={this.handleSubmit} />
+          </div>
         </div>
-      </form>
-    )
+      </form>;
   }
 }
 
