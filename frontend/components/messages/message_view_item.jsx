@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import { Popover } from '../_reusables/popover';
 
-class MessageViewItem extends React.Component {
+class MessageViewItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -12,7 +12,7 @@ class MessageViewItem extends React.Component {
 
   body() {
     const { msg } = this.props;
-    if (msg.messageType !== "text") {
+    if (msg.messageType !== 'text') {
       return <img style={{ borderRadius: '1.3em' }} src={msg.body} />
     } else {
       return msg.body
@@ -26,10 +26,10 @@ class MessageViewItem extends React.Component {
 
   render() {
     const { msg, currentUser, senderPic } = this.props;
-    const align = (msg.senderId === currentUser.id) ? "right" : "left";
+    const align = (msg.senderId === currentUser.id) ? 'right' : 'left';
 
     let style;
-    if (msg.messageType !== "text") {
+    if (msg.messageType !== 'text') {
       style = { padding: '0px' };
     } else { style = {} };
 

@@ -105,6 +105,7 @@
     .message-form {
       display: flex;
       border: none;
+      margin: 0 8px 0 12px;
 
       textarea {
         font-size: 14px;
@@ -116,14 +117,17 @@
 
       .fun-icons {
         display: flex;
-        flex-direction: row;
         align-items: center;
-        padding-right: 10px;
+        
+        .message-additions {
+          display: flex;
+        }
 
         .fa {
-          padding: 10px;
+          padding: 8px;
           color: $magenta;
-          font-size: $fontSizeH2;
+          // font-size: $fontSizeH2;
+          font-size: $fontSizeH1;
         }
 
         .fa:hover {
@@ -131,9 +135,9 @@
         }
       }
 
-      @media (max-width: 1275px) {
+      @media (max-width: 1500px) {
         flex-direction: column;
-        margin: 9px 8px 0 12px;
+        margin-top: 9px;
 
         textarea {
           height: 17px;
@@ -141,12 +145,14 @@
         }
 
         .fun-icons {
-          padding: 8px 0;
+          padding-top: 8px;
           justify-content: space-between;
 
-          .fa {
-            padding: 6px;
-          }
+          // .stickys, .giphys {
+          //   & > .fa {
+          //     padding-bottom: 6px;
+          //   }
+          // }
         }
       }
     }

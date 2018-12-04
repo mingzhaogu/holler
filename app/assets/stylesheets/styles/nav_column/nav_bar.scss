@@ -32,21 +32,21 @@
       width: 11vw;
       min-width: 80px;
       
-      &.extended:before {
-        left: 12px;
-        top: -8px;
-        border-left: 8px solid transparent;
-        border-right: 8px solid transparent;
-        border-bottom: 8px solid $boxBorder;
-      }
+      // &.extended:before {
+      //   left: 12px;
+      //   top: -8px;
+      //   border-left: 8px solid transparent;
+      //   border-right: 8px solid transparent;
+      //   border-bottom: 8px solid $boxBorder;
+      // }
 
-      &.extended:after {
-        left: 13px;
-        top: -7px;
-        border-left: 7px solid transparent;
-        border-right: 7px solid transparent;
-        border-bottom: 7px solid $white;
-      }
+      // &.extended:after {
+      //   left: 13px;
+      //   top: -7px;
+      //   border-left: 7px solid transparent;
+      //   border-right: 7px solid transparent;
+      //   border-bottom: 7px solid $white;
+      // }
 
       li {
         padding: 2px 24px;

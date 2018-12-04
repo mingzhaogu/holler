@@ -14,17 +14,17 @@ class Expressions extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchExpressions("")
+    this.props.fetchExpressions('')
   }
 
   displayExpressions = () => {
     return (
       this.props.expressions.map((exp) => (
-      <li key={exp.id}
-        onClick={this.sendExpression}
-      >
-        <img src={exp.images.fixed_height.url} />
-      </li>
+        <li key={exp.id}
+          onClick={this.sendExpression}
+        >
+          <img src={exp.images.fixed_height.url} />
+        </li>
       ))
     )
   }
@@ -36,8 +36,8 @@ class Expressions extends React.Component {
   }
 
   clearQuery = () => {
-    this.setState({ query: "", offset: 0 });
-    this.props.fetchExpressions("");
+    this.setState({ query: '', offset: 0 });
+    this.props.fetchExpressions('');
   }
 
   handleInput = e => {
@@ -60,7 +60,7 @@ class Expressions extends React.Component {
     const { showExpressions, messageType } = this.props;
     if (!showExpressions) return null;
     
-    return <Popover customClasses={`expressions-container ${messageType}`} arrow="bottom" extended>
+    return <Popover customClasses={`expressions-container ${messageType}`} arrow="bottom" align="left" extended>
         <div className="expressions-search">
           <i className="fa fa-search" aria-hidden="true" />
           <input type="text" className="expressions-search-input" onChange={this.handleInput} value={this.state.query} placeholder={`Search ${capitalize(this.props.messageType)}`} />

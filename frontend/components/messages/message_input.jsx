@@ -50,15 +50,19 @@ class MessageInput extends React.Component {
 
         <div className="fun-icons">
           <div className="message-additions">
-            <i className="fa fa-paw" aria-hidden="true" onClick={this.getStickyWidIt} />
-            <StickysContainer />
+            <span className="stickys" title="Choose a Sticky">
+              <i className="fa fa-paw" aria-hidden="true" onClick={this.getStickyWidIt} />
+              <StickysContainer />
+            </span>
 
-            <i className="fa fa-gift" aria-hidden="true" onClick={this.getGiphyWidIt} />
-            <GiphysContainer />
+            <span className="giphys" title="Choose a Giphy">
+              <i className="fa fa-gift" aria-hidden="true" onClick={this.getGiphyWidIt} />
+              <GiphysContainer />
+            </span>
           </div>
-          <div className="message-input-submit">
+          <span className="message-input-submit" title="Send a Message">
             <i className="fa fa-paper-plane" aria-hidden="true" onClick={this.handleSubmit} />
-          </div>
+          </span>
         </div>
       </form>;
   }

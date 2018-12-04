@@ -31462,13 +31462,14 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 var Popover = function Popover(_ref) {
   var arrow = _ref.arrow,
+      align = _ref.align,
       customClasses = _ref.customClasses,
       children = _ref.children,
       extended = _ref.extended,
-      props = _objectWithoutProperties(_ref, ["arrow", "customClasses", "children", "extended"]);
+      props = _objectWithoutProperties(_ref, ["arrow", "align", "customClasses", "children", "extended"]);
 
   var show = extended ? 'extended' : '';
-  var caret = arrow ? "caret-".concat(arrow) : '';
+  var caret = arrow ? "caret-".concat(arrow, "-").concat(align) : '';
   return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
     className: "popover ".concat(caret, " ").concat(customClasses, " ").concat(show)
   }, children);
@@ -33952,11 +33953,11 @@ function (_React$Component) {
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "clearQuery", function () {
       _this.setState({
-        query: "",
+        query: '',
         offset: 0
       });
 
-      _this.props.fetchExpressions("");
+      _this.props.fetchExpressions('');
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "handleInput", function (e) {
@@ -33991,7 +33992,7 @@ function (_React$Component) {
   _createClass(Expressions, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchExpressions("");
+      this.props.fetchExpressions('');
     }
   }, {
     key: "render",
@@ -34003,6 +34004,7 @@ function (_React$Component) {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__reusables_popover__["a" /* Popover */], {
         customClasses: "expressions-container ".concat(messageType),
         arrow: "bottom",
+        align: "left",
         extended: true
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "expressions-search"
@@ -60997,6 +60999,7 @@ function (_React$Component) {
       }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__reusables_popover__["a" /* Popover */], {
         customClasses: "nav-bar-dropdown",
         arrow: "top",
+        align: "left",
         extended: this.state.displayDropdown
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("ul", {
         onClick: function onClick(e) {
@@ -62586,8 +62589,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var MessageViewItem =
 /*#__PURE__*/
-function (_React$Component) {
-  _inherits(MessageViewItem, _React$Component);
+function (_Component) {
+  _inherits(MessageViewItem, _Component);
 
   function MessageViewItem(props) {
     var _this;
@@ -62617,7 +62620,7 @@ function (_React$Component) {
     value: function body() {
       var msg = this.props.msg;
 
-      if (msg.messageType !== "text") {
+      if (msg.messageType !== 'text') {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
           style: {
             borderRadius: '1.3em'
@@ -62635,10 +62638,10 @@ function (_React$Component) {
           msg = _this$props.msg,
           currentUser = _this$props.currentUser,
           senderPic = _this$props.senderPic;
-      var align = msg.senderId === currentUser.id ? "right" : "left";
+      var align = msg.senderId === currentUser.id ? 'right' : 'left';
       var style;
 
-      if (msg.messageType !== "text") {
+      if (msg.messageType !== 'text') {
         style = {
           padding: '0px'
         };
@@ -62667,7 +62670,7 @@ function (_React$Component) {
   }]);
 
   return MessageViewItem;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (MessageViewItem);
 
@@ -62836,16 +62839,23 @@ function (_React$Component) {
         className: "fun-icons"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
         className: "message-additions"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+        className: "stickys",
+        title: "Choose a Sticky"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
         className: "fa fa-paw",
         "aria-hidden": "true",
         onClick: this.getStickyWidIt
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__expressions_stickys_container__["a" /* default */], null), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__expressions_stickys_container__["a" /* default */], null)), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+        className: "giphys",
+        title: "Choose a Giphy"
+      }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
         className: "fa fa-gift",
         "aria-hidden": "true",
         onClick: this.getGiphyWidIt
-      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__expressions_giphys_container__["a" /* default */], null)), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", {
-        className: "message-input-submit"
+      }), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__expressions_giphys_container__["a" /* default */], null))), __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("span", {
+        className: "message-input-submit",
+        title: "Send a Message"
       }, __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("i", {
         className: "fa fa-paper-plane",
         "aria-hidden": "true",

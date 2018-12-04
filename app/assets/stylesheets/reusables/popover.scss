@@ -1,3 +1,10 @@
+$beforeXPosition: 12px;
+$afterXPosition: 13px;
+$beforeYPosition: -8px;
+$afterYPosition: -7px;
+$beforeThickness: 8px;
+$afterThickness: 7px;
+
 .popover {
     visibility: hidden;
     position: absolute;
@@ -11,28 +18,85 @@
 
     &.extended {
         visibility: visible;
+
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+        
+        &.caret-top-left, &.caret-top-right {
+            &:before {
+                top: $beforeYPosition;
+                border-left: $beforeThickness solid transparent;
+                border-right: $beforeThickness solid transparent;
+                border-bottom: $beforeThickness solid $boxBorder;
+            }
+
+            &:after {
+                top: $afterYPosition;
+                border-left: $afterThickness solid transparent;
+                border-right: $afterThickness solid transparent;
+                border-bottom: $afterThickness solid $white;
+            }
+        }
+        
+        &.caret-top-left {
+            &:before {
+                left: $beforeXPosition;
+            }
+
+            &:after {
+                left: $afterXPosition;
+            }
+        }
+        
+        &.caret-top-right {
+            &:before {
+                right: $beforeXPosition;
+            }
+
+            &:after {
+                right: $afterXPosition;
+            }
+        }
+        
+        &.caret-bottom-left, &.caret-bottom-right {
+            &:before {
+                bottom: $beforeYPosition;
+                border-left: $beforeThickness solid transparent;
+                border-right: $beforeThickness solid transparent;
+                border-top: $beforeThickness solid $boxBorder;
+            }
+
+            &:after {
+                bottom: $afterYPosition;
+                border-left: $afterThickness solid transparent;
+                border-right: $afterThickness solid transparent;
+                border-top: $afterThickness solid $white;
+            }
+        }
+        
+        &.caret-bottom-left {
+            &:before {
+                left: $beforeXPosition;
+            }
+
+            &:after {
+                left: $afterXPosition;
+            }
+        }
+        
+        &.caret-bottom-right {
+            &:before {
+                right: $beforeXPosition;
+            }
+
+            &:after {
+                right: $afterXPosition;
+            }
+        }
+
     }
-
-    &.extended:before, &.extended:after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 0;
-    }
-
-    // &.extended:before {
-    //     left: 12px;
-    //     top: -8px;
-    //     border-left: 8px solid transparent;
-    //     border-right: 8px solid transparent;
-    //     border-bottom: 8px solid $boxBorder;
-    // }
-
-    // &.extended:after {
-    //     left: 13px;
-    //     top: -7px;
-    //     border-left: 7px solid transparent;
-    //     border-right: 7px solid transparent;
-    //     border-bottom: 7px solid $white;
-    // }
 }

@@ -41,7 +41,7 @@ class NavHeader extends React.Component {
     return <nav className="nav-bar">
         <i className="fa fa-cog nav-bar-cog" aria-hidden="true" />
 
-        <Popover customClasses="nav-bar-dropdown" arrow="top" extended={this.state.displayDropdown} >
+        <Popover customClasses="nav-bar-dropdown" arrow="top" align="left" extended={this.state.displayDropdown} >
           <ul onClick={e => e.stopPropagation()}>
             <li onClick={this.props.toggleUserSettings}>Settings</li>
             <li onClick={logout}>Logout</li>
