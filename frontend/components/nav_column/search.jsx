@@ -7,12 +7,12 @@ class Search extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      query: "",
+      query: ''
     };
   }
 
   componentWillMount() {
-    this.props.fetchAllConversations("")
+    // this.props.fetchAllConversations("")
   }
 
   handleInput = e => {

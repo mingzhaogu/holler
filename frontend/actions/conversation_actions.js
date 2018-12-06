@@ -32,7 +32,7 @@ export const receiveConversation = (payload) => ({
 //   payload
 // });
 
-export const fetchAllConversations = (query) => (dispatch) => (
+export const fetchAllConversations = (query = '') => (dispatch) => (
   ConversationUtil.fetchConversations(query)
     .then(payload => dispatch(receiveAllConversations(payload)))
 );

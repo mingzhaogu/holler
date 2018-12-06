@@ -52,12 +52,12 @@ class MessageInput extends React.Component {
           <div className="message-additions">
             <span className="stickys" title="Choose a Sticky">
               <i className="fa fa-paw" aria-hidden="true" onClick={this.getStickyWidIt} />
-              <StickysContainer />
+              {this.props.showExpressions.stickys && <StickysContainer />}
             </span>
 
             <span className="giphys" title="Choose a Giphy">
               <i className="fa fa-gift" aria-hidden="true" onClick={this.getGiphyWidIt} />
-              <GiphysContainer />
+              {this.props.showExpressions.giphys && <GiphysContainer />}
             </span>
           </div>
           <span className="message-input-submit" title="Send a Message">

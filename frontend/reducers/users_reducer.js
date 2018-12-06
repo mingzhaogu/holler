@@ -19,8 +19,8 @@ const UsersReducer = (oldState = {}, action) => {
       return merge({}, oldState, action.currentUser);
     // case RECEIVE_ALL_CONVERSATIONS:
     //   return merge({}, oldState, action.payload.users);
-    case RECEIVE_CONVERSATION:
-      return merge({}, action.payload.users);
+    // case RECEIVE_CONVERSATION:
+    //   return merge({}, action.payload.users);
     default:
       return oldState;
   }

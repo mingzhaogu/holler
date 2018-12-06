@@ -139,19 +139,19 @@ end
 
 ls_messages = [
   {
-    conversation_id: 2, sender_id: stitch, message_type: "Giphy",
+    conversation_id: 2, sender_id: stitch, message_type: "giphy",
     body: "https://media0.giphy.com/media/I0IavIJOpDpCg/200.gif?cid=e1bb72ff5acf0b872e4e6279418eaae2"
   },
   {
-    conversation_id: 3, sender_id: stitch, message_type: "Sticky",
+    conversation_id: 3, sender_id: stitch, message_type: "sticky",
     body: "https://media2.giphy.com/media/zQZsoCpu3Ipq0/200.gif?cid=e1bb72ff5acf0caa72702e55598ea62f"
   },
   {
-    conversation_id: 3, sender_id: jumba, message_type: "Giphy",
+    conversation_id: 3, sender_id: jumba, message_type: "giphy",
     body: "https://media2.giphy.com/media/mmD5t45gfX6U0/200.gif?cid=e1bb72ff5ace55e3656d784c4dca8a9a"
   },
   {
-    conversation_id: 3, sender_id: pleakley, message_type: "Giphy",
+    conversation_id: 3, sender_id: pleakley, message_type: "giphy",
     body: "https://media2.giphy.com/media/cQys4y6ESMyxq/200.gif?cid=e1bb72ff5acf0b2d4279576a63e096d8"
   },
   {
@@ -203,11 +203,11 @@ ls_messages = [
     body: "And you like me better as a sister than a rabbit, right?"
   },
   {
-    conversation_id: 5, sender_id: stitch, message_type: "Giphy",
+    conversation_id: 5, sender_id: stitch, message_type: "giphy",
     body: "https://media2.giphy.com/media/QmkMGTMpGELDi/200.gif?cid=e1bb72ff5ace5466667a4d644da2ca08"
   },
   {
-    conversation_id: 5, sender_id: lilo, message_type: "Giphy",
+    conversation_id: 5, sender_id: lilo, message_type: "giphy",
     body: "https://media0.giphy.com/media/heYtu4tcSEdJ6/200.gif?cid=e1bb72ff5acfa80b79636731455d2129"
   },
   {
@@ -223,7 +223,7 @@ ls_messages = [
     body: "Aloha!"
   },
   {
-    conversation_id: 7, sender_id: gantu, message_type: "Giphy",
+    conversation_id: 7, sender_id: gantu, message_type: "giphy",
     body: "https://media3.giphy.com/media/QOFQt0i5vcoSs/200.gif?cid=e1bb72ff5acfbfdd592e6753732652f4"
   },
   {
@@ -231,11 +231,11 @@ ls_messages = [
     body: "Also cute and fluffy!"
   },
   {
-    conversation_id: 7, sender_id: stitch, message_type: "Giphy",
+    conversation_id: 7, sender_id: stitch, message_type: "giphy",
     body: "https://media0.giphy.com/media/rRLj72JejzeKc/200.gif?cid=e1bb72ff5acfc0c3756a457559051bf8"
   },
   {
-    conversation_id: 7, sender_id: gantu, message_type: "Giphy",
+    conversation_id: 7, sender_id: gantu, message_type: "giphy",
     body: "https://media0.giphy.com/media/xjCKXaZeHcRqg/200.gif?cid=e1bb72ff5acfbfdd592e6753732652f4"
   },
   {
@@ -256,7 +256,7 @@ ls_messages = [
   },
   {
     conversation_id: 1, sender_id: pleakley,
-    body: "In addition to sending text messages, you can also send stickers and gifs (courtesy of Giphy) via the 'paw' and 'gift' icons below. Emojis also work (depending on browser and device compatibility)!"
+    body: "In addition to sending text messages, you can also send stickers and gifs (courtesy of giphy) via the 'paw' and 'gift' icons below. Emojis also work (depending on browser and device compatibility)!"
   },
   {
     conversation_id: 1, sender_id: stitch,
@@ -267,11 +267,11 @@ ls_messages = [
     body: "Feel free to play around and let me know what you think! You can contact the developer, Annie, using the Github and/or LinkedIn icons in the conversation details sidebar. Enjoy!"
   },
   {
-    conversation_id: 1, sender_id: stitch, message_type: "Giphy",
+    conversation_id: 1, sender_id: stitch, message_type: "giphy",
     body: "https://media2.giphy.com/media/f8YTKdAHrx9gQ/200.gif?cid=e1bb72ff5acf0b6941633249363a2ffb"
   },
   {
-    conversation_id: 1, sender_id: scrump, message_type: "Giphy",
+    conversation_id: 1, sender_id: scrump, message_type: "giphy",
     body: "https://media3.giphy.com/media/mQFE7siDwCrcY/200.gif?cid=e1bb72ff5acf0d33367a4d5749dee610"
   }
 ]

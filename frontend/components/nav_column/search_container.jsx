@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 
 import Search from './search';
-import {
-  selectAllConversations,
-  findLastMessages
-} from '../../reducers/selectors';
-import { fetchAllConversations,
-} from '../../actions/conversation_actions';
+
+import { selectAllConversations } from '../../selectors/conversation_selectors';
+import { findLastMessages } from '../../selectors/message_selectors';
+import { fetchAllConversations } from "../../actions/conversation_actions";
 
 const mapStateToProps = (state, ownProps) => ({
   conversations: selectAllConversations(state),
@@ -17,8 +15,8 @@ const mapStateToProps = (state, ownProps) => ({
 // loading: state.ui.loading
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchAllConversations: (query) => (dispatch(fetchAllConversations(query))),
-})
+  fetchAllConversations: query => dispatch(fetchAllConversations(query))
+});
 
 export default withRouter(connect(
   mapStateToProps,

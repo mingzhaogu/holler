@@ -6,8 +6,6 @@ import MessageViewItem from './message_view_item';
 class MessageView extends React.Component {
   constructor(props) {
     super(props);
-    this.setUpChatroom = this.setUpChatroom.bind(this);
-    this.scrollToBottom = this.scrollToBottom.bind(this);
   }
 
   componentWillMount() {
@@ -28,7 +26,7 @@ class MessageView extends React.Component {
     this.scrollToBottom();
   }
 
-  setUpChatroom(convId, receiveMessage) {
+  setUpChatroom = (convId, receiveMessage) => {
     const chatroom = ActionCable.createConsumer();
     chatroom.subscriptions.create({
       channel: 'ChatChannel',
@@ -43,7 +41,7 @@ class MessageView extends React.Component {
     });
   };
 
-  scrollToBottom() {
+  scrollToBottom = () => {
     const chatContainer = document.getElementsByClassName('live-chat')[0];
     if (chatContainer) {
       chatContainer.scrollTop = chatContainer.scrollHeight;
@@ -52,7 +50,6 @@ class MessageView extends React.Component {
 
   render() {
     const { messages, currentUser, chatUsers } = this.props;
-
     const displayMessages = messages.map(msg => {
       if (!chatUsers[msg.senderId]) return null;
       else return (

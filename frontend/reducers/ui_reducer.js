@@ -12,15 +12,6 @@ import {
   START_LOADING_CONVERSATIONS,
   START_LOADING_SINGLE_CONVERSATION
 } from '../actions/conversation_actions';
-import {
-  RECEIVE_GIPHYS,
-  RECEIVE_MORE_GIPHYS,
-  RECEIVE_STICKYS,
-  RECEIVE_MORE_STICKYS
-} from '../actions/giphy_actions';
-import {
-  RECEIVE_USERS
-} from '../actions/user_actions';
 
 const _nullState = {
   showFriendDetails: true,
@@ -31,7 +22,7 @@ const _nullState = {
 };
 
 const UIReducer = (oldState = _nullState, action) => {
-  Object.freeze (oldState);
+  Object.freeze(oldState);
 
   let newState;
   switch(action.type) {

@@ -4,8 +4,7 @@ import { withRouter } from 'react-router';
 
 import FriendBar from './friend_bar';
 import { toggleFriendDetailsView } from '../../actions/ui_actions';
-import { findConversationName } from '../../reducers/selectors';
-
+import { findConversationName } from "../../selectors/conversation_selectors";
 
 const mapStateToProps = (state, ownProps) => ({
   chatName: findConversationName(state, ownProps) || "Welcome!",

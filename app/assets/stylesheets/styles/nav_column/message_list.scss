@@ -35,20 +35,22 @@
         }
 
         .conversation-list-item-body {
+          flex-grow: 1;
           overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-
+          
           .conversation-list-item-convo-name {
             font-weight: bolder;
             line-height: 1.4;
           }
-
+          
           .conversation-list-item-last-msg {
             height: 18px;
             font-size: 13px;
             // color: rgba(153, 153, 153, 1);
+            // overflow: hidden;
             overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
           }
         }
       }

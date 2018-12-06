@@ -1,24 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 import ConversationListItem from './conversation_list_item';
 
-class ConversationList extends React.Component {
+class ConversationList extends Component {
   constructor (props) {
     super(props);
   }
 
   render () {
+    const { lastMessages, users } = this.props;
+
     return (
       <section className="conversation-list">
         <ul>
           {this.props.conversations.map((conv) => {
-            return (
-              <ConversationListItem
-                key={conv.id}
-                conv={conv}
-                lastMsg={this.props.lastMessages[conv.id]}
-              />
-            )
+            const lastMsg = lastMessages[conv.id];
+            const sender = users[lastMsg.senderId];
+
+            return <ConversationListItem key={conv.id} conv={conv} lastMsg={lastMsg} sender={sender} />;
           })}
         </ul>
       </section>

@@ -7,20 +7,16 @@ import IconLinksComponent from '../icon_links/icon_links_component';
 class FriendDetails extends React.Component {
   constructor(props) {
     super(props);
-    const convoName = props.convoName;
 
     this.state = {
       isEditing: false,
-      convoName: "",
+      convoName: props.convoName,
       imageFile: null,
       imageUrl: null,
     }
+  }
 
-    this.handleKeyPress = this.handleKeyPress.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.submitChanges = this.submitChanges.bind(this);
-    this.togglePencil = this.togglePencil.bind(this);
-    this.updateImg = this.updateImg.bind(this);
+  componentDidMount() {
   }
 
   componentWillReceiveProps(nextProps) {
@@ -34,17 +30,17 @@ class FriendDetails extends React.Component {
     }
   }
 
-  handleKeyPress(e) {
+  handleKeyPress = e => {
     if (e.key === "Enter" && e.shiftKey === false) {
       this.submitChanges(e)
     }
   }
 
-  handleInput(e) {
+  handleInput = e => {
     this.setState({ convoName: e.target.value })
   }
 
-  submitChanges(e) {
+  submitChanges = e => {
     var formData = new FormData();
     formData.append("conversation[chat_name]", this.state.convoName)
 
@@ -56,7 +52,7 @@ class FriendDetails extends React.Component {
     this.setState({ isEditing: false })
   }
 
-  updateImg(e) {
+  updateImg = e => {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
 
@@ -71,7 +67,7 @@ class FriendDetails extends React.Component {
     if (file) fileReader.readAsDataURL(file);
   }
 
-  togglePencil(e) {
+  togglePencil = e => {
     this.setState(prevState => ({ isEditing: !prevState.isEditing }));
   }
 
