@@ -28,10 +28,10 @@ const sessionReducer = (oldState = _nullUser, action) => {
       return merge({}, { currentUser });
     case RECEIVE_CONVERSATION:
       const { conversation, messages } = action.payload;
-      return merge({}, oldState, {
-        currentConversation: Object.values(conversation)[0],
-        currentMessages: Object.values(messages)
-      });
+      const newState = merge({}, oldState);
+      newState.currentConversation = Object.values(conversation)[0];
+      newState.currentMessages = Object.values(messages);
+      return newState;
     default:
       return oldState;
   }

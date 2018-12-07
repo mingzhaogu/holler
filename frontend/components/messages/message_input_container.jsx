@@ -5,7 +5,7 @@ import { withRouter } from 'react-router';
 import MessageInput from './message_input';
 
 import { findConversationId, findConversationName } from "../../selectors/conversation_selectors";
-import { findAllMessages } from "../../selectors/message_selectors";
+import { findCurrentMessages } from "../../selectors/message_selectors";
 import { getExpressionsFlags } from "../../selectors/expressions_selectors";
 import { toggleGiphys, toggleStickys } from '../../actions/ui_actions';
 import { fetchGiphys, fetchStickys } from '../../actions/giphy_actions';
@@ -14,7 +14,7 @@ const mapStateToProps = (state, ownProps) => ({
   chatName: findConversationName(state, ownProps),
   convId: findConversationId(state, ownProps),
   currentUser: state.session.currentUser,
-  messages: findAllMessages(state, ownProps),
+  messages: findCurrentMessages(state, ownProps),
   showExpressions: getExpressionsFlags(state),
   showFriendDetails: state.ui.showFriendDetails
 });

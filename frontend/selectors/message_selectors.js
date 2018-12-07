@@ -17,7 +17,7 @@ export const findAllMessages = (state, ownProps) => {
 };
 
 export const findCurrentMessages = (state, ownProps) => (
-  state.session.messages || findAllMessages(state, ownProps)
+  state.session.currentMessages || findAllMessages(state, ownProps)
 );
 
 export const findMessage = (state, id) => (

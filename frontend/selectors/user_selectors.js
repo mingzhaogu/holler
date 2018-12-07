@@ -1,4 +1,4 @@
-import { findConversation } from "./conversation_selectors";
+import { findCurrentConversation } from "./conversation_selectors";
 
 export const findCurrentUser = (state) => {
   const currentUserId = state.session.currentUser.id;
@@ -17,7 +17,7 @@ export const findUser = (state, id) => (
 );
 
 export const findConversationUsers = (state, ownProps) => {
-  const currentConvo = findConversation(state, ownProps);
-  if (!currentConvo) return;
+  const currentConvo = findCurrentConversation(state, ownProps);
+  if (!currentConvo) return [];
   return currentConvo.usersId.map(id => findUser(state, id));
 }

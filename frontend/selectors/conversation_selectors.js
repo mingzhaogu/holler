@@ -7,7 +7,7 @@ export const findConversationId = (state, ownProps) => (
 );
 
 export const findCurrentConversation = (state, ownProps) => (
-    state.session.currentConversation
+    state.session.currentConversation || findConversation(state, ownProps)
 );
 
 export const findConversation = (state, ownProps) => (

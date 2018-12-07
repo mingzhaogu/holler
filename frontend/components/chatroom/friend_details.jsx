@@ -10,47 +10,49 @@ class FriendDetails extends React.Component {
 
     this.state = {
       isEditing: false,
-      convoName: props.convoName,
+      convoName: props.currentConvo.chatName,
       imageFile: null,
-      imageUrl: null,
-    }
+      imageUrl: null
+    };
   }
 
-  componentDidMount() {
-  }
+  componentDidMount() {}
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.convoName !== nextProps.convoName) {
+  componentDidUpdate(prevProps) {
+    if (this.props.currentConvo.chatName !== prevProps.currentConvo.chatName) {
       this.setState({
         isEditing: false,
-        convoName: nextProps.convoName,
+        convoName: this.props.currentConvo.chatName,
         imageFile: null,
-        imageUrl: nextProps.convoImage,
-      })
+        imageUrl: this.props.currentConvo.imageUrl
+      });
     }
   }
 
   handleKeyPress = e => {
     if (e.key === "Enter" && e.shiftKey === false) {
-      this.submitChanges(e)
+      this.submitChanges(e);
     }
-  }
+  };
 
   handleInput = e => {
-    this.setState({ convoName: e.target.value })
-  }
+    this.setState({ convoName: e.target.value });
+  };
 
   submitChanges = e => {
     var formData = new FormData();
-    formData.append("conversation[chat_name]", this.state.convoName)
+    formData.append(
+      "conversation[chat_name]",
+      this.state.currentConvo.chatName
+    );
 
     if (this.state.imageFile) {
-      formData.append("conversation[image]", this.state.imageFile)
+      formData.append("conversation[image]", this.state.imageFile);
     }
 
-    this.props.updateConversation(formData, this.props.currentConvo.id)
-    this.setState({ isEditing: false })
-  }
+    this.props.updateConversation(formData, this.props.currentConvo.id);
+    this.setState({ isEditing: false });
+  };
 
   updateImg = e => {
     const file = e.currentTarget.files[0];
@@ -61,78 +63,93 @@ class FriendDetails extends React.Component {
         imageFile: file,
         imageUrl: fileReader.result
       });
-      this.submitChanges(e)
-    }
+      this.submitChanges(e);
+    };
 
     if (file) fileReader.readAsDataURL(file);
-  }
+  };
 
   togglePencil = e => {
     this.setState(prevState => ({ isEditing: !prevState.isEditing }));
-  }
+  };
 
   staticHeader() {
     return (
       <div className="friend-details-header">
-        <label htmlFor="file"><img src={this.props.convoImage}
-          className="friend-details-convo-pic"
-          height="50"
-          width="50"
-        /></label>
-
-        <input type="file"
-          id="file"
-          accept="image/*"
-          onChange={this.updateImg} />
-
-        <label className="friend-details-convo-name"
-          onClick={this.togglePencil}
-        >
-          {this.props.convoName}
+        <label htmlFor="file">
+          <img
+            src={this.props.currentConvo.imageUrl}
+            className="friend-details-convo-pic"
+            height="50"
+            width="50"
+          />
         </label>
 
-        <i className="fa fa-pencil"
+        <input
+          type="file"
+          id="file"
+          accept="image/*"
+          onChange={this.updateImg}
+        />
+
+        <label
+          className="friend-details-convo-name"
+          onClick={this.togglePencil}
+        >
+          {this.props.currentConvo.chatName}
+        </label>
+
+        <i
+          className="fa fa-pencil"
           aria-hidden="true"
           onClick={this.togglePencil}
         />
       </div>
-    )
+    );
   }
 
   editHeader() {
     return (
       <React.Fragment>
         <div className="friend-details-header">
-          <label htmlFor="file"><img src={this.state.imageUrl}
-            className="friend-details-convo-pic"
-            height="50"
-            width="50"
-          /></label>
+          <label htmlFor="file">
+            <img
+              src={this.state.imageUrl}
+              className="friend-details-convo-pic"
+              height="50"
+              width="50"
+            />
+          </label>
 
-          <input type="file"
+          <input
+            type="file"
             id="file"
             accept="image/*"
             onChange={this.updateImg}
           />
 
-          <input className="friend-details-convo-name edit-convo-name"
+          <input
+            className="friend-details-convo-name edit-convo-name"
             autoFocus
             value={this.state.convoName}
             onKeyPress={this.handleKeyPress}
             onChange={this.handleInput}
           />
 
-          <i className="fa fa-floppy-o"
+          <i
+            className="fa fa-floppy-o"
             aria-hidden="true"
             onClick={this.submitChanges}
           />
         </div>
       </React.Fragment>
-    )
+    );
   }
 
   friendDetails() {
-    const header = (this.state.isEditing) ? (this.editHeader()) : (this.staticHeader());
+    const header = this.state.isEditing
+      ? this.editHeader()
+      : this.staticHeader();
 
     return (
       <div className="friend-details">
@@ -140,13 +157,15 @@ class FriendDetails extends React.Component {
         <IconLinksComponent />
         <FriendDetailsUserList convoUsers={this.props.convoUsers} />
       </div>
-    )
+    );
   }
 
   render() {
     if (this.props.showFriendDetails) {
-      return this.friendDetails()
-    } else { return null }
+      return this.friendDetails();
+    } else {
+      return null;
+    }
   }
 }
 
