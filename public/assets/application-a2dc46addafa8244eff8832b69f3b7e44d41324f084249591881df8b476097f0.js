@@ -63868,8 +63868,6 @@ var MessageReducer = function MessageReducer() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__actions_user_actions__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions_conversation_actions__ = __webpack_require__(4);
-
 
 
 
@@ -63877,7 +63875,6 @@ var UsersReducer = function UsersReducer() {
   var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(oldState);
-  var newState;
 
   switch (action.type) {
     case __WEBPACK_IMPORTED_MODULE_1__actions_user_actions__["b" /* RECEIVE_USERS */]:
@@ -63885,10 +63882,6 @@ var UsersReducer = function UsersReducer() {
 
     case __WEBPACK_IMPORTED_MODULE_1__actions_user_actions__["a" /* RECEIVE_USER */]:
       return Object(__WEBPACK_IMPORTED_MODULE_0_lodash__["merge"])({}, oldState, action.currentUser);
-    // case RECEIVE_ALL_CONVERSATIONS:
-    //   return merge({}, oldState, action.payload.users);
-    // case RECEIVE_CONVERSATION:
-    //   return merge({}, action.payload.users);
 
     default:
       return oldState;

@@ -40,6 +40,7 @@ end
 user_count = User.count
 
 demo_user = 1
+annie = 2
 lilo = user_count + 1
 stitch = user_count + 2
 pleakley = user_count + 3
@@ -117,7 +118,7 @@ end
 
 ls_conv_users = [
   # [conversationId, userId]
-  [1, demo_user], [1, lilo], [1, stitch], [1, pleakley], [1, jumba], [1, nani], [1, david], [1, scrump],
+  [1, demo_user], [1, annie], [1, lilo], [1, stitch], [1, pleakley], [1, jumba], [1, nani], [1, david], [1, scrump],
   [2, demo_user], [2, lilo], [2, stitch],
   [3, demo_user], [3, lilo], [3, stitch], [3, pleakley], [3, jumba],
   [4, demo_user], [4, lilo], [4, nani],
