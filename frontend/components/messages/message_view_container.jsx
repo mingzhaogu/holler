@@ -13,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
   convId: findConversationId(state, ownProps),
   currentUser: state.session.currentUser,
   chatUsers: state.entities.users,
-  messages: findCurrentMessages(state, ownProps),
+  messages: Object.values(state.entities.messages),
   expressionsOpen: state.ui.showGiphys || state.ui.showStickys
 });
 
