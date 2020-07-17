@@ -3,7 +3,7 @@
   "private": true,
   "dependencies": {
     "actioncable": "^5.1.6",
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.19",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-redux": "^5.0.7",
